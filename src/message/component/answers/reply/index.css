@@ -1,0 +1,38 @@
+.reply{
+    width: 900px;
+    display: flex;
+    margin-top: 10px;
+}
+.reply .reply-circle{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #7681F7;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+.reply .reply-circle span{
+    color: #7681F7;
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+.reply .reply-main{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.reply .reply-main .reply-details{
+    width: 700px;
+    overflow:hidden ;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.reply .reply-main .reply-time{
+    margin-top: 10px;
+    color: #A2A2A2;;
+}
+
+
+
+
+

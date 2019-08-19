@@ -1,0 +1,182 @@
+@font-face {font-family: "iconfont";
+    src: url('../../../iconfont/iconfont.eot'); /* IE9 */
+    src: url('../../../iconfont/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+    url('../../../iconfont/iconfont.woff2') format('woff2'),
+    url('../../../iconfont/iconfont.woff') format('woff'),
+    url('../../../iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('../../../iconfont/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sync:before {
+    content: "\e690";
+}
+
+.icon-lianjie:before {
+    content: "\e633";
+}
+
+.icon-xialajiantouxiangxia:before {
+    content: "\e55b";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.approve-portion{
+    width: 850px;
+    height: 469px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+    border-radius: 10px;
+}
+.approve-portion .portion-theme{
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    top: 50px;
+}
+.approve-portion .portion-img{
+   margin-top: 70px;
+    margin-left: 300px;
+}
+.approve-portion .portion-explain{
+    margin-top: 20px;
+    margin-left: 315px;
+    color: #9D9D9F;
+}
+.approve-portion .portion-button{
+    margin-top:20px;
+    margin-left: 150px;
+}
+.approve-portion .portion-button button{
+    width: 140px;
+    height: 46px;
+    background-color: #7681F7;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 100px;
+}
+.approve-portion .portion-button .return{
+    width: 140px;
+    height: 46px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #707070;
+    outline: none;
+    font-size: 18px;
+    color: #707070;
+}
+
+
+
+
+
+.approve-portion1{
+    width: 850px;
+    height: 606px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+    border-radius: 10px;
+    margin-top: 50px;
+}
+.approve-portion1 .portion1-theme{
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    top: 50px;
+}
+.approve-portion1 .portion1-name{
+    margin-top: 100px;
+    margin-left: 200px;
+}
+.approve-portion1 .portion1-name input {
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    margin-left: 20px;
+    outline: none;
+    font-size: 18px;
+}
+
+.approve-portion1 .portion1-number{
+    margin-top: 20px;
+    margin-left: 200px;
+}
+.approve-portion1 .portion1-number input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    margin-left: 20px;
+    outline: none;
+    font-size: 18px;
+}
+
+.approve-portion1 .portion1-information{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+.approve-portion1 .portion1-information textarea{
+    width: 476px;
+    height: 130px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    margin-left: 20px;
+    vertical-align: top;
+    outline: none;
+    font-size: 18px;
+}
+.approve-portion1 .portion1-explain{
+    margin-left: 280px;
+    margin-top: 20px;
+    color: #BEBEBE;
+}
+.approve-portion1 .portion1-explain .add{
+    color: #7681F7;
+}
+.approve-portion1 .portion1-button{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+.approve-portion1 .portion1-button button{
+    width: 140px;
+    height: 46px;
+    background-color: #7681F7;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 100px;
+    cursor:pointer;
+}
+.approve-portion1 .portion1-button .return{
+    width: 140px;
+    height: 46px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #707070;
+    outline: none;
+    font-size: 18px;
+    color: #707070;
+    cursor:pointer;
+}

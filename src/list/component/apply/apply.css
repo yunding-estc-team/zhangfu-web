@@ -1,0 +1,47 @@
+
+@font-face {font-family: "iconfont";
+    src: url('../apply/iconfont/iconfont.eot'); /* IE9 */
+    src: url('../apply/iconfont/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+    url('../apply/iconfont/iconfont.woff2') format('woff2'),
+    url('../apply/iconfont/iconfont.woff') format('woff'),
+    url('../apply/iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('../apply/iconfont/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tuandui:before {
+    content: "\e618";
+}
+
+
+
+
+
+
+.apply{
+    float: right;
+    width: 214px;
+    height: 126px;
+    background-color: #7681F7;
+    border-radius:5px 5px 5px 5px;
+    cursor:pointer;
+}
+.apply p{
+    font-size: 18px;
+    text-align:center;
+    transform:translateY(50%);
+}
+.sign{
+    color: #FFFFFF;
+}
+.number{
+    color: #F7ED76;
+}

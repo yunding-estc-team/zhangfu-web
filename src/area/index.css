@@ -1,0 +1,334 @@
+.area{
+    width: 1200px;
+    margin: 0 auto;
+}
+.area .picture{
+    background: url("../images/1.png");
+    width: 1200px;
+    height: 375px;
+}
+.area .picture button{
+    position: relative;
+    left: 330px;
+    top: 300px;
+    margin-left: 100px;
+    width: 120px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    background-color:rgba(0,0,0,0.1);
+    font-size: 18px;
+    color: #FFFFFF;
+    cursor:pointer;
+}
+
+.area .area-header{
+    margin-top: 10px;
+    width: 1200px;
+    height: 80px;
+    border-bottom: 2px solid #D4D4D4;
+}
+.area .area-header .header-left{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    /*border-bottom: 4px solid #7681F7;*/
+    padding: 30px;
+}
+.area .area-header .header-time{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 350px;
+    margin-top: 15px;
+}
+.area .area-header .header-time .stop-time span{
+    color: #F77676;
+}
+.area .area-header .header-time .duration {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #7F7F7F;
+}
+.area .area-header .header-button{
+    display: inline-block;
+    margin-left: 50px;
+}
+.area .area-header .header-button button{
+    border: 1px solid #7681F7;
+    width: 200px;
+    height: 50px;
+    background-color: #7681F7;
+    font-size: 18px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    outline: none;
+    cursor:pointer;
+}
+
+
+
+.area .area-main{
+    width: 1200px;
+    border: 1px solid blue;
+}
+.area .area-main .particulars-left{
+    display: inline-block;
+    width: 860px;
+
+}
+.area .area-main .particulars-right{
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    margin-left: 30px;
+}
+.area .area-main .particulars-right .right-section{
+    margin-top: 50px;
+}
+.area .area-main .particulars-right .right-type{
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    border: 2px solid #7681F7;
+    color: #7681F7;
+}
+.area .area-main .particulars-right .sponsor{
+    margin-top: 30px;
+}
+.area .area-main .particulars-right .sponsor .sponsor-picture{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #7681F7;
+    cursor:pointer;
+}
+.area .area-main .particulars-right .sponsor .sponsor-name{
+    display: inline-block;
+    position: relative;
+    top: 23px;
+    left: 20px;
+}
+.area .area-main .particulars-right .type-word{
+    margin-left: 30px;
+}
+
+
+
+
+
+.area .area-main .particulars-left .match-name{
+    width: 800px;
+    height: 50px;
+    border-bottom: 2px solid #707070;
+    margin-top: 50px;
+    margin-left: 40px;
+    font-size: 25px;
+}
+.area .area-main .particulars-left .match-area{
+    width: 800px;
+    margin-top: 40px;
+    margin-left: 40px;
+    border-bottom: 2px solid #707070;
+
+}
+
+
+
+
+
+
+.area .area-main .particulars-left .match-area .first-title{
+    font-size: 20px;
+    color: #7681F7;
+}
+.area .area-main .particulars-left .match-area .first-question{
+    float: right;
+    margin-top: -20px;
+}
+.area .area-main .particulars-left .match-area .first-question .question-circle{
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #7E7E7E;
+    text-align: center;
+    font-size: 16px;
+    color: #7E7E7E;
+    cursor:pointer;
+}
+.area .area-main .particulars-left .match-area .first-question .question-letter{
+    display: inline-block;
+    color: #7E7E7E;
+    margin-left: 10px;
+    margin-top: -5px;
+    cursor:pointer;
+}
+
+
+
+
+
+
+.particulars-left .match-area .details-second{
+    width: 700px;
+    margin-top: 30px;
+    margin-left: 90px;
+}
+.particulars-left .match-area .details-second .top{
+    display: inline-block;
+}
+.particulars-left .match-area .details-second .top .circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #B9BFFA;
+    text-align: center;
+}
+.particulars-left .match-area .details-second .top .circle span{
+    position: relative;
+    top: 40px;
+}
+.particulars-left .match-area .details-second .top .solid{
+    width: 157px;
+    border: 1px solid #F1F2FE;
+    position: relative;
+    top: 30px;
+}
+.particulars-left .match-area .details-second  .letter .circle1{
+    margin-left: 10px;
+}
+.particulars-left .match-area .details-second  .letter .circle2{
+    margin-left: 180px;
+}
+.particulars-left .match-area .details-second  .letter .circle3{
+    margin-left: 180px;
+}
+.particulars-left .match-area .details-third{
+    margin-top: 20px;
+}
+.particulars-left .match-area .title-number{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-color: #7681F7;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 5px;
+}
+.particulars-left .match-area .title-name{
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 18px;
+}
+.particulars-left .match-area  .details-word{
+    margin-top: 20px;
+    font-size: 15px;
+    color: #7F7F7F;
+    padding-bottom: 20px;
+}
+
+.particulars-left .notice{
+    width: 800px;
+    margin-top: 40px;
+    margin-left: 40px;
+    border-bottom: 2px solid #707070;
+}
+.particulars-left .comment{
+    width: 800px;
+    margin-top: 40px;
+    margin-left: 40px;
+    border-bottom: 2px solid #707070;
+}
+
+.catechism{
+    width: 800px;
+    margin: 0 auto;
+
+}
+.catechism .catechism-name{
+    font-size: 20px;
+    color: #7681F7;
+    margin-top: 50px;
+}
+.catechism .catechism-input{
+    margin-top: 20px;
+}
+.catechism .catechism-input input{
+    width: 600px;
+    height: 50px;
+    border: 2px solid #7681F7;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+}
+.catechism .catechism-input button{
+    width: 120px;
+    height: 50px;
+    background-color: #7681F7;
+    font-size: 18px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+.catechism-main{
+    width: 800px;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+
+
+
+
+.catechism-main .main-question{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-bottom: 1px solid #D4D4D4;
+    padding-bottom: 10px;
+}
+.catechism-main .main-question .main-circle{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #7681F7;
+    border-radius: 50%;
+    background-color: #7681F7;
+}
+.catechism-main .main-question .main-circle span{
+    color: #FFFFFF;
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+.catechism-main .main-question .problem{
+    width: 600px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.catechism-main .main-question .problem .problem-details{
+    width: 600px;
+    overflow:hidden ;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.catechism-main .main-question .problem .problem-footer{
+    width: 798px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+.catechism-main .main-question .problem .problem-footer .problem-time{
+    color: #A2A2A2;
+}

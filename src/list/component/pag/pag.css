@@ -1,0 +1,54 @@
+@font-face {font-family: "iconfont";
+    src: url('../pag/iconfont/iconfont.eot'); /* IE9 */
+    src: url('../pag/iconfont/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+    url('../pag/iconfont/iconfont.woff2') format('woff2'),
+    url('../pag/iconfont/iconfont.woff') format('woff'),
+    url('../pag/iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('../pag/iconfont/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fanhuizuojiantouxiangzuoshangyibuxianxing:before {
+    content: "\e606";
+}
+
+.icon-fanhuizuojiantouxiangzuoshangyibuxianxing1:before {
+    content: "\e503";
+}
+
+
+
+
+
+
+
+.pag{
+    width: 400px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top:40px;
+    padding-bottom: 25px;
+}
+.pag button{
+    width: 70px;
+    height: 40px;
+    font-size: 18px;
+    color: #7681F7;
+    margin-left: 8px;
+    border-radius:5px 5px 5px 5px;
+    background-color: #FFFFFF;
+    cursor:pointer;
+}
+.pag .number{
+    width: 40px;
+    height: 40px;
+    color: black;
+
+}

@@ -1,0 +1,91 @@
+@font-face {font-family: "iconfont";
+    src: url('iconfont/iconfont.eot'); /* IE9 */
+    src: url('iconfont/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont/iconfont.woff2') format('woff2'),
+    url('iconfont/iconfont.woff') format('woff'),
+    url('iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('iconfont/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sousuo:before {
+    content: "\e74b";
+}
+
+.icon-down2:before {
+    content: "\e6aa";
+}
+
+
+
+
+
+.section0{
+    width: 100%;
+    margin: 0 auto;
+    height: 80px;
+    position: relative;
+    top:-10px;
+    box-shadow: 0px 0px 6px 1px rgba(0 ,0, 0 ,.16);
+}
+.section0 .header{
+    margin: 0 auto;
+    width: 1200px;
+    height: 80px;
+}
+.section0 .header span{
+    font-size:20px;
+}
+.section0 .header-left{
+    float: left;
+    margin-left: 10px;
+}
+.section0 .header-left span{
+    margin-left: 30px;
+}
+.section0 .header-left img{
+    position: relative;
+    top: 20px;
+}
+
+
+
+.section0 .header input{
+    position:relative;
+    left: 500px;
+    width: 200px;
+    height: 33px;
+    float: left;
+    margin-top: 20px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid #7681F7;
+    font-size: 16px;
+    outline: none;
+}
+.section0 .search button{
+    position:relative;
+    left: 500px;
+    background-color: #7681F7;
+    width: 80px;
+    height: 37px;
+    margin-top: 20px;
+    border: 1px solid #7681F7;
+    font-size: 15px;
+    color:  #FFFFFF;
+    border-radius:0px 5px 5px 0px;
+    outline: none;
+    cursor:pointer;
+}
+.section0 .search span{
+    position: relative;
+    top:2px;
+    left:-2px;
+}
+

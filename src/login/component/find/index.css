@@ -1,0 +1,55 @@
+.find{
+    margin-top: -530px;
+    margin-left: 880px;
+    width: 382px;
+    height: 503px;
+    border-radius:15px 15px 15px 15px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+}
+.find-box{
+    width: 310px;
+    height: 398px;
+    position: relative;
+    left: 38px;
+    top: 50px;
+}
+.find .find-header{
+    text-align: center;
+    font-size: 20px;
+    color: #7699F7;
+}
+.find .find-input input{
+    width: 309px;
+    height: 47px;
+    border: 1px solid #7681F7;
+    font-size: 18px;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 20px;
+}
+.find .find-input button{
+    width: 114px;
+    height: 31px;
+    background-color: #F2F2F2;
+    color: #7681F7;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    position:absolute;
+    top: 128px;
+    left: 180px;
+    cursor:pointer;
+}
+.find .find-button button{
+    width: 309px;
+    height: 47px;
+    background-color: #7681F7;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-top: 40px;
+    cursor:pointer;
+}

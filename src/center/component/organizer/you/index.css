@@ -1,0 +1,105 @@
+.organizer-center2{
+    width: 1200px;
+    margin: 0 auto;
+}
+.organizer-center2 .organizer-section1{
+    display: flex;
+    width: 1200px;
+    height: 390px;
+    color: #FFFFFF;
+    background: url("../../../../images/暑假实践心得分享.png");
+}
+.organizer-center2 .organizer-section1 .section1-main{
+    margin: 0 auto;
+    position: relative;
+    top: 80px;
+    left: 10px;
+    text-align: center;
+}
+.organizer-center2 .organizer-section1 .section1-main .main-name{
+    margin-top: 50px;
+}
+.organizer-center2 .organizer-section1 .section1-main .main-school{
+    margin-top: 50px;
+}
+
+
+
+
+.organizer-center2 .organizer-section2{
+    width: 1200px;
+    margin-top: 50px;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0,.16 );
+}
+.organizer-center2 .organizer-section2 .section2-name{
+    text-align: center;
+}
+.organizer-center2 .organizer-section2 .section2-main p{
+    text-indent:2em;
+    width: 1000px;
+    font-size: 15px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+
+
+
+.organizer-center2 .organizer-section3{
+    width: 1200px;
+    background-color: #F6F7FE;
+    margin-top: 50px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+}
+.organizer-center2 .organizer-section3 .section3-name{
+    text-align: center;
+}
+.organizer-center2 .organizer-section3 .section3-part img{
+    cursor:pointer;
+}
+.organizer-center2 .organizer-section3 .section3-part{
+    width: 990px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #CDCED3;
+}
+.organizer-center2 .organizer-section3 .section3-part .part-main .main-name{
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #7681F7;
+    cursor:pointer;
+}
+.organizer-center2 .organizer-section3 .section3-part .part-main .main-word{
+    margin-top: 8px;
+    margin-left: 25px;
+    font-size: 15px;
+    color: #9D9D9F;
+}
+.organizer-center2 .organizer-section3 .section3-part .part-main .main-word .word-check{
+    position: relative;
+    left: 500px;
+    color: #7681F7;
+    cursor:pointer;
+}
+.organizer-center2 .up .iconfont{
+    font-size: 30px;
+    position: relative;
+    left: 600px;
+    cursor:pointer;
+}
+.organizer-center2 .down .iconfont{
+    font-size: 30px;
+    position: relative;
+    left: 600px;
+    cursor:pointer;
+}
+.organizer-center2 .up1{
+    display: none;
+}
+.organizer-center2 .down1{
+    display: none;
+}

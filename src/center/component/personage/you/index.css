@@ -1,0 +1,148 @@
+@font-face {font-family: "iconfont";
+    src: url('../../../iconfont/iconfont.eot'); /* IE9 */
+    src: url('../../../iconfont/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+    url('../../../iconfont/iconfont.woff2') format('woff2'),
+    url('../../../iconfont/iconfont.woff') format('woff'),
+    url('../../../iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('../../../iconfont/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tuandui:before {
+    content: "\e61f";
+}
+
+.icon-jiangbei:before {
+    content: "\e63e";
+}
+
+.icon-shijian:before {
+    content: "\e62d";
+}
+
+.icon-xiangxia:before {
+    content: "\e605";
+}
+
+.icon-bianji:before {
+    content: "\e612";
+}
+
+.icon-biaoqian:before {
+    content: "\e625";
+}
+
+.icon-xiangxia1:before {
+    content: "\e502";
+}
+
+
+
+
+
+
+
+
+.center2{
+    width: 1200px;
+    margin: 0 auto;
+}
+.center2 .pag{
+    width: 1200px;
+    height: 346px;
+    z-index: -1;
+}
+.center2 .background .inside img{
+    cursor:pointer;
+}
+.center2 .background .inside{
+    width: 150px;
+    height: 250px;
+    position: relative;
+    left:550px;
+    top: -315px;
+}
+.center2 .background .inside .name{
+    margin-left: 25px;
+    color:#F2F2F2;
+    margin-top: 30px;
+}
+.center2 .background .inside .school{
+    color: #D1D1D1;
+    margin-top: 20px;
+}
+
+.center2 .center-main {
+    position: relative;
+    top:-230px;
+}
+.center2 .center-main .iconfont{
+    padding-right: 15px;
+}
+.center2 .center-main .main-left{
+    display: inline-block;
+    vertical-align: top;
+    width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+}
+.center2 .center-main .main-left .parts img{
+    display: inline-block;
+    width: 500px;
+    height: 161px;
+    position: relative;
+    left:20px;
+    top: 40px;
+    cursor:pointer;
+}
+.center2 .center-main .main-left .parts .introduce{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 60px;
+    margin-top: 20px;
+    color: #707070;
+}
+.center2 .center-main .main-left .parts .introduce .theme{
+    font-size: 20px;
+    color: #7681F7;
+    cursor:pointer;
+}
+.center2 .center-main .main-left .parts .introduce .trophy{
+    color: #957DF7;
+}
+.center2 .center-main .main-left .parts .introduce .state{
+    position: relative;
+    left: 350px;
+    color: #B7B7B7;
+}
+.center2 .center-main .main-left .raced{
+    width: 200px;
+    height: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.center2 .up .iconfont{
+    font-size: 30px;
+    position: relative;
+    left: 580px;
+    cursor:pointer;
+}
+.center2 .down .iconfont{
+    font-size: 30px;
+    position: relative;
+    left: 580px;
+    cursor:pointer;
+}
+.center2 .up1{
+    display: none;
+}
+.down1{
+    display: none;
+}

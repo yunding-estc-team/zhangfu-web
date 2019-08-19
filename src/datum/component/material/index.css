@@ -1,0 +1,86 @@
+.material{
+    width: 850px;
+    height: 940px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+}
+.material .material-name{
+    position: relative;
+    top: 50px;
+    margin-left: 145px;
+}
+.material .material-name input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.material .material-principal{
+    margin-top: 80px;
+    margin-left: 130px;
+}
+.material .material-principal input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.material .material-number{
+    margin-top: 40px;
+    margin-left: 115px;
+}
+.material .material-number input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.material .material-email{
+    margin-top: 40px;
+    margin-left: 115px;
+}
+.material .material-email input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.material .material-intro{
+    margin-top: 40px;
+    margin-left: 145px;
+}
+.material .material-intro textarea{
+    width: 592px;
+    height: 366px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    margin-left: 20px;
+    vertical-align: top;
+}
+.material .material-button button{
+    width: 140px;
+    height: 46px;
+    background-color: #7681F7;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left:350px;
+    margin-top: 50px;
+    cursor:pointer;
+}

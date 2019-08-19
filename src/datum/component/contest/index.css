@@ -1,0 +1,61 @@
+.contest{
+    width: 850px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+}
+.contest .contest-button{
+    position: relative;
+    top: 50px;
+    left: 120px;
+}
+.contest .contest-button button{
+    width: 140px;
+    height: 46px;
+    background-color: #7681F7;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left:100px;
+    cursor:pointer;
+}
+.contest .contest-main{
+    width: 735px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+.contest .contest-main .contest-part img{
+    cursor:pointer;
+}
+
+.contest .contest-main .contest-part{
+    width: 734px;
+    border-bottom: 2px solid #D3D3D3;
+    display: flex;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.contest .contest-main .contest-part .contest-details{
+    margin-left: 20px;
+}
+.contest .contest-main .contest-part .contest-details .details-name{
+    font-size: 18px;
+    color: #7681F7;
+    margin-top: 10px;
+    cursor:pointer;
+}
+.contest .contest-main .contest-part .contest-details .details-time{
+    font-size: 15px;
+    color: #9D9D9F;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.contest .contest-main .contest-part .contest-details .details-check{
+    font-size: 15px;
+    color: #7681F7;
+    position: relative;
+    left: 550px;
+    cursor:pointer;
+}

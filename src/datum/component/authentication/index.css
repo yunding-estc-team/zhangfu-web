@@ -1,0 +1,65 @@
+.authentication{
+    width: 850px;
+    height: 487px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+}
+.authentication .authentication-theme{
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top: 40px;
+}
+.authentication .authentication-textarea{
+    margin-top: 100px;
+    margin-left: 120px;
+}
+.authentication .authentication-textarea textarea{
+    width: 592px;
+    height: 165px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.authentication .authentication-annotation{
+    margin-top: 20px;
+    margin-left: 140px;
+}
+.authentication .authentication-annotation span{
+    font-size: 15px;
+    color: #BEBEBE;
+    cursor:pointer;
+}
+.authentication .authentication-annotation .add{
+    color: #7681F7;
+    margin-left: 10px;
+    cursor:pointer;
+}
+.authentication .authentication-button{
+    margin-left: 110px;
+}
+.authentication .authentication-button button{
+    width: 140px;
+    height: 46px;
+    background-color: #7681F7;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 120px;
+    margin-top: 60px;
+    cursor:pointer;
+}
+.authentication .authentication-button .return{
+    width: 140px;
+    height: 46px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #707070;
+    outline: none;
+    font-size: 18px;
+    color: #707070;
+}

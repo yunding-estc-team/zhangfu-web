@@ -1,0 +1,68 @@
+.datum{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+}
+.datum .left{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+
+
+
+
+
+.datum .left-main .main{
+    width: 272px;
+    height: 469px;
+    margin-top: 50px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+    border-radius:10px 10px 10px 10px;
+}
+.datum .left-main .part1{
+    position: relative;
+    top: 30px;
+    width: 97px;
+    margin: 0 auto;
+}
+.datum .left-main .part1 p{
+    text-align: center;
+}
+.datum .left-main .part2{
+    width: 272px;
+    margin-top: 70px;
+    text-align:center;
+
+}
+.datum .left-main .part2 .tag{
+    width: 272px;
+    height: 40px;
+    margin-top: 30px;
+    background-color: #7681F7;
+    padding-top: 10px;
+    cursor:pointer;
+}
+
+
+
+
+
+.datum .right{
+    display: inline-block;
+    vertical-align: top;
+    margin-top:75px;
+    margin-left: 50px;
+}
+
+.material1{
+    display: none;
+}
+.authentication1{
+    display: none;
+}
+.contest1{
+    display: none;
+}

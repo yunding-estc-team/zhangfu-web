@@ -1,0 +1,68 @@
+@font-face {font-family: "iconfont";
+    src: url('../part/iconfont/iconfont.eot'); /* IE9 */
+    src: url('../part/iconfont/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+    url('../part/iconfont/iconfont.woff2') format('woff2'),
+    url('../part/iconfont/iconfont.woff') format('woff'),
+    url('../part/iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('../part/iconfont/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tuandui:before {
+    content: "\e669";
+}
+
+.icon-biaoqian:before {
+    content: "\e685";
+}
+
+.icon-shijian:before {
+    content: "\e716";
+}
+
+.icon-xiala:before {
+    content: "\e607";
+}
+
+.icon-xiala1:before {
+    content: "\e636";
+}
+
+.icon-xiugai:before {
+    content: "\e623";
+}
+
+
+.part{
+    width: 1120px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-bottom: 2px solid #DDDDDD;
+}
+.part img{
+    float: left;
+    width: 380px;
+    height: 250px;
+    cursor:pointer;
+}
+.part .introduce{
+    margin-left: 50px;
+    float: left;
+}
+.part .introduce .iconfont{
+    font-size: 18px;
+    padding-right: 20px;
+}
+.part .introduce .theme{
+    font-size: 20px;
+    color: #7681F7;
+    cursor:pointer;
+}

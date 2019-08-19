@@ -1,0 +1,7 @@
+ .import{
+     display: inline-block;
+    width: 1200px;
+     margin-top: 50px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+     cursor:pointer;
+}

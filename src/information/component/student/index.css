@@ -1,0 +1,79 @@
+.student{
+    width: 850px;
+    height: 500px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+}
+.student .student-theme{
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top: 40px;
+}
+.student .student-school{
+    margin-top: 100px;
+    margin-left: 180px;
+}
+.student .student-school input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.student .student-major{
+     margin-top: 20px;
+     margin-left: 180px;
+ }
+.student .student-major input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.student .student-number{
+    margin-top: 20px;
+    margin-left: 180px;
+}
+.student .student-number input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.student .student-button{
+    margin-left: 90px;
+}
+.student .student-button button{
+    width: 140px;
+    height: 46px;
+    background-color: #7681F7;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 120px;
+    margin-top: 60px;
+    cursor:pointer;
+}
+.student .student-button .return{
+    width: 140px;
+    height: 46px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #707070;
+    outline: none;
+    font-size: 18px;
+    color: #707070;
+}
+

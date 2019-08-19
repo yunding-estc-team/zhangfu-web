@@ -1,0 +1,16 @@
+.mores input{
+    width: 500px;
+    height: 65px;
+    outline: none;
+    border: 2px solid #D4D4D4;
+    border-radius: 10px;
+    font-size: 18px ;
+    margin-top: 50px;
+}
+.mores textarea{
+    width: 1120px;
+    height: 220px;
+    font-size: 18px;
+    outline: none;
+    margin-top: 50px;
+}

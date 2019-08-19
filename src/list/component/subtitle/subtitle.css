@@ -1,0 +1,18 @@
+.subtitle {
+    width: 1120px;
+    height: 54px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-bottom: 2px solid #DDDDDD ;
+}
+.subtitle span{
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 18px;
+    margin-left:30px;
+    position: relative;
+    top:15px;
+    border-bottom: 5px solid #7681F7;
+    cursor:pointer;
+}

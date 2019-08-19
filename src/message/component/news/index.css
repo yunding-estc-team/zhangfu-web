@@ -1,0 +1,23 @@
+.advices{
+    max-height: 995px;
+    min-height: 995px;
+    overflow-y:auto;
+}
+.news-main{
+    margin:  0 auto;
+    width: 1100px;
+  border-bottom: 2px solid #D4D4D4;
+}
+.news-main .main-theme{
+    margin-left: 40px;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.news-main .main-minute{
+    margin-top: 10px;
+    margin-left: 40px;
+    font-size: 15px;
+    color: #7F7F7F;
+    padding-bottom: 30px;
+}

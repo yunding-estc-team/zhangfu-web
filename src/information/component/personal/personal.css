@@ -1,0 +1,109 @@
+@font-face {font-family: "iconfont";
+    src: url('iconfont/iconfont.eot'); /* IE9 */
+    src: url('iconfont/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont/iconfont.woff2') format('woff2'),
+    url('iconfont/iconfont.woff') format('woff'),
+    url('iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('iconfont/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-down-fill:before {
+    content: "\e6a2";
+}
+
+li {
+    list-style: none;
+}
+.personal{
+    width: 850px;
+    height: 666px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+}
+.personal .list{
+    width: 700px;
+    height:400px;
+    margin: 0 auto;
+}
+.personal .list .line{
+    padding-top: 35px;
+}
+.personal .list .name{
+    color: #BEBEBE;
+}
+
+.personal .list .detailed{
+    margin-left: 80px;
+}
+.personal .list .detailed input {
+    width: 265px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.personal .list  .circle{
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    top: 5px;
+    width: 15px;
+    height:15px;
+    border-radius: 50%;
+    background-color: #7681F7;
+    border: 2px solid #BEBEBE;
+}
+.personal .list .sex {
+    margin-left: 5px;
+}
+
+.personal .list .choice{
+    display: inline-block;
+    width: 265px;
+    vertical-align:top;
+}
+.personal .list .choice li{
+    width: 265px;
+    height: 30px;
+
+    background-color: #EEEEF0;
+    text-align: center;
+    padding-top: 10px;
+}
+.personal .list .choice .second{
+    width: 265px;
+    display: none;
+    z-index: 999;
+}
+.personal .list .choice .iconfont{
+    color: #9D9D9F;
+    float: right;
+    margin-right: 20px;
+    cursor:pointer;
+}
+.personal button{
+    width: 87px;
+    height: 48px;
+    background-color: #7681F7;
+    color: white;
+    float: right;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    position: relative;
+    left: -30px;
+    top: 200px;
+    cursor:pointer;
+}
+
+

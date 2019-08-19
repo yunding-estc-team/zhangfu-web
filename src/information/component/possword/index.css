@@ -1,0 +1,111 @@
+@font-face {font-family: "iconfont";
+    src: url('iconfont/iconfont.eot'); /* IE9 */
+    src: url('iconfont/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont/iconfont.woff2') format('woff2'),
+    url('iconfont/iconfont.woff') format('woff'),
+    url('iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('iconfont/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-kanbujian:before {
+    content: "\e668";
+}
+
+
+
+
+
+
+.code{
+    width: 850px;
+    height: 469px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+}
+.code .code-theme{
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top: 40px;
+}
+.code .code-old{
+    margin-top: 100px;
+    margin-left: 250px;
+}
+.code .code-old input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+}
+.code .code-new{
+    margin-top: 40px;
+    margin-left: 250px;
+}
+.code .code-new input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+}
+.code .code-new .iconfont{
+    font-size: 25px;
+    color: #9D9D9F;
+    position: relative;
+    left:-40px;
+    top: 5px;
+}
+
+
+
+.code .code-affirm{
+    margin-top: 40px;
+    margin-left: 250px;
+}
+.code .code-affirm input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+}
+.code .code-button{
+    margin-left: 175px;
+}
+
+.code .code-button button{
+    width: 140px;
+    height: 46px;
+    background-color: #7681F7;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 75px;
+    margin-top: 40px;
+    cursor:pointer;
+}
+.code .code-button .return{
+    width: 140px;
+    height: 46px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #707070;
+    outline: none;
+    font-size: 18px;
+    color: #707070;
+}

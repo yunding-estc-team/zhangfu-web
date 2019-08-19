@@ -1,0 +1,12 @@
+.input2 input{
+    margin-top: 20px;
+    position: relative;
+    left: 35px;
+    width: 309px;
+    height: 47px;
+    border-radius:5px 5px 5px 5px;
+    border: 2px solid #BEBEBE;
+    outline: none;
+    font-size: 20px;
+}
+

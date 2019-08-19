@@ -1,0 +1,156 @@
+@font-face {font-family: "iconfont";
+    src: url('../home/iconfont/iconfont.eot'); /* IE9 */
+    src: url('../home/iconfont/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+    url('../home/iconfont/iconfont.woff2') format('woff2'),
+    url('../home/iconfont/iconfont.woff') format('woff'),
+    url('../home/iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('../home/iconfont/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yijieshu:before {
+    content: "\e62f";
+}
+
+.icon-jiarutuandui:before {
+    content: "\e61c";
+}
+
+.icon-tuandui:before {
+    content: "\e713";
+}
+
+.icon-yijieshu1:before {
+    content: "\e61b";
+}
+
+.icon-shijian:before {
+    content: "\e716";
+}
+
+.icon-gerenzhongxinwoderenwubiaozhuntouxianxing:before {
+    content: "\e601";
+}
+
+.icon-anquanyishipeixuncanjiashuai:before {
+    content: "\e620";
+}
+
+.icon-xiaolian:before {
+    content: "\e82e";
+}
+
+
+
+
+
+.home  .slideshow{
+    width: 100%;
+    height: 400px;
+    margin: 0 auto ;
+    background-color: #7681F7;
+}
+
+.home .home-game{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.home  .game-header{
+   text-align: center;
+    font-size: 25px;
+    margin-top: 100px;
+}
+.home  .game-classify{
+   margin-left: 360px;
+    font-size: 18px;
+    margin-top: 40px;
+}
+.home  .game-classify span{
+    margin-left: 100px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom: 4px solid #7681F7;
+    cursor:pointer;
+}
+.home .game-main{
+    width: 1200px;
+    margin-top:50px;
+}
+.home .game-main .games{
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 380px;
+    height: 393px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,.16);
+    cursor:pointer;
+}
+.home .game-main .games img{
+    width: 380px;
+    height: 250px;
+}
+.home .game-main .games .game-name{
+    margin-top: 20px;
+    margin-left: 12px;
+}
+.home .game-main .games .game-details .details-left{
+    display: inline-block;
+    margin-left: 12px;
+    color: #707070;
+}
+.home .game-main .games .game-details .details-left div{
+    margin-top: 20px;
+}
+.home .game-main .games .game-details .details-right{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 40px;
+    color: #707070;
+}
+.home .game-main .games .game-details .details-right div{
+    margin-top: 20px;
+}
+.home .game-main .games .game-details .word{
+    margin-left: 10px;
+}
+.home .game-main .games .game-details .game-state2{
+    color: #F77676;
+}
+.home .game-main .games .game-details .game-state2 .iconfont{
+    color: #F77676;
+}
+.home .game-main .games .game-details .game-state3{
+    color: #7699F7;
+}
+.home .game-main .games .game-details .game-state3 .iconfont{
+    color: #7699F7;
+}
+.home .game-footer button{
+    margin-top: 80px;
+    position: relative;
+    left: 515px;
+    background-color: #FFFFFF;
+    width: 170px;
+    height: 42px;
+    border: 2px solid #7681F7;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #7681F7;
+    outline: none;
+    cursor:pointer;
+}
+
+
+
+
+

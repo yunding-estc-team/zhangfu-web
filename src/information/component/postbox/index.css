@@ -1,0 +1,73 @@
+.postbox{
+    width: 850px;
+    height: 469px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 3px 6px 1px rgba(0 ,0, 0 ,.16);
+}
+.postbox .postbox-name{
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top: 40px;
+}
+.postbox .postbox-input{
+    margin-top: 100px;
+    margin-left: 240px;
+}
+.postbox .postbox-input input{
+    width: 350px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+}
+.postbox .postbox-main{
+    margin-left: 240px;
+    margin-top: 40px;
+}
+.postbox .postbox-main input{
+    width: 140px;
+    height: 46px;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+}
+.postbox .postbox-main button{
+    width: 140px;
+    height: 46px;
+    background-color: #7681F7;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 70px;
+}
+.postbox .postbox-button{
+    margin-left: 105px;
+}
+.postbox .postbox-button button{
+    width: 140px;
+    height: 46px;
+    background-color: #7681F7;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 120px;
+    margin-top: 60px;
+    cursor:pointer;
+}
+.postbox .postbox-button .return{
+    width: 140px;
+    height: 46px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #707070;
+    outline: none;
+    font-size: 18px;
+    color: #707070;
+}
