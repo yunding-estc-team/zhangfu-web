@@ -3,6 +3,7 @@ import './index.css'
 import Input1 from "../../input/input1";
 import Input2 from "../../input/input2";
 import {NavLink} from "react-router-dom";
+import sp from "../../../images/资源 1.png";
 
 
 // 登录的具体页面
@@ -39,10 +40,9 @@ class Loging extends Component{
                         <div className={this.state.active2 === true ? '' : 'inputB'}><Input2/></div>
                     </div>
                     <div className="section">
-
                         <div className="pour">
-                            <span className="special"><NavLink>忘记密码</NavLink></span>
-                            <span>注册账户</span>
+                            <span className="special"><NavLink to="/login/index">忘记密码</NavLink></span>
+                           <span><NavLink to="/register/index">注册账户</NavLink></span>
                         </div>
                     </div>
                     <div className="right-footer"><button>登录</button></div>

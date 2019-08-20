@@ -44,6 +44,7 @@
 }
 .login .right .section .pour{
     float: right;
+    margin-top: 10px;
     font-size: 10px;
 }
 .login .right .section .pour span{

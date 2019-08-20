@@ -10,16 +10,17 @@
 .register .middle{
     display: inline-block;
     vertical-align: top;
+    margin-left: 100px;
 }
 .register .middle .welcome .ch{
     font-size: 25px;
-    margin-left: 80px;
+    margin-left: 90px;
     letter-spacing:10px;
     color: #7681F7;
 }
 .register .middle .welcome .en{
     font-size: 15px;
-    margin-left: 68px;
+    margin-left: 78px;
     margin-top: -10px;
     color: #7681F7;
 }
