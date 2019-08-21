@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="727ca19c-5366-44e2-8e72-2cbd6d3e6c87" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/component/login/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/component/login/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/component/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/component/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/input/input1.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/input/input1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/input/input2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/input/input2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/register/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/register/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/header/component/right2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/header/component/right2/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/register/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/common/header/component/right2/iconfont" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -37,19 +34,19 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Issue.Navigation" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\untitled5\src\common\header\component\right2\iconfont" />
-      <recent name="E:\untitled5\src\information\component\possword\iconfont" />
-      <recent name="E:\untitled5\src\information\iconfont" />
-      <recent name="E:\untitled5\src\information\component" />
-      <recent name="E:\untitled5\src\center\iconfont" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\untitled5\src\information\component\approve\going" />
       <recent name="E:\untitled5\src\center\component\personage" />
       <recent name="E:\untitled5\src\center\component" />
       <recent name="E:\untitled5\src\center" />
       <recent name="E:\untitled5\src\center\me" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="E:\untitled5\src\common\header\component\right2\iconfont" />
+      <recent name="E:\untitled5\src\information\component\possword\iconfont" />
+      <recent name="E:\untitled5\src\information\iconfont" />
+      <recent name="E:\untitled5\src\information\component" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -64,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.npm start">
+  <component name="RunManager" selected="JavaScript Debug.Debug Application">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -116,6 +113,9 @@
       <workItem from="1566175103375" duration="1087000" />
       <workItem from="1566177031719" duration="3056000" />
       <workItem from="1566263373106" duration="6349000" />
+      <workItem from="1566296300742" duration="114000" />
+      <workItem from="1566296444631" duration="679000" />
+      <workItem from="1566348558959" duration="14318000" />
     </task>
     <servers />
   </component>
@@ -141,8 +141,13 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/information/index.js</url>
           <line>4</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/register/index.js</url>
+          <line>59</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

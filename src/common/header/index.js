@@ -24,11 +24,12 @@ class Header extends Component{
                                 <button> <span className="iconfont">&#xe74b;</span>搜索</button>
                             </form>
                         </div>
-                        <div className="header-right ">
-                            {/*<Right1/>*/}
-                            <Right2/>
-                            {/*<span><NavLink to="/login/index">登录/</NavLink></span>*/}
-                            {/*<span><NavLink to="/register/index">注册</NavLink></span>*/}
+                        <div>
+                            {localStorage.getItem("token")!==null?<Right2/>:
+                                    <span className="right1">
+                                        <NavLink to="/register/index">注册</NavLink>
+                                        <NavLink to="/login/index">/登录</NavLink>
+                                    </span>}
                         </div>
                     </div>
                 </div>
