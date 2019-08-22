@@ -1,3 +1,42 @@
+@font-face {font-family: "iconfont";
+    src: url('../area/iconfont/iconfont.eot'); /* IE9 */
+    src: url('../area/iconfont/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+    url('../area/iconfont/iconfont.woff2') format('woff2'),
+    url('../area/iconfont/iconfont.woff') format('woff'),
+    url('../area/iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('../area/iconfont/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-attentiondegree:before {
+    content: "\e7d4";
+}
+
+.icon-zuihuo:before {
+    content: "\e66e";
+}
+
+.icon-dianjiliang:before {
+    content: "\e694";
+}
+
+
+
+
+
+
+
+
+
+
+
 .area{
     width: 1200px;
     margin: 0 auto;
@@ -34,19 +73,12 @@
     /*border-bottom: 4px solid #7681F7;*/
     padding: 30px;
 }
-.area .area-header .header-time{
+.area .area-header .header-middle{
     display: inline-block;
-    vertical-align: top;
-    margin-left: 350px;
-    margin-top: 15px;
+    margin-left: 300px;
 }
-.area .area-header .header-time .stop-time span{
-    color: #F77676;
-}
-.area .area-header .header-time .duration {
-    margin-top: 10px;
-    font-size: 15px;
-    color: #7F7F7F;
+.area .area-header .header-middle span{
+    margin-left: 10px;
 }
 .area .area-header .header-button{
     display: inline-block;
@@ -196,17 +228,9 @@
     position: relative;
     top: 30px;
 }
-.particulars-left .match-area .details-second  .letter .circle1{
-    margin-left: 10px;
-}
-.particulars-left .match-area .details-second  .letter .circle2{
-    margin-left: 180px;
-}
-.particulars-left .match-area .details-second  .letter .circle3{
-    margin-left: 180px;
-}
+
 .particulars-left .match-area .details-third{
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .particulars-left .match-area .title-number{
     display: inline-block;
@@ -226,7 +250,7 @@
     margin-top: 20px;
     font-size: 15px;
     color: #7F7F7F;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }
 
 .particulars-left .notice{
@@ -332,3 +356,4 @@
 .catechism-main .main-question .problem .problem-footer .problem-time{
     color: #A2A2A2;
 }
+
