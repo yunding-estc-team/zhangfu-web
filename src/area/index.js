@@ -1,8 +1,90 @@
 import React, { Component } from 'react';
 import './index.css'
 import Reply from "../message/component/answers/reply";
+import {Link} from "react-router-dom";
+import api, {instance} from "../config/url";
+
 // 赛事详情
 class Area extends Component{
+
+
+
+    constructor(props){
+        super(props);
+        this.state = {
+            attention:true,
+            message:true,
+            question:false,
+
+            content:"",
+            competitionWikiId:this.props.id,
+            mag:""
+        }
+    };
+    handleAttention(){
+        if (this.state.attention === true){
+            this.setState(
+                {
+                    attention:!this.state.attention,
+                }
+            )
+        }
+        else{
+            return 0
+        }
+    }
+    handleMessage(){
+        if(this.state.message === true){
+            return 0;
+        }
+        else{
+            this.setState(
+                {
+                    message:!this.state.message,
+                    question:!this.state.question,
+                }
+            )
+        }
+    }
+    handleQuestion(){
+        if(this.state.question === true){
+            return 0;
+        }
+        else{
+            this.setState(
+                {
+                    message:!this.state.message,
+                    question:!this.state.question,
+                }
+            )
+        }
+    }
+    handleClick = (event) =>{
+        console.log(this.state.content);
+        instance.post(api.competitionWiki.userAnswer,
+            {
+                competitionWikiId:this.state.competitionWikiId,
+                content:this.state.content
+            }
+        ).then(
+            res =>{
+                if(res.data.code==="200"){
+                    // todo success
+                    this.setState({mag:""})
+                }else{
+                    // todo failure
+                    this.setState({mag:"提问失败！！!"})
+                }
+
+            }
+        )
+    };
+    inputChange(e){
+        let inputValue = e.target.value;
+        this.setState({
+            content: inputValue
+        })
+    }
     render(){
         let headerList = [
             {
@@ -18,6 +100,30 @@ class Area extends Component{
                 <span><span className="iconfont">&#xe694;</span><span>{header.dianjiliang}</span></span>
             </div>
         );
+
+        let questionList = [
+            {
+                "question":"这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干这个比赛主要是干嘛",
+                "time":"2019年8月15日"
+             }
+        ];
+        let data4 = questionList.map(question =>
+            <div className="catechism-main">
+                <div className="main-question">
+                    <div className="main-circle"><span>问</span></div>
+                    <div className="problem">
+                        {/*问题*/}
+                        <div className="problem-details">{question.question}</div>
+                        <div className="problem-footer">
+                            {/*提问时间*/}
+                            <span className="problem-time">提问于 <span>{question.time}</span></span>
+                            <Reply/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+
         let leftList = [
             {
                 "name":"2019年云顶暑期实践培训",
@@ -26,7 +132,7 @@ class Area extends Component{
                     "12届。比赛搭载Honda统一提供的125cc低油耗4冲程发动机，车架和车身等则由各车队独立创作完成，最终" +
                     "以燃油的消耗量多少而一决胜负。为启发人们对新能源的思考， 2011年更在中国首创了电动组别的比赛，参" +
                     " 赛车辆使用大赛指定电池并将该电池作为车辆行驶的唯一动力源。",
-                "matter":"以团队形式参赛，每支队伍3-6人，于2019年5月17日前提交立项书进行报名，暑假进行调研，于9月1日至11月30日期间进行决赛。"
+                "matter":"以团队形式参赛，每支队伍3-6人，于2019年5月17日前提交立项书进行报名，暑假进行调研，于9月1日至11月30日期间进行决赛。",
             }
         ];
         let data2 = leftList.map(left =>
@@ -35,10 +141,10 @@ class Area extends Component{
                 <div className="match-name">{left.name}</div>
                 <div className="match-area">
                     <div className="details-first">
-                        <div className="first-title">竞赛信息</div>
+                        <div className="first-title" id="jinsai">竞赛信息</div>
                         <div className="first-question">
-                            <div className="question-circle">?</div>
-                            <div className="question-letter">仍有疑问</div>
+                            <a href="#wengda"><div className="question-circle">?</div></a>
+                            <a href="#wengda"><div className="question-letter">仍有疑问</div></a>
                         </div>
                     </div>
                     <div className="details-second">
@@ -79,69 +185,18 @@ class Area extends Component{
                         </div>
                     </div>
                 </div>
-                <div className="catechism">
+                <div className="catechism" id="wengda">
                     <div className="catechism-name">赛事问答</div>
                     <div className="catechism-input">
-                        <input type="text" name="" id="" placeholder="问点什么吧"/>
-                        <button>我要提问</button>
+                        <input type="text" name="" id="" placeholder="问点什么吧" onChange={this.inputChange.bind(this)} />
+                        <button onClick={this.handleClick.bind(this)}>我要提问</button>
+                        <span className="mag">{this.state.msg}</span>
                     </div>
-                    <div className="catechism-main">
-                        <div className="main-question">
-                            <div className="main-circle"><span>问</span></div>
-                            <div className="problem">
-                                {/*问题*/}
-                                <div className="problem-details">这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干这个比赛主要是干嘛</div>
-                                <div className="problem-footer">
-                                    {/*提问时间*/}
-                                    <span className="problem-time">提问于 <span>2019年8月15日</span></span>
-                                    <Reply/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="main-question">
-                            <div className="main-circle"><span>问</span></div>
-                            <div className="problem">
-                                <div className="problem-details">这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干这个比赛主要是干嘛</div>
-                                <div className="problem-footer">
-                                    <span className="problem-time">提问于 <span>2019年8月15日</span></span>
-                                    {/*<Reply/>*/}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="main-question">
-                            <div className="main-circle"><span>问</span></div>
-                            <div className="problem">
-                                <div className="problem-details">这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干这个比赛主要是干嘛</div>
-                                <div className="problem-footer">
-                                    <span className="problem-time">提问于 <span>2019年8月15日</span></span>
-                                    {/*<Reply/>*/}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="main-question">
-                            <div className="main-circle"><span>问</span></div>
-                            <div className="problem">
-                                <div className="problem-details">这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干这个比赛主要是干嘛</div>
-                                <div className="problem-footer">
-                                    <span className="problem-time">提问于 <span>2019年8月15日</span></span>
-                                    {/*<Reply/>*/}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="main-question">
-                            <div className="main-circle"><span>问</span></div>
-                            <div className="problem">
-                                <div className="problem-details">这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干嘛这个比赛主要是干这个比赛主要是干嘛</div>
-                                <div className="problem-footer">
-                                    <span className="problem-time">提问于 <span>2019年8月15日</span></span>
-                                    {/*<Reply/>*/}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {data4}
                 </div>
             </div>
         );
+
         let rightList = [
             {
                 "name":"太原理工大学",
@@ -156,9 +211,9 @@ class Area extends Component{
                 <div className="right-section">
                     <span className="right-type">主办单位</span>
                     <div className="sponsor">
-                        <div className="sponsor-picture"><img src="" alt=""/></div>
+                        <Link to="/center/organizer/you/index"><div className="sponsor-picture"><img src="" alt=""/></div></Link>
                         {/*主办单位*/}
-                        <div className="sponsor-name">{right.name}</div>
+                        <Link to="/center/organizer/you/index"><div className="sponsor-name">{right.name}</div></Link>
                     </div>
                 </div>
                 <div className="right-section">
@@ -185,16 +240,23 @@ class Area extends Component{
         );
 
 
-
         return(
             <div className="area">
                 <div className="picture">
-                    <button>关注</button>
-                    <button>认领赛事</button>
+                    <span className={this.state.attention=== true ? 'attention1' : 'attention2'}>
+                        <button onClick={this.handleAttention.bind(this)}>关注</button>
+                    </span>
+                    <Link to="/datum/index">
+                        <button>认领赛事</button>
+                    </Link>
                 </div>
                 <div className="area-header">
-                    <div className="header-left">竞赛信息</div>
-                    <div className="header-left">问答</div>
+                    <span className={this.state.message===true ? 'message1' : 'message2'}>
+                          <div className="header-left" onClick={this.handleMessage.bind(this)}><a href="#jinsai">竞赛信息</a></div>
+                    </span>
+                    <span className={this.state.question===true ? 'question1' : 'question2'}>
+                        <div className="header-left" onClick={this.handleQuestion.bind(this)}><a href="#wengda">问答</a></div>
+                    </span>
                     <div className="header-middle">
                         {data1}
                     </div>

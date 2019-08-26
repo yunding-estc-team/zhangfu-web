@@ -64,21 +64,43 @@
 }
 
 .home  .game-header{
-    text-align: center;
+   text-align: center;
     font-size: 25px;
     margin-top: 100px;
 }
 .home  .game-classify{
-    margin-left: 360px;
+   margin-left: 360px;
     font-size: 18px;
     margin-top: 40px;
 }
-.home  .game-classify span{
+.home  .game-classify .new1{
     margin-left: 100px;
     padding-bottom: 10px;
     padding-right: 10px;
     padding-left: 10px;
     border-bottom: 4px solid #7681F7;
+    cursor:pointer;
+}
+.home  .game-classify .new2{
+    margin-left: 100px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor:pointer;
+}
+.home  .game-classify .host1{
+    margin-left: 100px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom: 4px solid #7681F7;
+    cursor:pointer;
+}
+.home  .game-classify .host2{
+    margin-left: 100px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
     cursor:pointer;
 }
 .home .game-main{
@@ -150,6 +172,7 @@
     outline: none;
     cursor:pointer;
 }
+
 
 
 

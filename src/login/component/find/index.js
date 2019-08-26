@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './index.css'
+import './index.css';
+import {Link} from "react-router-dom";
 
 // 找回密码
 class Find extends Component{
@@ -16,7 +17,9 @@ class Find extends Component{
                         <input type="text" placeholder="请确认新密码"/>
                     </div>
                     <div className="find-button">
-                        <button>重新登录</button>
+                        <Link to="/login/index">
+                            <button>重新登录</button>
+                        </Link>
                     </div>
                 </div>
             </div>

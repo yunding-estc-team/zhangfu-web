@@ -23,6 +23,19 @@ class Datum extends Component{
 
 
     render(){
+        let handList =[
+            {
+                "name":"天一科技公司"
+            }
+        ];
+        let data =handList.map(hand =>
+            <div className="part1">
+                {/*头像*/}
+                <img src={img} alt=""/>
+                {/*名称*/}
+                <p>{hand.name}</p>
+            </div>
+        );
         return(
             <div>
                 <div className="datum">
@@ -30,12 +43,7 @@ class Datum extends Component{
                         <div className="left-main">
                             <div className="item">账户设置</div>
                             <div className="main">
-                                <div className="part1">
-                                    {/*头像*/}
-                                    <img src={img} alt=""/>
-                                    {/*名称*/}
-                                    <p>天一科技公司</p>
-                                </div>
+                                {data}
                                 <div className="part2">
                                     <div className="tag" onClick={this.handleMaterial}>举办方信息</div>
                                     <div className="tag" onClick={this.handleAuthentication}>认证举办方</div>

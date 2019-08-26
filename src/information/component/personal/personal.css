@@ -52,7 +52,7 @@ li {
     border-radius: 5px;
     font-size: 18px;
 }
-.personal .list  .circle{
+.personal .list  .circle1A{
     display: inline-block;
     position: relative;
     margin-left: 10px;
@@ -61,6 +61,37 @@ li {
     height:15px;
     border-radius: 50%;
     background-color: #7681F7;
+    border: 2px solid #BEBEBE;
+}
+.personal .list  .circle1B{
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    top: 5px;
+    width: 15px;
+    height:15px;
+    border-radius: 50%;
+    border: 2px solid #BEBEBE;
+}
+.personal .list  .circle2A{
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    top: 5px;
+    width: 15px;
+    height:15px;
+    border-radius: 50%;
+    background-color: #7681F7;
+    border: 2px solid #BEBEBE;
+}
+.personal .list  .circle2B{
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    top: 5px;
+    width: 15px;
+    height:15px;
+    border-radius: 50%;
     border: 2px solid #BEBEBE;
 }
 .personal .list .sex {

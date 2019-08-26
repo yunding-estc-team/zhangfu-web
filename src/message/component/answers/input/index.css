@@ -39,3 +39,12 @@
     margin-top: 3px;
     cursor:pointer;
 }
+.box1{
+    display: none;
+}
+
+.box .mag{
+    position: relative;
+    top: -50px;
+    color: red;
+}

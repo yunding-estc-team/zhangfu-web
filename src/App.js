@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from "./common/header";
 import Footer from "./common/fooder";
 import List from "./list";
-import {NavLink, Route} from "react-router-dom";
+import {Link, Route} from "react-router-dom";
 import Information from "./information/index";
 import Login from "./login/index";
 import Register from "./register/index";
@@ -23,12 +23,12 @@ class App extends Component{
             <div>
                 <Header/>
                     <div>
-                        {/*<li><NavLink to="/center/personage/you/index">个人中心</NavLink></li>*/}
-                        {/*<li><NavLink to="/center/personage/me/index">个人中心</NavLink></li>*/}
-                        {/*<li><NavLink to="/center/organizer/you/index">个人中心</NavLink></li>*/}
-                        {/*<li><NavLink to="/center/organizer/me/index">个人中心</NavLink></li>*/}
-                        {/*<li><NavLink to="/message/index">消息盒子</NavLink></li>*/}
-                        {/*<li><NavLink to="/area/index">赛事详情</NavLink></li>*/}
+                        {/*<li><Link to="/center/personage/you/index">个人中心</Link></li>*/}
+                        {/*<li><Link to="/center/personage/me/index">个人中心</Link></li>*/}
+                        {/*<li><Link to="/center/organizer/you/index">个人中心</Link></li>*/}
+                        {/*<li><Link to="/center/organizer/me/index">个人中心</Link></li>*/}
+                        {/*<li><Link to="/message/index">消息盒子</Link></li>*/}
+                        {/*<li><Link to="/area/index">赛事详情</Link></li>*/}
                     </div>
                     <Route path="/set/index" component={Set} />
                     <Route path="/message/index" component={Message} />

@@ -32,7 +32,7 @@
     width: 470px;
     height: 520px;
     position: relative;
-    left: -25px;
+    left: 10px;
     top: 20px;
 }
 
@@ -45,13 +45,38 @@
     position: relative;
     top: 40px;
 }
-.list2-header .circle{
+.list2-header .circle1A{
     width: 15px;
     height: 15px;
     border: 1px solid #9D9D9F;
     border-radius: 50%;
-    margin-left:80px;
-    /*background-color: #7681F7;*/
+    margin-left:60px;
+    background-color: #7681F7;
+    cursor:pointer;
+}
+.list2-header .circle1B{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #9D9D9F;
+    border-radius: 50%;
+    margin-left:60px;
+    cursor:pointer;
+}
+.list2-header .circle2A{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #9D9D9F;
+    border-radius: 50%;
+    margin-left:60px;
+    background-color: #7681F7;
+    cursor:pointer;
+}
+.list2-header .circle2B{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #9D9D9F;
+    border-radius: 50%;
+    margin-left:60px;
     cursor:pointer;
 }
 .list2-header .name{

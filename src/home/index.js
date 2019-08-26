@@ -4,6 +4,41 @@ import img4 from '../images/1.png'
 import {Link} from "react-router-dom";
 // 首页
 class Home extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            new:true,
+            host:false,
+        }
+    }
+    handleNew(){
+        if(this.state.new === true){
+            return 0
+        }
+        else{
+            this.setState(
+                {
+                    new:!this.state.new,
+                    host:!this.state.host,
+                }
+            )
+        }
+    }
+    handleHost(){
+        if(this.state.host === true){
+            return 0
+        }
+        else{
+            this.setState(
+                {
+                    new:!this.state.new,
+                    host:!this.state.host,
+                }
+            )
+        }
+    }
+
+
     render(){
         let gameList = [
             {
@@ -107,8 +142,8 @@ class Home extends Component{
                 <div className="home-game">
                     <div className="game-header">赛事</div>
                     <div className="game-classify">
-                        <span>最热赛事</span>
-                        <span>最新赛事</span>
+                        <span className={this.state.new===true ? 'new1' :'new2'} onClick={this.handleNew.bind(this)}>最热赛事</span>
+                        <span className={this.state.host===true ? 'host1' : 'host2'} onClick={this.handleHost.bind(this)}>最新赛事</span>
                     </div>
                     <div className="game-main">
                         {part}
@@ -119,8 +154,7 @@ class Home extends Component{
                 </div>
             </div>
         )
-    }
+     }
 }
 
 export default Home
-

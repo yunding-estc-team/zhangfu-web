@@ -2,6 +2,40 @@ import React, { Component } from 'react';
 import './personal.css'
 // 个人资料
 class Personal extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            circle1:true,
+            circle2:false,
+        }
+    }
+    handleOrganization(){
+        if(this.state.circle1===true){
+            return 0
+        }
+        else{
+            this.setState(
+                {
+                    circle1:!this.state.circle1,
+                    circle2:!this.state.circle2,
+                }
+            )
+        }
+    }
+    handleParticipant(){
+        if(this.state.circle2===true){
+            return 0
+        }
+        else{
+            this.setState(
+                {
+                    circle1:!this.state.circle1,
+                    circle2:!this.state.circle2,
+                }
+            )
+        }
+    }
+
     render(){
         return(
             <div className="personal">
@@ -21,10 +55,12 @@ class Personal extends Component{
                             <span className="name">性别: </span>
                             <span className="detailed">
                                 <span>
-                                   <div className="circle"/> <span className="sex">男</span>
+                                   <div className={this.state.circle1 === true ? 'circle1A' : 'circle1B'} onClick={this.handleOrganization.bind(this)}/>
+                                   <span className="sex">男</span>
                                 </span>
                                 <span>
-                                    <div className="circle"/><span className="sex">女</span>
+                                    <div className={this.state.circle2 === true ? 'circle2A' : 'circle2B'} onClick={this.handleParticipant.bind(this)}/>
+                                    <span className="sex">女</span>
                                 </span>
                             </span>
                         </li>

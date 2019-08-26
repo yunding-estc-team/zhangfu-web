@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
-import {BrowserRouter as Router, Link, NavLink, Route,} from 'react-router-dom'
-// import {NavLink, Route} from "react-router-dom";
+import {BrowserRouter as Router, Link, Route,} from 'react-router-dom'
+
 import Personal from "./component/personal/personal";
 import Attestation from "./component/attestation/attestation";
 import Approve from "./component/approve/going/index";
@@ -45,9 +45,9 @@ class Information extends Component{
                                 <p>修改头像</p>
                             </div>
                             <div className="part2">
-                                {/*<NavLink to="/information/component/personal/personal"><div className="tag">个人资料</div></NavLink>*/}
-                                {/*<NavLink to="/information/component/approve/going/index"><div className="tag">认证用户</div></NavLink>*/}
-                                {/*<NavLink to="/information/component/attestation/attestation"><div className="tag">账户安全</div></NavLink>*/}
+                                {/*<Link to="/information/component/personal/personal"><div className="tag">个人资料</div></Link>*/}
+                                {/*<Link to="/information/component/approve/going/index"><div className="tag">认证用户</div></Link>*/}
+                                {/*<Link to="/information/component/attestation/attestation"><div className="tag">账户安全</div></Link>*/}
                                 <div className="tag" onClick={this.handlePersonal}>个人资料</div>
                                 <div className="tag" onClick={this.handleApprove}>认证用户</div>
                                 <div className="tag" onClick={this.handleAttestation}>账户安全</div>
@@ -69,8 +69,8 @@ class Information extends Component{
                         {/*<Route path="/information/component/attestation/attestation" component={Attestation} />*/}
                         <div className={this.state.personal === true ? '' : 'personal1'}><Personal/></div>
                         <div className={this.state.approve === true ? '' : 'approve1'}><Approve/></div>
-                        {/*<div className={this.state.approve === true ? '' : 'approve1'}><Approve1/></div>*/}
                         <div className={this.state.attestation === true ? '' : 'attestation1'}><Attestation/></div>
+                        {/*<div className={this.state.approve === true ? '' : 'approve1'}><Approve1/></div>*/}
                     </div>
                 </Router>
             </div>

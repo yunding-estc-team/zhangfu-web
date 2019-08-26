@@ -1,6 +1,5 @@
 .reply{
     width: 900px;
-    display: flex;
     margin-top: 10px;
 }
 .reply .reply-circle{
@@ -9,6 +8,7 @@
     border: 2px solid #7681F7;
     border-radius: 50%;
     background-color: #FFFFFF;
+    display: inline-block;
 }
 .reply .reply-circle span{
     color: #7681F7;
@@ -20,6 +20,8 @@
 .reply .reply-main{
     margin-left: 30px;
     margin-top: 10px;
+    display: inline-block;
+    vertical-align: top;
 }
 .reply .reply-main .reply-details{
     width: 700px;

@@ -28,7 +28,9 @@
 }
 
 
-
+a {
+    text-decoration: none;
+}
 
 
 
@@ -59,6 +61,32 @@
     color: #FFFFFF;
     cursor:pointer;
 }
+.area .picture .attention1 button{
+    position: relative;
+    left: 330px;
+    top: 300px;
+    margin-left: 100px;
+    width: 120px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    background-color:rgba(0,0,0,0.1);
+    font-size: 18px;
+    color: #FFFFFF;
+    cursor:pointer;
+}.area .picture .attention2 button{
+     position: relative;
+     left: 330px;
+     top: 300px;
+     margin-left: 100px;
+     width: 120px;
+     height: 50px;
+     border: 2px solid #ffffff;
+     background-color:grey;
+     font-size: 18px;
+     color: #FFFFFF;
+     cursor:pointer;
+ }
+
 
 .area .area-header{
     margin-top: 10px;
@@ -66,13 +94,44 @@
     height: 80px;
     border-bottom: 2px solid #D4D4D4;
 }
-.area .area-header .header-left{
+
+
+
+
+
+.area .area-header .message1 .header-left{
     display: inline-block;
     width: 100px;
     text-align: center;
-    /*border-bottom: 4px solid #7681F7;*/
+    border-bottom: 4px solid #7681F7;
     padding: 30px;
+    cursor:pointer;
 }
+.area .area-header .message2 .header-left{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    padding: 30px;
+    cursor:pointer;
+}
+.area .area-header .question1 .header-left{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    border-bottom: 4px solid #7681F7;
+    padding: 30px;
+    cursor:pointer;
+}
+.area .area-header .question2 .header-left{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    padding: 30px;
+    cursor:pointer;
+}
+
+
+
 .area .area-header .header-middle{
     display: inline-block;
     margin-left: 300px;
@@ -299,7 +358,9 @@
     margin-left: 20px;
     cursor:pointer;
 }
-
+.catechism .catechism-input .mag{
+    color: red;
+}
 
 
 
@@ -356,4 +417,3 @@
 .catechism-main .main-question .problem .problem-footer .problem-time{
     color: #A2A2A2;
 }
-
