@@ -9,10 +9,7 @@ export default function reducer(state,action) {
             return action.payload;
         // 更新会附加属性
         case "U_UPDATE":
-            console.log(state.user);
-            console.log(Object.assign({},state,{user:action.payload}));
-            // return Object.assign({},state.user,action.payload);
-            return {...state,user:action.payload};
+            return Object.assign(state.user,action.payload);
         case "U_TEST":
         case "C_SAVE":
             return action.payload;
