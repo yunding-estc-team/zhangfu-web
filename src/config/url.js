@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const baseUrl="http://localhost:8080";
+// const baseUrl="http://localhost:8080";
 //todo 更改ip
-// const baseUrl="http://192.168.0.111:8080";
+const baseUrl="http://192.168.0.111:8080";
 export const api= {
     user:{
         // 用密码登录

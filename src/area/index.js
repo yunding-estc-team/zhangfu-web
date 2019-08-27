@@ -3,6 +3,7 @@ import './index.css'
 import Reply from "../message/component/answers/reply";
 import {Link} from "react-router-dom";
 import api, {instance} from "../config/url";
+import CompetitionApi from "../config/competitionApi";
 
 // 赛事详情
 class Area extends Component{
@@ -16,11 +17,37 @@ class Area extends Component{
             message:true,
             question:false,
 
+            // 问题内容
             content:"",
+            // 问题id
             competitionWikiId:this.props.id,
-            mag:""
+            // 问答时的提示信息
+            mag:"",
+            // 赛事id
+            id:this.props.id,
+            // 获取的赛事对象
+            competition:{},
         }
     };
+
+    // 获取数据
+    getInfo=()=>{
+        console.log("id"+this.state.id);
+        CompetitionApi.getCompetitionInfo(this.state.id)
+            .then(res=>{
+                console.log(res.data);
+                this.setState({competition:res.data.data});
+            })
+    };
+
+    // 加载组件时
+    componentDidMount() {
+        console.log(this.props);
+        console.log(this.props.location);
+        console.log(window.location.state)
+        // this.getInfo();
+    }
+
     handleAttention(){
         if (this.state.attention === true){
             this.setState(

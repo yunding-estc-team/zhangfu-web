@@ -25,9 +25,8 @@ export default class UserApi{
     };
 
     // 判断用户类型
-    judgeUser=(e)=>{
-        console.log("judge");
-        instance.post(api.user.checkAccountType,{address:e.nativeEvent.target.value})
+    static judgeUser=(e)=>{
+        return instance.post(api.user.checkAccountType,{address:e.nativeEvent.target.value})
             .then(res=>{
                 if (res.data.code!=="200"){
                     this.setState({msg:"手机/电子邮件非法"});
@@ -45,6 +44,9 @@ export default class UserApi{
                         });
                 }
             });
+    };
+    static exist=(e)=>{
+       return instance.post(api.user.checkAccountExist,{userName:this.state.userName});
     };
 
     // 发送验证码

@@ -1,23 +1,15 @@
 import api,{instance} from "./url";
-export default class competitionApi {
+export default class CompetitionApi {
 
     // 获取赛事详情
-    getCompetitionInfo=()=>{
-        instance.get(api.competition.getCompetitionInfo,{
+    static getCompetitionInfo=(id)=>{
+        return instance.get(api.competition.getCompetitionInfo,{
             params:{
                 // 赛事id
-                id:"27a07448-5fdc-4ece-8a07-471c10917b3a",
+                id:id,
             }
-        })
-            .then(res=>{
-                    if (res.data.code===200) {
-                        // 渲染数据
-                        console.log("请求成功");
-                        console.log(res.data.data);
-                    }else{}
-                    // 失败处理
-                }
-            )};
+        });
+    };
 
     // 关注赛事
     attention=()=>{
@@ -66,13 +58,15 @@ export default class competitionApi {
     };
 
     // 首页赛事信息获取
-    home=()=>{
-        instance.get(api.competition.getRank,{
+    static home=(t,c,p)=>{
+        return instance.get(api.competition.getRank,{
             params:{
                 // 当前页面
-                c:"",
+                c:c,
                 // 页面大小
-                p:"",
+                p:p,
+                // 类型
+                t:t,
             }
         })
     };

@@ -15,10 +15,12 @@ import Personage2 from "./center/component/personage/you"
 import Organizer1 from "./center/component/organizer/me";
 import Organizer2 from "./center/component/organizer/you";
 import Datum from "./datum";
+import DEV from "./test/component/DEV";
 
 
 class App extends Component{
     render(){
+        console.log(this.context);
         return(
             <div>
                 <Header/>
@@ -43,6 +45,7 @@ class App extends Component{
                     <Route path="/center/organizer/me/index" component={Organizer1}/>
                     <Route path="/center/organizer/you/index" component={Organizer2}/>
                     <Route path="/area/index" component={Area}/>
+                    <Route path="/test" component={DEV}/>
                 <Footer/>
             </div>
         )

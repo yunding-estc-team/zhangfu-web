@@ -1,8 +1,34 @@
 import React, { Component } from 'react';
 import './index.css'
-import { BrowserRouter as Router, NavLink , Route , } from 'react-router-dom'
+import { NavLink , Route , } from 'react-router-dom'
+import UserApi from "../../../config/userApi";
 
 class List1 extends Component{
+    // 判断用户名
+    judge=(e)=>{
+        UserApi.judgeUser(e)
+            .then(res=>{
+                if(res.data.code!=="200"){
+                    this.setState({msg:"输入非法的用户名"})
+                }else{
+                    UserApi.exist(e)
+                        .then(res=>{
+                            if(res.data.code==="204"){
+                                this.setState({msg:"用户名已存在"});
+                            }else{
+                                // 消除异常信息,并保存到store中
+                                this.setState({msg:""});
+                                // TODO 保存
+                            }
+                        })
+                }
+            })
+    };
+
+    // 获取验证码
+    sendCode=()=>{
+
+    };
     render(){
         return(
             <div className="list1">
@@ -10,7 +36,7 @@ class List1 extends Component{
                     <form action="">
                         <ul>
                             {/*输入手机号*/}
-                            <li className="first"><input type="text" placeholder="输入手机号"/></li>
+                            <li className="first"><input type="text" placeholder="输入手机号" onChange={this.judge}/></li>
                             <li className="second">
                                 {/*输入手机号验证码*/}
                                 <span><input type="text" placeholder="输入手机验证码"/></span><span><button>获得验证码</button></span>

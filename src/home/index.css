@@ -113,14 +113,18 @@
     margin-left: 20px;
     margin-top: 20px;
     width: 380px;
-    height: 393px;
+    height: 360px;
     border-radius: 10px;
     box-shadow: 0px 3px 6px 0px rgba(0,0,0,.16);
     cursor:pointer;
 }
+.home .game-main .games .img{
+    width:380px;
+    height: 200px;
+}
 .home .game-main .games img{
     width: 380px;
-    height: 250px;
+    height: 200px;
 }
 .home .game-main .games .game-name{
     margin-top: 20px;

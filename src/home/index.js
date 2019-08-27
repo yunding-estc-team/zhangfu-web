@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css'
 import img4 from '../images/1.png'
 import {Link} from "react-router-dom";
+import CompetitionApi from "../config/competitionApi";
 // 首页
 class Home extends Component{
     constructor(props){
@@ -9,9 +10,27 @@ class Home extends Component{
         this.state = {
             new:true,
             host:false,
+            // 从后台获取的(首页)数据
+            gameList:[],
         }
     }
+    // 获取数据
+    getRank=(type)=>{
+        CompetitionApi.home(type,1,6)
+        .then(res=>{
+            this.setState({gameList:res.data.data});
+        });
+
+    };
+
+    // 加载时获取数据
+    componentDidMount() {
+        this.getRank("new");
+    };
+
     handleNew(){
+        this.getRank("new");
+        console.log("new");
         if(this.state.new === true){
             return 0
         }
@@ -25,6 +44,7 @@ class Home extends Component{
         }
     }
     handleHost(){
+        this.getRank("hot");
         if(this.state.host === true){
             return 0
         }
@@ -38,97 +58,32 @@ class Home extends Component{
         }
     }
 
-
     render(){
-        let gameList = [
-            {
-                "img":"../images/1.png",
-                "name":"2019年云顶暑期实践培训",
-                "time":"2019年7月1日-2019年9月7日",
-                "state":"已结束",
-                "personage":"团队赛",
-                "people":"1990人"
-            },
-            {
-                "img":"img4",
-                "name":"2019年云顶暑期实践培训",
-                "iconfont0":"&#xe716",
-                "time":"2019年7月1日-2019年9月7日",
-                "iconfont1":"&#xe61b",
-                "state":"已结束",
-                "iconfont2":"&#xe713",
-                "personage":"团队赛",
-                "iconfont3":"&#xe61c",
-                "people":"1990人"
-            },
-            {
-                "img":"img4",
-                "name":"2019年云顶暑期实践培训",
-                "iconfont0":"&#xe716",
-                "time":"2019年7月1日-2019年9月7日",
-                "iconfont1":"&#xe61b",
-                "state":"已结束",
-                "iconfont2":"&#xe713",
-                "personage":"团队赛",
-                "iconfont3":"&#xe61c",
-                "people":"1990人"
-            },
-            {
-                "img":"img4",
-                "name":"2019年云顶暑期实践培训",
-                "iconfont0":"&#xe716",
-                "time":"2019年7月1日-2019年9月7日",
-                "iconfont1":"&#xe61b",
-                "state":"已结束",
-                "iconfont2":"&#xe713",
-                "personage":"团队赛",
-                "iconfont3":"&#xe61c",
-                "people":"1990人"
-            },
-            {
-                "img":"img4",
-                "name":"2019年云顶暑期实践培训",
-                "iconfont0":"&#xe716",
-                "time":"2019年7月1日-2019年9月7日",
-                "iconfont1":"&#xe61b",
-                "state":"已结束",
-                "iconfont2":"&#xe713",
-                "personage":"团队赛",
-                "iconfont3":"&#xe61c",
-                "people":"1990人"
-            },
-            {
-                "img":"img4",
-                "name":"2019年云顶暑期实践培训",
-                "iconfont0":"&#xe716",
-                "time":"2019年7月1日-2019年9月7日",
-                "iconfont1":"&#xe61b",
-                "state":"已结束",
-                "iconfont2":"&#xe713",
-                "personage":"团队赛",
-                "iconfont3":"&#xe61c",
-                "people":"1990人"
-            },
-        ];
-        let part = gameList.map(game =>
+        let part = this.state.gameList.map(game =>
             <div>
-                <Link to="/area/index">
+                <Link to={{
+                    pathname: "/area/index",
+                    state: {id: game.CompetitionId},
+                    search: "dasfasd",
+                }}>
                     <div className="games">
-                        <img src={img4} alt=""/>
+                        <div className="img">
+                            <img src={game.cover} alt=""/>
+                        </div>
                         <div>
                             <div className="game-name">{game.name}</div>
                             <div className="game-details">
                                 <div className="details-left">
                                     <div><span className="iconfont">&#xe716;</span><span
-                                        className="word">{game.time}</span></div>
+                                        className="word">{game.createAt}</span></div>
                                     <div className="game-state2"><span className="iconfont">&#xe61b;</span><span
-                                        className="word">{game.state}</span></div>
+                                        className="word">{game.joinLink===null||game.joinLink===""?"已结束":"进行中"}</span></div>
                                 </div>
                                 <div className="details-right">
                                     <div className="personage"><span className="iconfont">&#xe713;</span><span
-                                        className="word">{game.personage}</span></div>
+                                        className="word">{game.isIndividual==="0"? "个人赛":"团队赛"}</span></div>
                                     <div><span className="iconfont">&#xe61c;</span><span
-                                        className="word">{game.people}</span></div>
+                                        className="word">{game.clickCount}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -142,8 +97,8 @@ class Home extends Component{
                 <div className="home-game">
                     <div className="game-header">赛事</div>
                     <div className="game-classify">
-                        <span className={this.state.new===true ? 'new1' :'new2'} onClick={this.handleNew.bind(this)}>最热赛事</span>
-                        <span className={this.state.host===true ? 'host1' : 'host2'} onClick={this.handleHost.bind(this)}>最新赛事</span>
+                        <span className={this.state.new===true ? 'new1' :'new2'} onClick={this.handleNew.bind(this)}>最新赛事</span>
+                        <span className={this.state.host===true ? 'host1' : 'host2'} onClick={this.handleHost.bind(this)}>最热赛事</span>
                     </div>
                     <div className="game-main">
                         {part}
