@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import './index.css';
 import approve from '../../../../images/shenfenzhengzhengmian.png'
+import api from "../../../../config/url";
 
 // 未验证身份时验证获奖的页面
 /**
  * @Data 2019年8月28日04点28分
+ * @TODO 补充一个URL
  */
 
 class Approve extends Component{
     render(){
-        let {saveUC,submitUC}=this.props;
+        let {saveUC,submitUC} = this.props;
         return(
             <div className="approve">
                 <div className="approve-portion">
@@ -18,7 +20,11 @@ class Approve extends Component{
                         <div className="portion-theme">实名认证</div>
                         <div className="portion-img"><img src={approve} alt=""/></div>
                         <div className="portion-explain">（请将学生卡有照片一面上传）</div>
-                        <div className="portion-button"><button>确认</button><button className="return">返回</button></div>
+                        <div className="portion-button">
+                            // todo 补充URL
+                            <button onClick={submitUC}>确认</button>
+                            <button className="return">返回</button>
+                        </div>
                     </form>
                 </div>
                 <div className="approve-portion1">
@@ -41,7 +47,7 @@ class Approve extends Component{
                             <span className="iconfont">&#xe633;</span><span className="add">添加附件</span><span>（上传有效文件或照片）</span>
                         </div>
                         <div className="portion1-button">
-                            <button onClick={submitUC()}>确认</button>
+                            <button onClick={submitUC(api.user.insertPrizeInfo)}>确认</button>
                             <button className="return">返回</button>
                         </div>
                     </form>

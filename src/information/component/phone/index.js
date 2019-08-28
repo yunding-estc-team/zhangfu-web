@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 import {UserModel} from "../../../config/model";
+import api from "../../../config/url";
 
 // 验证原手机号后修改手机号
 /**
@@ -23,7 +24,7 @@ class Phone extends Component{
                         </form>
                     </div>
                     <div className="phone-button">
-                        <button onClick={submitU()}>确定</button>
+                        <button onClick={submitU(api.user.sendPhoneCode)}>确定</button>
                     </div>
                 </form>
             </div>

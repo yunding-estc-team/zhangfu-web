@@ -6,9 +6,18 @@
       <change beforePath="$PROJECT_DIR$/src/containers/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/information/component/approve/going/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/approve/going/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/information/component/approve/over/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/approve/over/index.js" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/utils/ReduxMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ReduxMap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/actionCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/actionCreator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/actionType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/actionType.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/information/component/name/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/name/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/information/component/personal/personal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/personal/personal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/information/component/phone/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/phone/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/information/component/possword/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/possword/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/information/component/postbox/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/postbox/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/information/component/safety/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/safety/index.js" afterDir="false" />
+>>>>>>> 870d30168712016b154a4617623b1240ef378478
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +35,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="width" value="1040" />
+    <option name="height" value="592" />
+  </component>
   <component name="ProjectId" id="1P7U8VO5CVsBbIalb14uJqBmJ4v" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -33,13 +47,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -136,6 +151,9 @@
       <workItem from="1566952339620" duration="480000" />
       <workItem from="1566952830644" duration="1514000" />
       <workItem from="1566954347185" duration="4552000" />
+      <workItem from="1566974291114" duration="130000" />
+      <workItem from="1566974442478" duration="3288000" />
+      <workItem from="1566977816271" duration="42000" />
     </task>
     <servers />
   </component>
@@ -150,6 +168,20 @@
             <State>
               <option name="COLUMN_ORDER" />
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
