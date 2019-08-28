@@ -469,7 +469,7 @@ export default class UserApi{
             pageCurrent:"",
             //每页的行数
             pageSize:","
-        }
+        };
         instance.post(api.user.selectJoinCompetion,data)
             .then(res=>{
                 console.log(res.data.code);

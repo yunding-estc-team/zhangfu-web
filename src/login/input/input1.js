@@ -5,10 +5,11 @@ import './input1.css'
 
 class Input1 extends Component{
     render(){
+        [saveU,sendCode]=this.props;
         return(
             <div className="input1">
-                <input className="yanzhengma" type="text"  placeholder="请输入验证码"  />
-                <span className="auth"> <button>获得验证码</button></span>
+                <input className="yanzhengma" type="text"  placeholder="请输入验证码" onChange={saveU} />
+                <span className="auth"> <button onClick={sendCode}>获得验证码</button></span>
             </div>
         )
      }

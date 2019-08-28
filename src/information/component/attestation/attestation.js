@@ -4,25 +4,31 @@ import {Link, Route} from "react-router-dom";
 
 
 // 账号安全
+/**
+ * @Data 2019年8月28日04点37分
+ */
 
 class Attestation extends Component{
     render(){
+        let {user}=this.props;
         return(
             <div className="attestation">
                 <div className="section">
                     <li>
                         <span className="name">真实姓名</span>
-                        <span className="minute1">张三</span>
+                        <span className="minute1">{user.realname}</span>
                         <span><Link to="/information/component/name/index"><button>修改</button></Link></span>
                     </li>
                     <li>
                         <span className="name">邮箱账号</span>
-                        <span className="minute">未绑定邮箱，绑定后可使用该邮箱直接登录</span>
-                        <span><Link to="/information/component/postbox/index"><button>绑定</button></Link></span>
+                        <span className="minute">{user.email}</span>
+                        // 当有邮箱是不显示
+                        {user.email===""||user.email===undefined?
+                            <span><Link to="/information/component/postbox/index"><button>绑定</button></Link></span>:<span/>}
                     </li>
                     <li>
                         <span className="name">手机账号</span>
-                        <span className="minute">可以使用手机18*******73马上登录</span>
+                        <span className="minute">{user.phone}</span>
                         <span><Link to="/information/component/safety/index"><button>修改</button></Link></span>
                     </li>
                     <li>

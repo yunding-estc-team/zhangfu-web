@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import './index.css'
+import {UserModel} from "../../../config/model";
 
 // 修改姓名
+
+/**
+ * @Data 2019年8月28日05点08分
+ */
 class Call extends Component{
     render(){
+        let {submitU,saveU}=this.props;
         return(
             <div className="call">
-                <form action="">
                     <div className="call-name">修改姓名</div>
-                    <div className="call-input"><input type="text" placeholder="必须为真实姓名"/></div>
+                    <div className="call-input"><input type="text" id={UserModel.realName} placeholder="必须为真实姓名" onChange={saveU}/></div>
                     <div className="call-button">
-                        <button>确认</button>
+                        <button onClick={submitU()}>确认</button>
+                        // todo 返回应有链接
                         <button className="return">返回</button>
                     </div>
-                </form>
             </div>
         )
      }

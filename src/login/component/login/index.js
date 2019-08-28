@@ -23,6 +23,8 @@ class Loging extends Component{
 
 
     render(){
+        let {saveU,saveS,submit}=this.props;
+
         return(
             <div>
                 <div className="right">
@@ -32,7 +34,7 @@ class Loging extends Component{
                     </div>
                     <div className="up">
                         {/*输入手机号*/}
-                        <input className="number" type="text" placeholder="请输入手机号"/>
+                        <input className="number" type="text" placeholder="请输入手机号" id="address" onChange={saveU}/>
                     </div>
                     <div className="down">
                         <div className={this.state.active === true ? '' : 'inputA'}> <Input1/></div>
@@ -44,15 +46,17 @@ class Loging extends Component{
                            <span><Link to="/register/index">注册账户</Link></span>
                         </div>
                     </div>
-                    <div className="right-footer"><button>登录</button></div>
+                    <div className="right-footer"><button onClick={submitU()}>登录</button></div>
                 </div>
             </div>
         )
      }
+
     handleShow ()  {
         if (this.state.active === true){
             return 0;
         } else {
+            saveS();
             this.setState(
                 {
                     active: !this.state.active,
@@ -65,6 +69,7 @@ class Loging extends Component{
         if (this.state.active2 === true) {
             return 0;
         } else {
+            saveS();
             this.setState(
                 {
                     active: !this.state.active,

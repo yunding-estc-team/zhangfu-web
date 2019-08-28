@@ -13,8 +13,12 @@ export default function reducer(state,action) {
         case "U_TEST":
         case "C_SAVE":
             return action.payload;
+
+        case "E_STATUS":{
+            return {status:!state.status}
+        }
         default:
             console.log("default");
-            return {user:{name:""}};
+            return {user:{name:""},status:true };
     }
 }

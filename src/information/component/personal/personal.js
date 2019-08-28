@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import './personal.css'
+import {UserModel} from "../../../config/model";
 // 个人资料
+/**
+ * @Data 2019年8月28日05点09分
+ */
 class Personal extends Component{
     constructor(props){
         super(props);
         this.state={
             circle1:true,
             circle2:false,
-        }
+        };
+
     }
     handleOrganization(){
+       // todo 设置性别
         if(this.state.circle1===true){
             return 0
         }
@@ -23,6 +29,7 @@ class Personal extends Component{
         }
     }
     handleParticipant(){
+        // todo 设置性别
         if(this.state.circle2===true){
             return 0
         }
@@ -37,6 +44,7 @@ class Personal extends Component{
     }
 
     render(){
+        let {saveU,user,setU,submitU}=this.props;
         return(
             <div className="personal">
                 <form action="">
@@ -44,15 +52,18 @@ class Personal extends Component{
                         <li className="line">
                             <span className="name">昵称：</span>
                             {/*输入昵称*/}
-                            <span className="detailed"><input type="text" placeholder="2~8个汉字/4~16个字符"/></span>
+                            <span className="detailed">
+                                <input type="text" placeholder="2~8个汉字/4~16个字符" id={UserModel.userName} onChange={saveU}/>
+                            </span>
                         </li>
                         <li className="line">
                             <span className="name">姓名：</span>
                             {/*真实姓名*/}
-                            <span className="detailed">张云雷</span>
+                            // todo 这里css改动
+                            <input className="detailed" id={UserModel.realName} onChange={saveU}/>
                         </li>
                         <li className="line">
-                            <span className="name">性别: </span>
+                            <span className="name">性别:</span>
                             <span className="detailed">
                                 <span>
                                    <div className={this.state.circle1 === true ? 'circle1A' : 'circle1B'} onClick={this.handleOrganization.bind(this)}/>
@@ -64,6 +75,8 @@ class Personal extends Component{
                                 </span>
                             </span>
                         </li>
+
+                        // todo 看不懂
                         <li className="line">
                             <span className="name">年龄: </span>
                             <span className="detailed">
@@ -76,6 +89,8 @@ class Personal extends Component{
                                 </div>
                             </span>
                         </li>
+
+                        // todo 看不懂，一下信息是否需要更改
                         <li className="line">
                             <span className="name">学号: </span>
                             {/*学号*/}
@@ -93,6 +108,8 @@ class Personal extends Component{
                             <span className="name">学历: </span>
                             <span className="detailed">
                                 <div className="choice">
+
+                                    // todo 看不懂，是不是要做select标签？
                                     <li className="first">初中 <span className="iconfont">&#xe6a2;</span></li>
                                     <div className="second">
                                         <li>高中</li>
@@ -114,7 +131,7 @@ class Personal extends Component{
                             </span>
                         </li>
                     </div>
-                    <button>保存</button>
+                    <button onClick={submitU()}>保存</button>
                 </form>
             </div>
         )

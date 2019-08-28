@@ -28,7 +28,7 @@ export const api= {
         // 绑定邮箱
         checkCode:"/user/msg/checkCode",
         //无需输入手机号，给已绑定的手机号发送验证
-        sendbindPhoneCode:"/user/msg/tokenPhone",
+        sendBindPhoneCode:"/user/msg/tokenPhone",
         //无需输入手机号，验证已绑定手机的验证码
         tokenCheckCode:"/user/msg/tokenCheckCode",
         //修改密码
@@ -44,11 +44,7 @@ export const api= {
         //搜索内容展示
         searchAll:"/user/searchByName",
         //获取历史获奖记录
-        selectJoinCompetion:"/user/selectJoinCompetion"
-
-
-
-
+        selectJoinCompetition:"/user/selectJoinCompetition"
     },
 
     /**
