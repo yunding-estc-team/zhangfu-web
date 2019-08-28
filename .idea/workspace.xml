@@ -3,25 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="727ca19c-5366-44e2-8e72-2cbd6d3e6c87" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/url.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/userApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/information/component/approve/going/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/approve/going/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/information/component/approve/over/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/approve/over/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/information/component/attestation/attestation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/attestation/attestation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/information/component/name/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/name/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/information/component/personal/personal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/personal/personal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/information/component/phone/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/phone/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/information/component/possword/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/possword/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/information/component/postbox/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/postbox/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/information/component/safety/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/safety/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/information/component/student/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/information/component/student/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/component/find/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/component/find/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/component/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/component/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/input/input1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/input/input1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/input/input2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/input/input2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ReduxMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ReduxMap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/actionCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/actionCreator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/actionType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/actionType.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.npm start">
+  <component name="RunManager" selected="JavaScript Debug.Debug Application">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -96,6 +83,10 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="npm.npm start" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\zf\AppData\Roaming\Subversion</configuration>
@@ -171,6 +162,18 @@
           <url>file://$PROJECT_DIR$/src/area/index.js</url>
           <line>62</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/utils/ReduxMap.js</url>
+          <line>31</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/utils/ReduxMap.js</url>
+          <line>26</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

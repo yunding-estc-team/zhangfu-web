@@ -41,7 +41,7 @@ class Approve extends Component{
                             <span className="iconfont">&#xe633;</span><span className="add">添加附件</span><span>（上传有效文件或照片）</span>
                         </div>
                         <div className="portion1-button">
-                            <button onClick={submitUC}>确认</button>
+                            <button onClick={submitUC()}>确认</button>
                             <button className="return">返回</button>
                         </div>
                     </form>

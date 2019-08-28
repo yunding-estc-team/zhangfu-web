@@ -8,7 +8,7 @@ import './index.css'
 // 验证身份后时的获奖验证
 class Approve1 extends Component{
     render(){
-        let {user}=this.props;
+        let {user,submitUC}=this.props;
         return(
             <div className="Approve1">
                 <div className="segment">
@@ -36,7 +36,7 @@ class Approve1 extends Component{
                         <span className="iconfont">&#xe633;</span><span className="add">添加附件</span><span>（已上传*******）</span>
                     </div>
                     <div className="segment1-button">
-                        <button>确定</button>
+                        <button onClick={submitUC()}>确定</button>
                         <button className="return">返回</button>
                     </div>
                 </div>
