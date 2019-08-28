@@ -36,7 +36,7 @@ class Approve1 extends Component{
                         <span className="iconfont">&#xe633;</span><span className="add">添加附件</span><span>（已上传*******）</span>
                     </div>
                     <div className="segment1-button">
-                        <button>确定</button>
+                        <button onClick={submitUC(api.user.insertPrizeInfo)}>确定</button>
                         <button className="return">返回</button>
                     </div>
                 </div>

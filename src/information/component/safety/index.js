@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import './index.css'
 import {NavLink} from "react-router-dom";
 import {UserModel} from "../../../config/model";
+
 // 原手机号验证
+/**
+ * @TODO 补充URL
+ */
+
 class Safely extends Component{
     render(){
         let {saveU,sendCode,submitU}=this.props;

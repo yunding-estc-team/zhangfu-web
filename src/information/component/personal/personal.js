@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './personal.css'
 import {UserModel} from "../../../config/model";
-// 个人资料
+// 修改个人资料
 /**
  * @Data 2019年8月28日05点09分
  */
@@ -131,7 +131,7 @@ class Personal extends Component{
                             </span>
                         </li>
                     </div>
-                    <button onClick={submitU()}>保存</button>
+                    <button onClick={submitU(api.user.updateInfo)}>保存</button>
                 </form>
             </div>
         )

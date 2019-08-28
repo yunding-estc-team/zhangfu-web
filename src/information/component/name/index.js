@@ -15,7 +15,7 @@ class Call extends Component{
                     <div className="call-name">修改姓名</div>
                     <div className="call-input"><input type="text" id={UserModel.realName} placeholder="必须为真实姓名" onChange={saveU}/></div>
                     <div className="call-button">
-                        <button onClick={submitU()}>确认</button>
+                        <button onClick={submitU(api.user.updatePrivateInfo)}>确认</button>
                         // todo 返回应有链接
                         <button className="return">返回</button>
                     </div>

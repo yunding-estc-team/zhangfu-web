@@ -20,7 +20,7 @@ class Code extends Component{
                     {/*再次输入新密码*/}
                     <div className="code-affirm"><input type="password" placeholder="确认新密码" onChange={checkoutPassword}/></div>
                     <div className="code-button">
-                        <button onClick={submitU()}>确认</button>
+                        <button onClick={submitU(api.user.changePassword)}>确认</button>
                         //todo 应该有返回链接
                         <button className="return">返回</button>
                     </div>
