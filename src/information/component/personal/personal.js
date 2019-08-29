@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './personal.css'
 import {UserModel} from "../../../config/model";
+import api from "../../../config/url";
 // 修改个人资料
 /**
  * @Data 2019年8月28日05点09分

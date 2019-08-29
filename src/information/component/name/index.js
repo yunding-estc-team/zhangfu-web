@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 import {UserModel} from "../../../config/model";
+import api from "../../../config/url";
 
 // 修改姓名
 

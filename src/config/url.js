@@ -25,7 +25,7 @@ export const api= {
         updatePrivateInfo:"/user/updatePrivateInfo",
         sendEmailCode:"/user/msg/email",
         sendPhoneCode:"/user/msg/phone",
-        // 绑定邮箱
+        // 检验验证码
         checkCode:"/user/msg/checkCode",
         //无需输入手机号，给已绑定的手机号发送验证
         sendBindPhoneCode:"/user/msg/tokenPhone",
@@ -44,7 +44,9 @@ export const api= {
         //搜索内容展示
         searchAll:"/user/searchByName",
         //获取历史获奖记录
-        selectJoinCompetition:"/user/selectJoinCompetition"
+        selectJoinCompetition:"/user/selectJoinCompetition",
+        // 上传学生证
+        uploadStd:"/user/uploadStd"
     },
 
     /**

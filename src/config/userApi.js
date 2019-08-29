@@ -482,4 +482,66 @@ export default class UserApi{
                 }
             });
     }
+    /**
+     * 获取个人资料
+     */
+    listInfo(){
+        instance.post(api.user.info)
+            .then(res=>{
+                console.log(res.data.code);
+                if(res.data.code==="200"){
+                    this.setState({msg:"查看成功"});
+                    console.log(res.data.msg);
+                }else {
+                    this.setState({msg: "查看失败"});
+                    console.log(res.data.msg);
+                }
+            });
+    }
+
+    /**
+     * 学生证上传
+     */
+    uploadStd(){
+        let data ={
+            // 提交文件的路径
+            path:"",
+            //已提交文件的删除hash
+            hash:""
+        };
+        instance.post(api.user.uploadStd,data)
+            .then(res=>{
+                console.log(res.data.code);
+                if(res.data.code==="200"){
+                    this.setState({msg:"提交成功"});
+                    console.log(res.data.msg);
+                }else {
+                    this.setState({msg: "提交失败"});
+                    console.log(res.data.msg);
+                }
+            });
+    }
+
+    /**
+     * 获奖信息录入
+     */
+    insertPrizeInfo(){
+        let data ={
+            competitionName:"",
+            reward:"",
+            cover:""
+        };
+        instance.post(api.user.uploadStd,data)
+            .then(res=>{
+                console.log(res.data.code);
+                if(res.data.code==="200"){
+                    this.setState({msg:"录入成功"});
+                    console.log(res.data.msg);
+                }else {
+                    this.setState({msg: "录入失败"});
+                    console.log(res.data.msg);
+                }
+            });
+    }
+
 }

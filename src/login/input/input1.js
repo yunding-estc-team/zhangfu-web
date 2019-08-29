@@ -5,7 +5,7 @@ import './input1.css'
 
 class Input1 extends Component{
     render(){
-        [saveU,sendCode]=this.props;
+        let {saveU,sendCode}=this.props;
         return(
             <div className="input1">
                 <input className="yanzhengma" type="text"  placeholder="请输入验证码" onChange={saveU} />

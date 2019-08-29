@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 import {UserModel} from "../../../config/model";
+import api from "../../../config/url";
 // 绑定邮箱账号
 /**
  * @Data 2019年8月28日09点15分

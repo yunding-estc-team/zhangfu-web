@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 import axios from 'axios';
 import instance from '../config/url'
 
-
 // 创建赛事
 class Set extends Component{
 
@@ -37,6 +36,8 @@ class Set extends Component{
     // 图片
     handleChangePicture=(e)=>{
         this.setCompetition({cover:e.target.files[0]});
+
+
         Set.upload(this.state.competition.cover)
             .then(res=>{
                 if(res.data.success===true){
@@ -80,7 +81,7 @@ class Set extends Component{
 
     handleClick = (event) =>{
         let input = document.querySelectorAll()
-    }
+    };
 
 
 

@@ -23,7 +23,7 @@ class Loging extends Component{
 
 
     render(){
-        let {saveU,saveS,submit}=this.props;
+        let {saveU,saveS,submitU}=this.props;
 
         return(
             <div>
@@ -56,7 +56,7 @@ class Loging extends Component{
         if (this.state.active === true){
             return 0;
         } else {
-            saveS();
+            this.props.saveS();
             this.setState(
                 {
                     active: !this.state.active,
@@ -69,7 +69,7 @@ class Loging extends Component{
         if (this.state.active2 === true) {
             return 0;
         } else {
-            saveS();
+            this.props.saveS();
             this.setState(
                 {
                     active: !this.state.active,
