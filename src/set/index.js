@@ -4,6 +4,7 @@ import More from "./component";
 import {Link} from "react-router-dom";
 import axios from 'axios';
 import instance from '../config/url'
+import {CompetitionModel} from "../config/model";
 
 // 创建赛事
 class Set extends Component{
@@ -19,43 +20,30 @@ class Set extends Component{
             },
             // 是否可以提交
             prevent:true,
-            // 消息
-            msg:"",
         }
     };
 
-    setCompetition=(c)=>{
-        this.setState(Object.assign(this.state.competition,c));
-    };
 
-    // common data
-    handleChange=(e)=>{
 
-    };
-
-    // 图片
+    // 上传图片获取路径
     handleChangePicture=(e)=>{
+        // 结果在msg中
+        let {setMsg,setC}=this.props;
+
+        //  获取input框中的文件
         this.setCompetition({cover:e.target.files[0]});
 
-
+        // 调用上传方法，获取路径
         Set.upload(this.state.competition.cover)
             .then(res=>{
                 if(res.data.success===true){
-                    console.log(res.data);
-                    this.setCompetition(
-                        {
-                            file:res.data.data.url,
-                            hash:res.data.data.hash
-                        }
+                    setC({file:res.data.data.url,hash:res.data.data.hash}
                     );
-                    this.setState({msg:""});
+                    setMsg("")
                 }else{
-                    this.setState({msg:"上传失败"});
+                    setMsg("上传失败");
                 }}
-                // res=>console.log(res.data)
             );
-
-        console.log(this.state.competition);
     };
 
     // upload picture
@@ -70,43 +58,34 @@ class Set extends Component{
 
 
     submit=()=>{
+        let {competition,setMsg}=this.props;
+
         // 检查空值
 
         // 提交
-        instance.post("/organization/competition",this.state.competition)
-            .then(
-
+        instance.post("/organization/competition",competition)
+            .then(res=>{
+                if(res.data.code==="200"){
+                    setMsg("");
+                }else{
+                    setMsg("上传失败")
+                }
+                }
             )
     };
 
-    handleClick = (event) =>{
-        let input = document.querySelectorAll()
-    };
 
-
-
+    // todo 103,105行的id有作用吗
     render(){
-        // Set.upload(this.state.competition.cover);
-        let typeList = [
-            {
-                "object":"大数据",
-            },
-            {
-                "object":"大数据",
-            },
-            {
-                "object":"大数据",
-            },
-            {
-                "object":"大数据",
-            },
-        ];
+        // 获取赛事类型
+        let {typeList,msg,saveC,setC}=this.props;
+
+        // 遍历获取
         let type = typeList.map(type =>
             <div>
                 <span className="mold">{type.object}</span>
             </div>
         );
-
 
         return(
             <div className="set">
@@ -119,21 +98,21 @@ class Set extends Component{
                         </div>
                         <button className="up-img">上传图片</button>
                         <input className="button" type="file" onChange={this.handleChangePicture} />
-                        <span className="mag">{this.state.msg}</span>
+                        <span className="mag">{msg}</span>
                     </div>
                     <div className="set-part">
                         <div className="set-title">竞赛名称</div>
-                        <input type="text" placeholder="赛事名称" theme={this.state.theme} id="theme" onChange={this.inputChange}/>
+                        <input type="text" placeholder="赛事名称" theme={this.state.theme} id="theme" onChange={saveC}/>
                     </div>
                     <div className="set-part">
                         <div className="set-title">主办单位</div>
-                        <div><input type="text" placeholder="主办方名称" name={this.state.name} id="name" onChange={this.inputChange}/></div>
+                        <div><input type="text" placeholder="主办方名称" name={this.state.name} id="name" onChange={saveC}/></div>
                     </div>
                     <div className="set-part">
                         <div className="set-title">赛事类型</div>
                         <div className="set-line">
-                            <div className="set-line"><div className="part-circle"/><span>团队赛</span></div>
-                            <div className="set-line"><div className="part-circle"/><span>个人赛</span></div>
+                            <div className="set-line"><div className="part-circle" onClick={setC({[CompetitionModel.individual]:0})}/><span>团队赛</span></div>
+                            <div className="set-line"><div className="part-circle" onClick={setC({[CompetitionModel.individual]:1})}/><span>个人赛</span></div>
                         </div>
                     </div>
                     <div className="set-part">
@@ -155,13 +134,13 @@ class Set extends Component{
                     <div className="set-part">
                         <div className="set-title">赛事介绍</div>
                         <div>
-                            <textarea name=""  cols="30" rows="10" introduce={this.state.introduce} id="introduce" onChange={this.inputChange}/>
+                            <textarea name=""  cols="30" rows="10" introduce={this.state.introduce} id={CompetitionModel.introduction} onChange={saveC}/>
                         </div>
                     </div>
                     <div className="set-part">
                         <div className="set-title">竞赛规则</div>
                         <div>
-                            <textarea name=""  cols="30" rows="10" rule={this.state.rule} id="rule" onChange={this.inputChange}/>
+                            <textarea name=""  cols="30" rows="10" rule={this.state.rule} id={CompetitionModel.content} onChange={saveC}/>
                         </div>
                     </div>
                     <div className="set-part">
@@ -173,7 +152,7 @@ class Set extends Component{
                     </div>
                     <div className="set-part">
                         <div className="set-title">赛事链接</div>
-                        <div className="link"><input type="text" link={this.state.link} id="link" onChange={this.inputChange}/></div>
+                        <div className="link"><input type="text" link={this.state.link} id={CompetitionModel.joinLink} onChange={saveC}/></div>
                     </div>
                     <More/>
                     <div className="set-part">

@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-// const baseUrl="http://localhost:8080";
+const baseUrl="http://localhost:8080";
 //todo 更改ip
 // const baseUrl="http://192.168.0.111:8080";
-const baseUrl="http:192.168.0.177:8080";
+// const baseUrl="http:192.168.0.177:8080";
 export const api= {
     user:{
         // 用密码登录
@@ -77,6 +77,8 @@ export const api= {
     },
 
     competition:{
+        // 发布比赛
+        postCompetition:"/organization/competition",
         // 获取赛事详情
         getCompetitionInfo:"/competition/info",
         // 获取赛事排行

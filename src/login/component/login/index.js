@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import api from "../../../config/url";
 import {connect} from "react-redux";
 import ReduxMap from "../../../utils/ReduxMap";
+import userApi from "../../../config/userApi";
 
 
 // 登录的具体页面
@@ -26,10 +27,9 @@ class Loging extends Component{
 
 
     render(){
-        const {saveU,submitU,status}=this.props;
-        console.log(submitU);
-        console.log(status);
+        const {saveU,status,user}=this.props;
 
+        let url=this.state.active===true?api.user.loginByCode:api.user.loginByPassword;
         return(
             <div>
                 <div className="right">
@@ -52,7 +52,7 @@ class Loging extends Component{
                         </div>
                     </div>
                     {/*<div className="right-footer"><button onClick={submitU(status ?api.user.loginByCode:api.user.loginByPassword)*/}
-                    <div className="right-footer"><button onClick={submitU("fasfdsa")}>登录</button></div>
+                    <div className="right-footer"><button onClick={userApi.login(url,user)}>登录</button></div>
                 </div>
             </div>
         )
@@ -62,8 +62,6 @@ class Loging extends Component{
         if (this.state.active === true){
             return 0;
         } else {
-            // 更改store中的状态
-            this.props.saveS();
             this.setState(
                 {
                     active: !this.state.active,
@@ -76,8 +74,6 @@ class Loging extends Component{
         if (this.state.active2 === true) {
             return 0;
         } else {
-            // 更改store中的状态
-            this.props.saveS();
             this.setState(
                 {
                     active: !this.state.active,

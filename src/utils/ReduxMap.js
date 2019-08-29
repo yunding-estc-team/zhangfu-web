@@ -22,24 +22,32 @@ export default class ReduxMap {
 
     // 用户常用的dispatch
     static mapDispatchToPropsU=(dispatch,ownProps)=> {
-        console.log("ownProps:"+ownProps);
         return {
             // 保存用户（非覆盖性）
             saveU: (event) => {
-                // todo test
-                console.log({[event.target.id]: event.target.value});
                 dispatch(ActionCreator.updateUser({[event.target.id]: event.target.value}));
             },
+
+            // 保存用户（覆盖）
+            forceSaveU:(u)=>
+               dispatch(ActionCreator.saveUser(u)),
+
+            // 清空user
+            clearU:()=>{
+                dispatch(ActionCreator.cleatUser());
+            },
+
             // 从后台获取用户
             getU:(url,param)=>{
+                console.log("getU");
                 instance.get(url,{params:param})
                     .then(res=>{
                         if(res.data.code==="200"){
-                            // todo
                             dispatch(ActionCreator.saveUser(res.data.data));
                         }
                     })
             },
+
             // 设置user
             setU:(u)=>{
                    dispatch(ActionCreator.updateUser(u));
@@ -56,27 +64,16 @@ export default class ReduxMap {
                     )
             },
 
-            // 检验密码一致性
-            checkoutPassword:(e)=>{
-            },
+
             // 更新状态
             saveS: () => {
                 dispatch(ActionCreator.changeStatus())
             },
 
-            // submit用户
-            submitU: (url,data) => {
-                if (data!==undefined) {
-                    instance.post(url, data)
-                }
 
-                // 返回promise对象
-                instance.post(url, ownProps.user)
-                    .then(res => res.data.code === "200"
-                        ? dispatch(ActionCreator.msgSuccess(res.data.msg))
-                        : dispatch(ActionCreator.msgFailure(res.data.msg))
-                    )
-
+            // 设置消息
+            setMsg:(msg)=>{
+                dispatch(ActionCreator.setMsg(msg));
             }
 
         };
@@ -98,6 +95,22 @@ export default class ReduxMap {
                     :dispatch(ActionCreator.msgFailure(res.data.msg))
                     )
             }
+        }
+    };
+
+    // 赛事常用的dispatch
+    static mapDispatchToPropsC=(dispatch,ownProps)=>{
+        return {
+
+            // 非覆盖更新
+            saveC:(event)=>{
+                dispatch(ActionCreator.updateCompetition({[event.target.id]:event.target.value}));
+            },
+
+            // 设置特定值
+            setC:(c)=>{
+                dispatch(ActionCreator.updateCompetition(c));
+            },
         }
     }
 }

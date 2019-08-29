@@ -12,4 +12,13 @@ export default class Tools{
         return axios.post(pictureUrl, form,config);
     }
 
+//    检验密码一致性
+    static checkoutPassword=(event,password)=>{
+        if (event.target.value === password) {
+            return "";
+        } else {
+            return "密码不一致";
+        }
+    }
+
 }

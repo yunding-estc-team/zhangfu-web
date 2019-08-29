@@ -2,13 +2,21 @@ import React from 'react'
 import {connect} from "react-redux/es/alternate-renderers";
 import DEV from "./component/DEV";
 import ActionCreator from "../utils/actionCreator";
-    function Test({user,onClick,onChange,getU}){
+import ReduxMap from "../utils/ReduxMap";
+import {instance,api }from '../config/url'
+    function Test({user,onClick,onChange,getU,sendCode}){
         // console.log(user);
         console.log(user);
+        let data =()=>{
+            instance.post(api.user.sendCode,{userName:"19834522726"})
+                .then(res=>{
+                    console.log(res.data.code);
+                })
+        }
         return (
             <div>
                 {user.name}{user.id}
-                <button onClick={getU}>dispatch</button>
+                <button onClick={data}>dispatch</button>
                 <input onChange={onChange} placeholder={"change"}/>
             </div>
         )
@@ -36,5 +44,5 @@ import ActionCreator from "../utils/actionCreator";
 
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(Test);
+export default connect(mapStateToProps,ReduxMap.mapDispatchToPropsU)(Test);
 // export default Test;

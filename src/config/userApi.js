@@ -50,72 +50,27 @@ export default class UserApi{
     };
 
     // 发送验证码
-    sendCode=()=>{
-        console.log("code");
-        if (this.state.isIllegal===true){
-            return;
-        }
-        let data = {name:"19834522726"};
-        instance.post(api.user.sendCode,data)
-            .then(res=>{
-                console.log(res.data);
-                if (res.data.code === "200") {
-                    //todo 发送成功
-                    console.log("success");
-                }else{
-                    //todo 发送失败
-                    console.log("failure");
-                }
-            })
+    static sendCode=(address)=>{
+        let data = {name:address};
+        return instance.post(api.user.sendCode,data)
     };
 
     // 请求注册接口
-    register=()=>{
-
-        //传输的数据
-        let data =
-            {
-                // 验证码
-                code:this.state.code,
-                // 用户手机/邮箱
-                address:this.state.userName,
-                // 用户的类型
-                type:this.state.type,
-                password:this.state.password,
-            };
-        // axios
-        instance.post(api.user.register,data)
-            .then(res=>{
-                if (res.data.code==="200"){
-                    // todo 跳转到注册成功
-                    console.log("success");
-                }
-            })
+    static register=(user)=>{
+        return instance.post(api.user.register,user)
     };
+
     /**
      * 用户登录
      */
-    login=()=>{
-        // const url = api.user.loginByPassword;
-        let data = {};
-        let url;
-        if (this.state.active===true){
-            //验证code登录
-            url = api.user.loginByCode;
-        }else{
-            //密码登录
-            url = api.user.loginByPassword;
-        }
-        instance.post(url,data)
+    static login=(url,data)=>{
+        return instance.post(url,data)
             .then(response=>{
                 console.log(response.data.code==="200");
                 if(response.data.code === "200"){
                     // 存储token到localStorage
                     localStorage.setItem("token",response.data.data);
-                }})
-            .catch(error=>{
-                //todo 错误处理
-            });
+                }});
     };
 
 

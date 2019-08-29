@@ -1,4 +1,4 @@
-import {Extra, User, UserCompetition} from "./actionType";
+import {Competition, Extra, User, UserCompetition} from "./actionType";
 
 export default class ActionCreator{
 
@@ -9,12 +9,20 @@ export default class ActionCreator{
         }
     };
 
+    // 清空状态保存
     static saveUser=(user)=>{
         return {
             type:User.SAVE,
             payload:user,
         }
     };
+
+    // 清空user
+    static cleatUser=()=>{
+        return{
+            type:User.CLEAR,
+        }
+    }
 
     // change status
     static changeStatus=()=>{
@@ -46,6 +54,37 @@ export default class ActionCreator{
         return {
             type:UserCompetition.SAVE,
             payload:competition,
+        }
+    };
+
+    // 设置消息
+    static setMsg=(msg)=>{
+        return{
+            type:Extra.M_SET,
+            payload:msg
+        }
+    };
+
+    // 保存比赛（非覆盖）
+    static updateCompetition=(c)=>{
+        return {
+            type:Competition.UPDATE,
+            payload:c
+        }
+    };
+
+    // 单独设施比赛
+    static setCompetition=(c)=>{
+        return {
+            type:Competition.SET,
+            payload:c
+        }
+    };
+
+    // 清楚competition数据
+    static cleatCompetition=()=>{
+        return {
+            type:Competition.CLEAR,
         }
     }
 }
