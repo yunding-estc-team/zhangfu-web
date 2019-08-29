@@ -10,8 +10,6 @@ import Phone from "../information/component/phone";
 import Code from "../information/component/possword";
 import Postbox from "../information/component/postbox";
 import {connect} from "react-redux";
-// 为各个组件加入redux
-export const loging = connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToProps)(Loging);
 export const input1 = connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToProps)(Input1);
 export const input2 = connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToProps)(Input2);
 export const approve = connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToProps)(Approve);

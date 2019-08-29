@@ -20,7 +20,6 @@ import DEV from "./test/component/DEV";
 
 class App extends Component{
     render(){
-        console.log(this.context);
         return(
             <div>
                 <Header/>

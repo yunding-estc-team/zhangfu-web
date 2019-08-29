@@ -3,6 +3,9 @@ import './index.css'
 import Input1 from "../../input/input1";
 import Input2 from "../../input/input2";
 import {Link} from "react-router-dom";
+import api from "../../../config/url";
+import {connect} from "react-redux";
+import ReduxMap from "../../../utils/ReduxMap";
 
 
 // 登录的具体页面
@@ -23,7 +26,9 @@ class Loging extends Component{
 
 
     render(){
-        let {saveU,saveS,submitU}=this.props;
+        const {saveU,submitU,status}=this.props;
+        console.log(submitU);
+        console.log(status);
 
         return(
             <div>
@@ -46,7 +51,8 @@ class Loging extends Component{
                            <span><Link to="/register/index">注册账户</Link></span>
                         </div>
                     </div>
-                    <div className="right-footer"><button onClick={submitU()}>登录</button></div>
+                    {/*<div className="right-footer"><button onClick={submitU(status ?api.user.loginByCode:api.user.loginByPassword)*/}
+                    <div className="right-footer"><button onClick={submitU("fasfdsa")}>登录</button></div>
                 </div>
             </div>
         )
@@ -56,6 +62,7 @@ class Loging extends Component{
         if (this.state.active === true){
             return 0;
         } else {
+            // 更改store中的状态
             this.props.saveS();
             this.setState(
                 {
@@ -69,6 +76,7 @@ class Loging extends Component{
         if (this.state.active2 === true) {
             return 0;
         } else {
+            // 更改store中的状态
             this.props.saveS();
             this.setState(
                 {
@@ -80,4 +88,4 @@ class Loging extends Component{
     }
 }
 
-export default Loging
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsU)(Loging);

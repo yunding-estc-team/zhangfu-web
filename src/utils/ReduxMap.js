@@ -9,8 +9,12 @@ export default class ReduxMap {
             user:state.user,
             // competition
             competition:state.competition,
+            // 赛事列表
+            competitionList:state.competitionList,
             // wiki
             wiki:state.wiki,
+            // 状态值
+            status:state.status,
             // 后台返回的信息
             msg:state.msg,
         }
@@ -26,15 +30,25 @@ export default class ReduxMap {
                 console.log({[event.target.id]: event.target.value});
                 dispatch(ActionCreator.updateUser({[event.target.id]: event.target.value}));
             },
-
+            // 从后台获取用户
+            getU:(url,param)=>{
+                instance.get(url,{params:param})
+                    .then(res=>{
+                        if(res.data.code==="200"){
+                            // todo
+                            dispatch(ActionCreator.saveUser(res.data.data));
+                        }
+                    })
+            },
             // 设置user
             setU:(u)=>{
                    dispatch(ActionCreator.updateUser(u));
             },
 
             // 发送验证码
-            sendCode:()=>{
-                data={name:ownProps};
+            sendCode:(address)=>{
+                 console.log(address);
+                let data={name:ownProps};
                 instance.post(api.user.sendCode,data)
                     .then(res=>res.data.code==="200"
                     ?dispatch(ActionCreator.msgSuccess(res.data.msg))
@@ -44,16 +58,18 @@ export default class ReduxMap {
 
             // 检验密码一致性
             checkoutPassword:(e)=>{
-                // todo test
-                console.log("ownProps------------"ownProps);
             },
             // 更新状态
-            saveS: (event) => {
+            saveS: () => {
                 dispatch(ActionCreator.changeStatus())
             },
 
             // submit用户
-            submitU: (url) => {
+            submitU: (url,data) => {
+                if (data!==undefined) {
+                    instance.post(url, data)
+                }
+
                 // 返回promise对象
                 instance.post(url, ownProps.user)
                     .then(res => res.data.code === "200"
@@ -78,7 +94,9 @@ export default class ReduxMap {
             submitUC:(url)=>{
                 instance.post(url,ownProps)
                     .then(res=>res.data.code==="200"
-                    ?dispatch(ActionCreator.msgSuccess(res.data.msg)))
+                    ?dispatch(ActionCreator.msgSuccess(res.data.msg))
+                    :dispatch(ActionCreator.msgFailure(res.data.msg))
+                    )
             }
         }
     }

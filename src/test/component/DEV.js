@@ -19,6 +19,7 @@ class DEV extends React.Component{
     }
 }
 const mapStateToProps=(state,ownProps)=>{
+    console.log("state------------");
     console.log(ownProps);
     console.log("state"+state);
     return{
@@ -26,6 +27,8 @@ const mapStateToProps=(state,ownProps)=>{
     }
 };
 const mapDispatchToProps=(dispatch,ownProps)=>{
+    console.log("dispatch++++++++++++++");
+    console.log(ownProps);
     return {
         onClick:()=>dispatch(ActionCreator.updateUser({name: "noname"}))
     }

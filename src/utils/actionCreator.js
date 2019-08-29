@@ -9,6 +9,13 @@ export default class ActionCreator{
         }
     };
 
+    static saveUser=(user)=>{
+        return {
+            type:User.SAVE,
+            payload:user,
+        }
+    };
+
     // change status
     static changeStatus=()=>{
         return {

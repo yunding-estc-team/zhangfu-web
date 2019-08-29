@@ -2,13 +2,13 @@ import React from 'react'
 import {connect} from "react-redux/es/alternate-renderers";
 import DEV from "./component/DEV";
 import ActionCreator from "../utils/actionCreator";
-    function Test({user,onClick,onChange}){
+    function Test({user,onClick,onChange,getU}){
         // console.log(user);
         console.log(user);
         return (
             <div>
                 {user.name}{user.id}
-                <button onClick={onClick}>dispatch</button>
+                <button onClick={getU}>dispatch</button>
                 <input onChange={onChange} placeholder={"change"}/>
             </div>
         )
