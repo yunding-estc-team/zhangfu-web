@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import ActionCreator from "../../utils/actionCreator";
 import Test from "../testStore";
+import Hello from "./hello";
 class DEV extends React.Component{
     test=()=>{
         this.props.dispatch(ActionCreator.updateUser({name:"fasdf"}));
@@ -13,22 +14,17 @@ class DEV extends React.Component{
         console.log("store"+u+user);
         return(
             <div>
-            <Test/>
+                <Hello/>
             </div>
         )
     }
 }
 const mapStateToProps=(state,ownProps)=>{
-    console.log("state------------");
-    console.log(ownProps);
-    console.log("state"+state);
     return{
         user:state,
     }
 };
 const mapDispatchToProps=(dispatch,ownProps)=>{
-    console.log("dispatch++++++++++++++");
-    console.log(ownProps);
     return {
         onClick:()=>dispatch(ActionCreator.updateUser({name: "noname"}))
     }

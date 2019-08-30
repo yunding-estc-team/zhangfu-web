@@ -17,6 +17,8 @@ export default class ReduxMap {
             status:state.status,
             // 后台返回的信息
             msg:state.msg,
+            // 创办赛事时的赛事类型列表
+            typeList:state.typeList,
         }
     };
 
@@ -53,16 +55,6 @@ export default class ReduxMap {
                    dispatch(ActionCreator.updateUser(u));
             },
 
-            // 发送验证码
-            sendCode:(address)=>{
-                 console.log(address);
-                let data={name:ownProps};
-                instance.post(api.user.sendCode,data)
-                    .then(res=>res.data.code==="200"
-                    ?dispatch(ActionCreator.msgSuccess(res.data.msg))
-                    :dispatch(ActionCreator.msgFailure(res.data.msg))
-                    )
-            },
 
 
             // 更新状态
@@ -98,7 +90,13 @@ export default class ReduxMap {
         }
     };
 
-    // 赛事常用的dispatch
+
+    /**
+     * 赛事用的dispatch
+     * @param dispatch
+     * @param ownProps
+     * @returns {{saveC: saveC, setC: setC}}
+     */
     static mapDispatchToPropsC=(dispatch,ownProps)=>{
         return {
 
@@ -111,6 +109,32 @@ export default class ReduxMap {
             setC:(c)=>{
                 dispatch(ActionCreator.updateCompetition(c));
             },
+
+            // 非覆盖更新
+            setCL:(event)=>{
+                dispatch(ActionCreator.updateCompetitionList())
+            }
+        }
+    }
+
+    // 问答常用的dispatch
+    static mapDispatchTOPropsW=(dispatch,ownProps)=>{
+        return{
+            saveW:(w)=>{
+            return dispatch(ActionCreator.updateWiki(w))
+            },
+        }
+    }
+
+    /**
+     * 搜索功能dispatch
+     */
+    static mapDispatchToPropsS=(dispatch,ownProps)=>{
+        return{
+            //
+            saveS:(e)=>{
+                return dispatch(ActionCreator.updateSearch(e.nativeEvent.target.value));
+            }
         }
     }
 }

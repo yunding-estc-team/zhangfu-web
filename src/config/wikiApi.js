@@ -8,22 +8,9 @@ import api, {instance} from "./url";
 export default class {
 
     // 个人用户进行提问
-    askQuestions() {
-        let data = {
-            // 比赛id
-            competitionId:"",
-            // 问题的内容
-            content:""
-        };
-        instance.post(api.competitionWiki.askQuestions, data)
-            .then(res => {
-                // 输出传输内容
-                console.log(res.data.data);
-                // 显示状态码
-                console.log(res.data.code);
-                // 显示提示信息
-                console.log(res.data.msg);
-            });
+    static askQuestions(data) {
+
+        return instance.post(api.competitionWiki.askQuestions, data)
     }
 
     // 组织用户获取提问

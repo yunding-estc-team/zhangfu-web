@@ -1,8 +1,6 @@
 import {connect} from "react-redux/es/alternate-renderers";
 
 export default function reducer(state,action) {
-    console.log(action);
-    console.log(state);
     switch (action.type) {
         // 保存,会顶替属性
         case "U_SAVE":
@@ -10,10 +8,10 @@ export default function reducer(state,action) {
             return {...state,user:action.payload};
         // 更新会附加属性
         case "U_UPDATE":
-            return {...state,user:Object.assign(state.user,action.payload)};
+            return {user: Object.assign({},state.user,action.payload)};
         // 清空user
         case "U_CLEAR":
-            return {...state,user:{}};
+            return {user:{}};
         case "C_SAVE":
             return action.payload;
         // 变化状态

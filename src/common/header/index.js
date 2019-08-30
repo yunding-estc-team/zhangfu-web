@@ -9,6 +9,7 @@ import Right2 from "./component/right2";
 // 公共头
 class Header extends Component{
     render(){
+        let {saveS}=this.props;
         return(
             <div>
                 <div className="section0">
@@ -20,7 +21,7 @@ class Header extends Component{
                         </div>
                         <div className="search">
                             <form action="">
-                                <input type="text"/>
+                                <input type="text" id="name" onChange={saveS}/>
                                 <button> <span className="iconfont">&#xe74b;</span>搜索</button>
                             </form>
                         </div>

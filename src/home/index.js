@@ -3,6 +3,8 @@ import './index.css'
 import img4 from '../images/1.png'
 import {Link} from "react-router-dom";
 import CompetitionApi from "../config/competitionApi";
+import {connect} from "react-redux";
+import ReduxMap from "../utils/ReduxMap";
 // 首页
 class Home extends Component{
     constructor(props){
@@ -25,7 +27,11 @@ class Home extends Component{
 
     // 加载时获取数据
     componentDidMount() {
-        this.getRank("new");
+        let {setCL}=this.props;
+        CompetitionApi.home("new",1,6)
+            .then(res=>{
+                setCL(res.data.data);
+            })
     };
 
     handleNew(){
@@ -59,7 +65,10 @@ class Home extends Component{
     }
 
     render(){
-        let part = this.state.gameList.map(game =>
+
+        // 获取比赛排行列表
+        let {competitionList}=this.props;
+        let part = competitionList.map(game =>
             <div>
                 <Link to={{
                     pathname: "/area/index",
@@ -82,8 +91,8 @@ class Home extends Component{
                                 <div className="details-right">
                                     <div className="personage"><span className="iconfont">&#xe713;</span><span
                                         className="word">{game.isIndividual==="0"? "个人赛":"团队赛"}</span></div>
-                                    <div><span className="iconfont">&#xe61c;</span><span
-                                        className="word">{game.clickCount}</span></div>
+                                    <div><span className="iconfont">&#xe61c;</span>
+                                        <span className="word">{game.clickCount}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -91,6 +100,7 @@ class Home extends Component{
                 </Link>
             </div>
         );
+
         return(
             <div className="home">
                 <div className="slideshow"/>
@@ -109,7 +119,7 @@ class Home extends Component{
                 </div>
             </div>
         )
-     }
+    }
 }
 
-export default Home
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsC)(Home)

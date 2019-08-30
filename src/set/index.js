@@ -3,8 +3,10 @@ import './index.css'
 import More from "./component";
 import {Link} from "react-router-dom";
 import axios from 'axios';
-import instance from '../config/url'
+import {instance,api} from '../config/url'
 import {CompetitionModel} from "../config/model";
+import ReduxMap from "../utils/ReduxMap";
+import {connect} from "react-redux";
 
 // 创建赛事
 class Set extends Component{
@@ -63,12 +65,12 @@ class Set extends Component{
         // 检查空值
 
         // 提交
-        instance.post("/organization/competition",competition)
+        instance.post(api.competition.postCompetition,competition)
             .then(res=>{
                 if(res.data.code==="200"){
                     setMsg("");
                 }else{
-                    setMsg("上传失败")
+                    setMsg("上传失败");
                 }
                 }
             )
@@ -78,13 +80,14 @@ class Set extends Component{
     // todo 103,105行的id有作用吗
     render(){
         // 获取赛事类型
-        let {typeList,msg,saveC,setC}=this.props;
+        let {msg,saveC,setC}=this.props;
 
         // 遍历获取
+        let typeList=[]
         let type = typeList.map(type =>
-            <div>
+            (<div>
                 <span className="mold">{type.object}</span>
-            </div>
+            </div>)
         );
 
         return(
@@ -111,8 +114,8 @@ class Set extends Component{
                     <div className="set-part">
                         <div className="set-title">赛事类型</div>
                         <div className="set-line">
-                            <div className="set-line"><div className="part-circle" onClick={setC({[CompetitionModel.individual]:0})}/><span>团队赛</span></div>
-                            <div className="set-line"><div className="part-circle" onClick={setC({[CompetitionModel.individual]:1})}/><span>个人赛</span></div>
+                            <div className="set-line"><div className="part-circle" onClick={()=>setC({[CompetitionModel.individual]:"0"})}/><span>团队赛</span></div>
+                            <div className="set-line"><div className="part-circle" onClick={()=>setC({[CompetitionModel.individual]:"1"})}/><span>个人赛</span></div>
                         </div>
                     </div>
                     <div className="set-part">
@@ -160,7 +163,7 @@ class Set extends Component{
                     <div className="more"><span>添加更多</span></div>
                 </div>
                 <div className="set-part">
-                    <Link to="/area/index"><button className="part-left" onClick={this.handleClick.bind(this)}>保存信息</button></Link>
+                    <Link to="/area/index"><button className="part-left" onClick={this.submit}>保存信息</button></Link>
                     <button className="part-right">下一步</button>
                 </div>
                 </div>
@@ -169,4 +172,4 @@ class Set extends Component{
      }
 }
 
-export default Set
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsC)(Set)

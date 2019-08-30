@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './index.css'
 import Input1 from "../../input/input1";
 import Input2 from "../../input/input2";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import api from "../../../config/url";
 import {connect} from "react-redux";
 import ReduxMap from "../../../utils/ReduxMap";
-import userApi from "../../../config/userApi";
+import UserApi from "../../../config/userApi";
+import '../../../common/Extra/msg.css'
 
 
 // 登录的具体页面
@@ -24,12 +25,33 @@ class Loging extends Component{
 
     }
 
-
+    submit=(url,user)=>{
+        UserApi.login(url,user)
+            .then(res=>{
+                console.log(res);
+                if (res.data.code==="200"){
+                    // 存储token到localStorage
+                    localStorage.setItem("token",res.data.data);
+                    // 跳转到主页
+                    withRouter(
+                        ({history})=>{
+                            history.push("/home/index")
+                        }
+                    )
+                }else{
+                    // 登录失败提示信息
+                    this.props.setMsg("登录失败");
+                }
+            })
+    };
 
     render(){
-        const {saveU,status,user}=this.props;
+        const {saveU,msg,user}=this.props;
 
         let url=this.state.active===true?api.user.loginByCode:api.user.loginByPassword;
+
+        console.log(url);
+
         return(
             <div>
                 <div className="right">
@@ -39,11 +61,12 @@ class Loging extends Component{
                     </div>
                     <div className="up">
                         {/*输入手机号*/}
-                        <input className="number" type="text" placeholder="请输入手机号" id="address" onChange={saveU}/>
+                        <input className="number" type="text" placeholder="请输入手机号" id="userName" onChange={saveU}/>
                     </div>
                     <div className="down">
-                        <div className={this.state.active === true ? '' : 'inputA'}> <Input1/></div>
+                        <div className={this.state.active === true ? '' : 'inputA'}><Input1/></div>
                         <div className={this.state.active2 === true ? '' : 'inputB'}><Input2/></div>
+                        <span className="msgFailure" >{msg}</span>
                     </div>
                     <div className="section">
                         <div className="pour">
@@ -52,7 +75,7 @@ class Loging extends Component{
                         </div>
                     </div>
                     {/*<div className="right-footer"><button onClick={submitU(status ?api.user.loginByCode:api.user.loginByPassword)*/}
-                    <div className="right-footer"><button onClick={userApi.login(url,user)}>登录</button></div>
+                    <div className="right-footer"><button onClick={()=>this.submit(url,user)}>登录</button></div>
                 </div>
             </div>
         )

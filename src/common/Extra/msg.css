@@ -1,0 +1,6 @@
+/*失败消息显示*/
+.msgFailure{
+    color: #ff0000;
+    font-size: 16px;
+    margin: 15px 20px 0  ;
+}

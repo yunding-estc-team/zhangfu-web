@@ -10,7 +10,13 @@ export const Competition={
     UPDATE:"C_UPDATE",
     SET:"C_SET",
     CLEAR:"C_CLEAR",
+    SET_L:"C_UPDATE_L",
 };
+
+export const Wiki={
+    UPDATE:"W_UPDATE",
+    SET:"W_SET",
+}
 
 export const Extra={
     // 设置状态值
@@ -29,4 +35,10 @@ export const UserCompetition={
     // 存储
     SAVE:"UC_SAVE"
 };
+
+export const Search={
+    SAVE:"S_SAVE",
+    UPDATE:"S_UPDATE",
+
+}
 

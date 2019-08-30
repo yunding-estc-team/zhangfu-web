@@ -25,28 +25,13 @@ export default class UserApi{
     };
 
     // 判断用户类型
-    static judgeUser=(e)=>{
-        return instance.post(api.user.checkAccountType,{address:e.nativeEvent.target.value})
-            .then(res=>{
-                if (res.data.code!=="200"){
-                    this.setState({msg:"手机/电子邮件非法"});
-                }else{
-                    instance.post(api.user.checkAccountExist,{userName:this.state.userName})
-                        .then(res=>{
-                            //判断是否存在200正常
-                            if(res.data.code===204){
-                                this.setState({msg:"手机/电子邮件已注册"});
-                                console.log(this.state.msg);
-                            }else{
-                                this.setState({msg:""});
-                                this.setState({isIllegal:false});
-                            }
-                        });
-                }
-            });
+    static judgeUser=(userName)=>{
+        return instance.post(api.user.checkAccountType,{address:userName});
+
     };
-    static exist=(e)=>{
-       return instance.post(api.user.checkAccountExist,{userName:this.state.userName});
+
+    static exist=(userName)=>{
+       return instance.post(api.user.checkAccountExist,{address:userName});
     };
 
     // 发送验证码
@@ -65,12 +50,6 @@ export default class UserApi{
      */
     static login=(url,data)=>{
         return instance.post(url,data)
-            .then(response=>{
-                console.log(response.data.code==="200");
-                if(response.data.code === "200"){
-                    // 存储token到localStorage
-                    localStorage.setItem("token",response.data.data);
-                }});
     };
 
 
@@ -372,22 +351,9 @@ export default class UserApi{
     /**
      * 搜索（下拉框推荐与输入内容相关的结果）
      */
-    search(){
-        let data={
-            //搜索内容
-            name:""
-        }
-        instance.post(api.user.searchName,data)
-            .then(res=>{
-                console.log(res.data.code);
-                if(res.data.code==="200"){
-                    this.setState({msg:"搜索成功"});
-                    console.log(res.data.msg);
-                }else {
-                    this.setState({msg: "搜索失败"});
-                    console.log(res.data.msg);
-            }
-            });
+    search(name){
+            //搜索内容 name
+        return instance.post(api.user.searchName,{name:name})
     }
 
     /**

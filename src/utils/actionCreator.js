@@ -1,7 +1,12 @@
-import {Competition, Extra, User, UserCompetition} from "./actionType";
+import {Competition, Extra, Search, User, UserCompetition, Wiki} from "./actionType";
 
 export default class ActionCreator{
 
+    /**
+     * 用户
+     * @param user
+     * @returns {{payload: *, type: *}}
+     */
     static updateUser=(user)=>{
         return {
             type:User.UPDATE,
@@ -22,7 +27,7 @@ export default class ActionCreator{
         return{
             type:User.CLEAR,
         }
-    }
+    };
 
     // change status
     static changeStatus=()=>{
@@ -49,6 +54,11 @@ export default class ActionCreator{
         }
     };
 
+    /**
+     * 用户参赛
+     * @param competition
+     * @returns {{payload: *, type: *}}
+     */
     // 用户参赛数据保存
     static updateUserCompetition=(competition)=>{
         return {
@@ -65,6 +75,11 @@ export default class ActionCreator{
         }
     };
 
+    /**
+     * 比赛
+     * @param c
+     * @returns {{payload: *, type: *}}
+     */
     // 保存比赛（非覆盖）
     static updateCompetition=(c)=>{
         return {
@@ -73,7 +88,7 @@ export default class ActionCreator{
         }
     };
 
-    // 单独设施比赛
+    // 单独设置比赛
     static setCompetition=(c)=>{
         return {
             type:Competition.SET,
@@ -81,10 +96,41 @@ export default class ActionCreator{
         }
     };
 
-    // 清楚competition数据
+    // 清除competition数据
     static cleatCompetition=()=>{
         return {
             type:Competition.CLEAR,
         }
+    };
+
+    // 设置赛事列表
+    static updateCompetitionList=(cl)=>{
+        return{
+            type:Competition.SET_L,
+            payload:cl,
+        }
+    };
+
+    /**
+     * 问答
+     */
+
+    // 问答 保存数据（非覆盖）
+    static updateWiki=(w)=>{
+        return{
+            type:Wiki.UPDATE,
+            payload:w,
+        }
     }
+
+    /**
+     * 搜索
+     */
+    static updateSearch=(s)=>{
+        return{
+            type:Search.UPDATE,
+            payload:s
+        }
+    }
+
 }
