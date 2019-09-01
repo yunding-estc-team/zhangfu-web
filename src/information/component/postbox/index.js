@@ -21,9 +21,9 @@ class Postbox extends Component{
                         <span><button onClick={sendCode}>获取验证码</button></span>
                     </div>
                     <div className="postbox-button">
-                        <button onClick={submitU(api.user.checkCode)}>确认</button>
+                        <button onClick={submitU(api.user.checkCode).then(this.props.changeEmail)}>确认</button>
                         // todo 返回链接
-                        <button className="return">返回</button>
+                        <button className="return" onClick={this.props.changeEmail}>返回</button>
                     </div>
                 </form>
             </div>

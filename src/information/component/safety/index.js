@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './index.css'
-import {NavLink} from "react-router-dom";
 import {UserModel} from "../../../config/model";
 import api from "../../../config/url";
 
@@ -24,7 +23,7 @@ class Safely extends Component{
                             <button onClick={sendCode}>发送验证码</button>
                     </div>
                     <div className="safely-button">
-                        <NavLink to="/information/component/phone/index"><button onClick={submitU(api.user.checkCode)}>提交</button></NavLink>
+                        <button onClick={submitU(api.user.checkCode).then(this.props.changeSafety)}>提交</button>
                     </div>
             </div>
         )

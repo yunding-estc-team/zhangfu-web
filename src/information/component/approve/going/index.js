@@ -102,7 +102,7 @@ class Approve extends Component{
                         </div>
                         <div className="portion-explain">（请将学生卡有照片一面上传）</div>
                         <div className="portion-button">
-                            <button onClick={submitUC(api.user.uploadStd)}>确认</button>
+                            <button onClick={()=>submitUC(api.user.uploadStd)}>确认</button>
                             <button className="return">返回</button>
                         </div>
                     </form>
@@ -130,7 +130,7 @@ class Approve extends Component{
                             <span>（上传有效文件或照片）</span>
                         </div>
                         <div className="portion1-button">
-                            <button onClick={submitUC(api.user.insertPrizeInfo)}>确认</button>
+                            <button onClick={()=>submitUC(api.user.insertPrizeInfo)}>确认</button>
                             <button className="return">返回</button>
                         </div>
                     </form>

@@ -25,7 +25,7 @@ class App extends Component{
                 <Header/>
                     <div>
                         {/*<li><Link to="/center/personage/you/index">个人中心</Link></li>*/}
-                        {/*<li><Link to="/center/personage/me/index">个人中心</Link></li>*/}
+                        <li><Link to="/center/personage/me/index">个人中心</Link></li>
                         {/*<li><Link to="/center/organizer/you/index">个人中心</Link></li>*/}
                         {/*<li><Link to="/center/organizer/me/index">个人中心</Link></li>*/}
                         {/*<li><Link to="/message/index">消息盒子</Link></li>*/}

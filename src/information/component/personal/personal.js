@@ -132,7 +132,7 @@ class Personal extends Component{
                             </span>
                         </li>
                     </div>
-                    <button onClick={submitU(api.user.updateInfo)}>保存</button>
+                    <button onClick={()=>submitU(api.user.updateInfo)}>保存</button>
                 </form>
             </div>
         )

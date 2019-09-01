@@ -23,9 +23,9 @@ class Student extends Component{
                         <span>学号：</span><span><input type="text" placeholder="例：2018005783" id={UserModel.number} onChange={saveU}/></span>
                     </div>
                     <div className="student-button">
-                        <button onClick={submitU(api.user.updatePrivateInfo)}>确认</button>
+                        <button onClick={submitU(api.user.updatePrivateInfo) .then(this.props.changeStudent)}>确认</button>
                         // todo 没有返回链接
-                        <button className="return">返回</button>
+                        <button className="return" onClick={this.props.changeStudent}>返回</button>
                     </div>
                 </form>
             </div>
