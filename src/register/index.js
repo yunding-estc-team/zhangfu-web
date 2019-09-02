@@ -3,7 +3,7 @@ import './index.css'
 import img3 from '../images/undraw_review_fkgn.png'
 import List1 from "./component/list1";
 import {connect} from "react-redux";
-import ReduxMap from "../utils/ReduxMap";
+import ReduxMap from "../store/ReduxMap";
 
 // 注册
 /**

@@ -146,9 +146,17 @@ export default class ReduxMap {
     // 问答常用的dispatch
     static mapDispatchTOPropsW=(dispatch,ownProps)=>{
         return{
+            // 存储消息内容
             saveW:(w)=>{
             return dispatch(ActionCreator.updateWiki(w))
             },
+
+            // 设置消息
+            setMsg:(msg)=>{
+                dispatch(ActionCreator.setMsg(msg));
+            },
+
+            //
         }
     };
 

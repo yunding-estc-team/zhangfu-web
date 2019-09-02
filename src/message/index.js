@@ -19,17 +19,21 @@ class Message extends Component{
         return(
             <div className="message">
                 <div className="message-header">
-                    <div className="news" onClick={this.handleNews}>赛事消息</div>
+                    <div className="news" onClick={this.handleNews}>消息</div>
                     <div className="answers" onClick={this.handleAnswers}>问答</div>
                     <div className="message-state">全部标记为已读</div>
                 </div>
                 <div className="message-particular">
+                    // 条件渲染
+                    // 消息
                     <div className={this.state.message1 === true ? '' : 'newsA'}><News/></div>
+                    // 问答
                     <div className={this.state.message2 === true ? '' : 'answersA'}><Answers/></div>
                 </div>
             </div>
         )
      }
+
      handleNews(){
         if(this.state.message1 === true){
             return 0;
@@ -42,6 +46,7 @@ class Message extends Component{
             )
         }
      }
+
      handleAnswers(){
          if(this.state.message2 === true){
              return 0;

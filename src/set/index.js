@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import axios from 'axios';
 import {instance,api} from '../config/url'
 import {CompetitionModel} from "../config/model";
-import ReduxMap from "../utils/ReduxMap";
+import ReduxMap from "../store/ReduxMap";
 import {connect} from "react-redux";
 
 // 创建赛事

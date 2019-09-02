@@ -384,24 +384,14 @@ export default class UserApi{
     /**
      * 获取历史获奖记录
      */
-    findHistoryPrize(){
+    static findHistoryPrize({c,p}){
         let data ={
             //当前页
-            pageCurrent:"",
+            pageCurrent:c,
             //每页的行数
-            pageSize:","
+            pageSize:p,
         };
-        instance.post(api.user.selectJoinCompetion,data)
-            .then(res=>{
-                console.log(res.data.code);
-                if(res.data.code==="200"){
-                    this.setState({msg:"搜索成功"});
-                    console.log(res.data.msg);
-                }else {
-                    this.setState({msg: "搜索失败"});
-                    console.log(res.data.msg);
-                }
-            });
+        return instance.post(api.user.selectJoinCompetion,data)
     }
     /**
      * 获取个人资料

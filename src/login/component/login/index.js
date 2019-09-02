@@ -5,7 +5,7 @@ import Input2 from "../../input/input2";
 import {Link, withRouter} from "react-router-dom";
 import api, {instance} from "../../../config/url";
 import {connect} from "react-redux";
-import ReduxMap from "../../../utils/ReduxMap";
+import ReduxMap from "../../../store/ReduxMap";
 import UserApi from "../../../config/userApi";
 import '../../../common/Extra/msg.css'
 

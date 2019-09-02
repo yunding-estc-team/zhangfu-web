@@ -58,24 +58,16 @@ export default class {
     }
 
     // 赛事详情页面获取全部问答信息
-    getAllWiki() {
+    static getAllWiki(id,c,p) {
         let data = {
             // 赛事id
-            competitionId: "",
+            competitionId: id,
             // 页码
-            pageCurrent: "",
+            pageCurrent: c,
             // 每页显示条数
-            pageSize: ""
+            pageSize: p,
         };
-        instance.post(api.competitionWiki.getAllWiki, data)
-            .then(res => {
-                // 输出传输内容
-                console.log(res.data.data);
-                // 显示状态码
-                console.log(res.data.code);
-                // 显示提示信息
-                console.log(res.data.msg);
-            });
+        return instance.post(api.competitionWiki.getAllWiki,)
     }
 
 }

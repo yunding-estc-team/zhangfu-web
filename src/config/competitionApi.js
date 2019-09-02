@@ -12,15 +12,9 @@ export default class CompetitionApi {
     };
 
     // 关注赛事
-    attention=()=>{
-        let data={};
-        instance.put(api.competition.attention,data)
-            .then(res=>{
-                if (res.data.code === "200") {
-                    console.log(res.data);
-                    console.log("success");
-                }
-            })
+    static attention=(competitionId)=>
+
+        instance.put(api.competition.attention,{competitionId:competitionId})
     };
 
     // 获取报名链接

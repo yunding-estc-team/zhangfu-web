@@ -5,6 +5,7 @@ import png1 from'../../../../images/wallhaven-dge9ll.png';
 import img from "../../../../images/1.png";
 import img0 from "../../../../images/853f400ac858c0f3749601f50a83da0ebdbeede135caf-yYVAGU_fw658.png";
 import {Link} from "react-router-dom";
+import UserApi from "../../../../config/userApi";
 
 // 用户个人中心（自己看）
 class Personage1 extends Component{
@@ -21,16 +22,27 @@ class Personage1 extends Component{
         this.handleUp2 = this.handleUp2.bind(this);
         this.handleDown2 = this.handleDown2.bind(this)
     }
+
+    componentDidMount=()=>{
+        let {setCL}=this.props;
+        // 获取得奖赛事信息
+        UserApi.findHistoryPrize({c:1,p:3})
+            .then(res=>{
+                setCL(res.data.data);
+            })
+    };
     render(){
-        let handList = [
+        /**
             {
                 "background":"png",
                 "img":"png1",
                 "name":"张云雷",
                 "school":"太原理工大学"
             }
-        ];
-        let data = handList.map(hand =>
+         */
+
+        let {user,competitionList}=this.props;
+        let data =
             <div className="background">
                 {/*背景*/}
                 <img className="pag" src={png} alt=""/>
@@ -38,43 +50,43 @@ class Personage1 extends Component{
                     {/*头像*/}
                     <img src={png1} alt=""/>
                     {/*姓名*/}
-                    <div className="name">{hand.name}</div>
+                    <div className="name">{user.userName}</div>
                     {/*大学*/}
-                    <div className="school">{hand.school}</div>
+                    <div className="school">{user.school}</div>
                     <div className="alter">
                         <Link to="/information/index"><span className="iconfont">&#xe612;</span>修改资料</Link>
                     </div>
                 </div>
             </div>
-        );
-        let partList = [
-            {
-                "img":"img",
-                "theme":"2019年云顶暑期实践培训",
-                "time":"2019年7月1日-2019年9月7日",
-                "type":"团队赛",
-                "object":"计算机/算法",
-                "award":"获得********赛二等奖",
-                "state":"已完成",
-            }
-        ];
-        let data1 = partList.map(part =>
+        ;
+        // let partList = [
+        //     {
+        //         "img":"img",
+        //         "theme":"2019年云顶暑期实践培训",
+        //         "time":"2019年7月1日-2019年9月7日",
+        //         "type":"团队赛",
+        //         "object":"计算机/算法",
+        //         "award":"获得********赛二等奖",
+        //         "state":"已完成",
+        //     }
+        // ];
+        let data1 = competitionList.map(part =>
             <div className="parts">
                 {/*赛事海报*/}
                 <Link to="/area/index"><img src={img} alt=""/></Link>
                 <div className="introduce">
                     {/*赛事名称*/}
-                    <Link to="/area/index"><p className="theme">{part.theme}</p></Link>
+                    <Link to="/area/index"><p className="theme">{part.name}</p></Link>
                     {/*评审时间*/}
-                    <p> <span className="iconfont">&#xe62d;</span>评审时间 ：{part.time}</p>
+                    <p> <span className="iconfont">&#xe62d;</span>评审时间 ：{part.createAt}</p>
                     {/*赛事类型*/}
                     <p> <span className="iconfont">&#xe61f;</span>{part.type}</p>
                     {/*赛事类型*/}
                     <p> <span className="iconfont">&#xe625;</span>{part.object}</p>
                     {/*获得的奖项*/}
-                    <p className="trophy"> <span className="iconfont">&#xe63e;</span>{part.award}</p>
+                    <p className="trophy"> <span className="iconfont">&#xe63e;</span>{part.reward}</p>
                     {/*赛事状态*/}
-                    <p><span className="state">{part.state}</span></p>
+                    {/*<p><span className="state">{part.state}</span></p>*/}
                 </div>
             </div>
         );

@@ -3,7 +3,7 @@ import Apply from '../apply/apply'
 import img from '../../../images/1.png'
 import './part.css'
  import {Link} from "react-router-dom";
- import ReduxMap from "../../../utils/ReduxMap";
+ import ReduxMap from "../../../store/ReduxMap";
  import {connect} from "react-redux";
  import CompetitionApi from "../../../config/competitionApi";
 

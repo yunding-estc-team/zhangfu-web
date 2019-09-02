@@ -5,6 +5,9 @@ import {Link} from "react-router-dom";
 import api, {instance} from "../config/url";
 import CompetitionApi from "../config/competitionApi";
 import wikiApi from "../config/wikiApi";
+import UserApi from "../config/userApi";
+import {connect} from "react-redux";
+import ReduxMap from "../store/ReduxMap";
 
 // 赛事详情
 class Area extends Component{
@@ -22,9 +25,8 @@ class Area extends Component{
             // 问答时的提示信息
             mag:"",
             // 赛事id
-            id:this.props.id,
-            // 获取的赛事对象
-            competition:{},
+            id:this.props.location.state,
+
         }
     };
 
@@ -40,15 +42,21 @@ class Area extends Component{
 
     // 加载组件时
     componentDidMount() {
-        console.log(this.props);
-        console.log(this.props.location);
         console.log(window.location.state);
         let id = this.props.location.state;
         this.getInfo(id);
+        wikiApi.getAllWiki(id,1,10);
     }
 
+    // 点击关注
     handleAttention(){
+        let {attentionC}=this.props;
         if (this.state.attention === true){
+
+            // 关注赛事
+            CompetitionApi.attention(this.state.id);
+
+            // 改变受控组件状态
             this.setState(
                 {
                     attention:!this.state.attention,
@@ -59,6 +67,7 @@ class Area extends Component{
             return 0
         }
     }
+
 
     handleMessage(){
         if(this.state.message === true){
@@ -74,6 +83,7 @@ class Area extends Component{
         }
     }
 
+
     handleQuestion(){
         if(this.state.question === true){
             return 0;
@@ -88,6 +98,8 @@ class Area extends Component{
         }
     }
 
+
+    //  提问
     handleClick = (event) =>{
         console.log(this.state.content);
         instance.post(api.competitionWiki.userAnswer,
@@ -109,12 +121,7 @@ class Area extends Component{
         )
     };
 
-    inputChange(e){
-        let inputValue = e.target.value;
-        this.setState({
-            content: inputValue
-        })
-    }
+
 
     // 提交问题数据
     submit=()=>{
@@ -132,8 +139,8 @@ class Area extends Component{
     };
 
     render(){
-        // 比赛的所有属性，问答列表,消息
-        let {competition,wikiList,msg,saveW}=this.props;
+        // 比赛的所有属性，问答列表,保存消息
+        let {competition,wikiList,msg,saveW,setMsg}=this.props;
 
         let data1 =
             <div>
@@ -241,16 +248,6 @@ class Area extends Component{
                     {/*赛事类型*/}
                     <span className="type-word">{competition.isIndividual}</span>
                 </div>
-                {/*<div className="right-section">*/}
-                {/*    <span className="right-type">报名时间</span>*/}
-                {/*    /!*报名时间*!/*/}
-                {/*    <span className="type-word">{competition}</span>*/}
-                {/*</div>*/}
-                {/*<div className="right-section">*/}
-                {/*    <span className="right-type">比赛时间</span>*/}
-                {/*    /!*比赛时间*!/*/}
-                {/*    <span className="type-word">{right.gametime}</span>*/}
-                {/*</div>*/}
                 <div className="right-section">
                     <span className="right-type">学科类型</span>
                     {/*学科类型*/}
@@ -281,7 +278,8 @@ class Area extends Component{
                         {data1}
                     </div>
                     <div className="header-button">
-                        <Link to={competition.joinLink}><button>立即报名</button></Link>
+                        // 报名链接
+                        <button onClick={()=>window.location.history.push(competition.joinLink)}>立即报名</button>
                     </div>
                 </div>
                 <div className="area-main">
@@ -293,4 +291,5 @@ class Area extends Component{
     }
 }
 
-export default Area
+// 暴露connect高阶组件
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchTOPropsW)(Area);

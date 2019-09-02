@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import ActionCreator from "../../utils/actionCreator";
+import ActionCreator from "../../store/actionCreator";
 import Test from "../testStore";
 import Hello from "./hello";
 import {withRouter} from "react-router-dom";

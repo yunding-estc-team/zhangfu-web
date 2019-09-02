@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 import approve from '../../../../images/shenfenzhengzhengmian.png'
 import api from "../../../../config/url";
-import Tools from '../../../../utils/Tools'
+import Tools from '../../../../util/Tools'
 
 // 未验证身份时验证获奖的页面
 /**

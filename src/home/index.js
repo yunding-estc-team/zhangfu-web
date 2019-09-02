@@ -4,7 +4,7 @@ import './index.css'
 import {Link} from "react-router-dom";
 import CompetitionApi from "../config/competitionApi";
 import {connect} from "react-redux";
-import ReduxMap from "../utils/ReduxMap";
+import ReduxMap from "../store/ReduxMap";
 // 首页
 class Home extends Component{
     constructor(props){

@@ -8,22 +8,14 @@ import api, {instance} from "./url";
 export default class {
 
     // 获取系统通知列表
-    getAnnounceList() {
+    static getAnnounceList({c,p}) {
         let data = {
             // 页码
-            pageCurrent: "",
+            pageCurrent: c,
             // 每页显示条数
-            pageSize: ""
+            pageSize: p
         };
-        instance.post(api.userAnnounce.getAnnounceList, data)
-            .then(res => {
-                // 输出传输内容
-                console.log(res.data.data);
-                // 显示状态码
-                console.log(res.data.code);
-                // 显示提示信息
-                console.log(res.data.msg);
-            });
+        return instance.post(api.userAnnounce.getAnnounceList, data)
     }
 
     // 读取详细信息
