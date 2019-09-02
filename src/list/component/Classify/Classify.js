@@ -20,10 +20,6 @@ class Classify extends Component{
                             <span>生物</span>
                             <span>化学</span>
                             <span>物理</span>
-                            <span>物理</span>
-                            <span>物理</span>
-                            <span>物理</span>
-                            <span>物理</span>
                         </div>
                         <div> <span className="iconfont">&#xe55b;</span></div>
                     </div>

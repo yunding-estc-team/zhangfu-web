@@ -18,12 +18,18 @@ class Organizer1 extends Component{
 
     render(){
 
-        let {user,competitionList} = this.props;
+        // let {user,competitionList} = this.props;
+        let competitionList = [];
+        let user={
+            // portrait:"https://cn.bing.com/images/search?view=detailV2&ccid=ZFeZmWyt&id=3E1BD5A3E0751E891E36CDAD65A71AA8F3CF185B&thid=OIP.ZFeZmWytRtwrRsuEXhSTUAHaEo&mediaurl=http%3a%2f%2fwww.desktopwallpaperhd.net%2fwallpapers%2f10%2fd%2fdongwushijie-animal-tupian-107405.jpg&exph=1200&expw=1920&q=tupian&simid=608003712743506607&selectedIndex=0&ajaxhist=0",
+            name:"guodatou",
+            school:'none',
+        };
 
         let data =
             <div className="section1-main">
                 {/*头像*/}
-                <img src={organizer} alt=""/>
+                <img src={user.portrait} alt=""/>
                 {/*名字*/}
                 <div className="main-name">{user.name}</div>
                 {/*学校*/}
@@ -80,7 +86,7 @@ class Organizer1 extends Component{
                     {data}
                     <div className="section1-side">
                         <div className="side1">
-                            <Link to="/set/index"><span>发布赛事入口</span></Link>
+                            <Link to="/set/index"><span>发布赛事</span></Link>
                         </div>
                         <div className="side2"><span>上传</span></div>
                     </div>
@@ -89,8 +95,9 @@ class Organizer1 extends Component{
                 {data2}
             </div>
         )
-     }
-    handleUp(){
+     };
+
+     handleUp(){
         if(this.state.up1 === true){
             this.setState(
                 {
@@ -102,6 +109,7 @@ class Organizer1 extends Component{
             return 0
         }
     }
+
     handleDown(){
         if(this.state.down1 === true){
             this.setState(

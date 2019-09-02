@@ -29,6 +29,8 @@ export const UserModel={
     number:"number",
     // 登录名
     address:"address",
+    //
+    portrait:"portrait"
 };
 
 export const CompetitionModel={

@@ -3,7 +3,7 @@ import './index.css'
 import Input1 from "../../input/input1";
 import Input2 from "../../input/input2";
 import {Link, withRouter} from "react-router-dom";
-import api from "../../../config/url";
+import api, {instance} from "../../../config/url";
 import {connect} from "react-redux";
 import ReduxMap from "../../../utils/ReduxMap";
 import UserApi from "../../../config/userApi";
@@ -25,24 +25,31 @@ class Loging extends Component{
 
     }
 
+    goHome=()=>{
+        this.props.history.push("/test")
+    };
+    forward=()=>{
+        this.props.history.push("/home/index")
+    };
+
     submit=(url,user)=>{
+        this.props.history.push("/home/index");
+        console.log(instance);
         UserApi.login(url,user)
             .then(res=>{
                 console.log(res);
                 if (res.data.code==="200"){
                     // 存储token到localStorage
                     localStorage.setItem("token",res.data.data);
+                    console.log(localStorage.getItem("token"));
                     // 跳转到主页
-                    withRouter(
-                        ({history})=>{
-                            history.push("/home/index")
-                        }
-                    )
+                    // this.props.history.push("/register/index");
                 }else{
                     // 登录失败提示信息
                     this.props.setMsg("登录失败");
                 }
             })
+
     };
 
     render(){
@@ -75,7 +82,7 @@ class Loging extends Component{
                         </div>
                     </div>
                     {/*<div className="right-footer"><button onClick={submitU(status ?api.user.loginByCode:api.user.loginByPassword)*/}
-                    <div className="right-footer"><button onClick={()=>this.submit(url,user)}>登录</button></div>
+                    <div className="right-footer"><button onClick={this.forward}>登录</button></div>
                 </div>
             </div>
         )
@@ -107,4 +114,5 @@ class Loging extends Component{
     }
 }
 
-export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsU)(Loging);
+const loging = connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsU)(Loging);
+export default withRouter(loging);

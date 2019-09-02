@@ -43,8 +43,8 @@ class App extends Component{
                     <Route path="/center/personage/you/index" component={Personage2}/>
                     <Route path="/center/organizer/me/index" component={Organizer1}/>
                     <Route path="/center/organizer/you/index" component={Organizer2}/>
-                    <Route path="/area/index" component={Area}/>
-                    <Route path="/test" component={DEV}/>
+                    <Route path="/area" component={Area}/>
+                    <Route path="/test" render={DEV}/>
                 <Footer/>
             </div>
         )

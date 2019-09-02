@@ -8,9 +8,6 @@ import wikiApi from "../config/wikiApi";
 
 // 赛事详情
 class Area extends Component{
-
-
-
     constructor(props){
         super(props);
         this.state = {
@@ -32,12 +29,12 @@ class Area extends Component{
     };
 
     // 获取数据
-    getInfo=()=>{
-        console.log("id"+this.state.id);
-        CompetitionApi.getCompetitionInfo(this.state.id)
+    getInfo=(competitionId)=>{
+        let {setC}=this.props;
+        CompetitionApi.getCompetitionInfo(competitionId)
             .then(res=>{
                 console.log(res.data);
-                this.setState({competition:res.data.data});
+                setC(res.data.data);
             })
     };
 
@@ -45,8 +42,9 @@ class Area extends Component{
     componentDidMount() {
         console.log(this.props);
         console.log(this.props.location);
-        console.log(window.location.state)
-        // this.getInfo();
+        console.log(window.location.state);
+        let id = this.props.location.state;
+        this.getInfo(id);
     }
 
     handleAttention(){

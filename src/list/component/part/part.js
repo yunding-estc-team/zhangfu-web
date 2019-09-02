@@ -3,43 +3,56 @@ import Apply from '../apply/apply'
 import img from '../../../images/1.png'
 import './part.css'
  import {Link} from "react-router-dom";
+ import ReduxMap from "../../../utils/ReduxMap";
+ import {connect} from "react-redux";
+ import CompetitionApi from "../../../config/competitionApi";
 
 
  // 具体赛事
 class Part extends Component{
+
+
+
+
     render(){
-        let contestList = [
-            {
-                "theme":"2019年云顶暑期实践培训",
-                "sing":"2019年7月1日-2019年9月7日",
-                "review":"2019年7月1日-2019年9月7日",
-                "type":"团队赛",
-                "subject":"计算机/算法"
-            },
-            {
-                "theme":"2019年云顶暑期实践培训",
-                "sing":"2019年7月1日-2019年9月7日",
-                "review":"2019年7月1日-2019年9月7日",
-                "type":"团队赛",
-                "subject":"计算机/算法"
-            }
-        ];
-        let data = contestList.map(contest =>
-            <div>
+        // let contestList = [
+        //     {
+        //         "theme":"2019年云顶暑期实践培训",
+        //         "sing":"2019年7月1日-2019年9月7日",
+        //         "review":"2019年7月1日-2019年9月7日",
+        //         "type":"团队赛",
+        //         "subject":"计算机/算法"
+        //     },
+        //     {
+        //         "theme":"2019年云顶暑期实践培训",
+        //         "sing":"2019年7月1日-2019年9月7日",
+        //         "review":"2019年7月1日-2019年9月7日",
+        //         "type":"团队赛",
+        //         "subject":"计算机/算法"
+        //     }
+        // ];
+
+        let {competitionList}=this.props;
+
+        let data = competitionList.map(contest =>
+            <Link to={{
+                pathname:"/area",
+                state:contest.competitionId
+            }}>
                 <div className="part">
                     {/*赛事海报*/}
-                    <Link to="/area/index"><img src={img} alt=""/></Link>
+                    <Link to="/area/index"><img src={contest.cover} alt=""/></Link>
                     <div className="introduce">
                         {/*赛事名称*/}
-                        <Link to="/area/index"><p className="theme">{contest.theme}</p></Link>
-                        <p> <span className="iconfont">&#xe716;</span>报名时间 ：{contest.sing}</p>
+                        <Link to="/area/index"><p className="theme">{contest.name}</p></Link>
+                        <p> <span className="iconfont">&#xe716;</span>报名时间 ：{contest.createAt}</p>
                         <p> <span className="iconfont">&#xe716;</span>评审时间 ：{contest.review}</p>
-                        <p> <span className="iconfont">&#xe669;</span>{contest.type}</p>
-                        <p> <span className="iconfont">&#xe685;</span>{contest.subject}</p>
+                        <p> <span className="iconfont">&#xe669;</span>{contest.isIndividual==="0"?"团队赛":"个人赛"}</p>
+                        <p> <span className="iconfont">&#xe685;</span>{contest.type}</p>
                     </div>
-                    <Apply/>
+                    <Apply joinLink={contest.joinLink}/>
                 </div>
-            </div>
+            </Link>
         );
         return(
             <div>
@@ -49,4 +62,4 @@ class Part extends Component{
      }
 }
 
-export default Part
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsC)(Part)

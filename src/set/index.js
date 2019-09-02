@@ -77,7 +77,6 @@ class Set extends Component{
     };
 
 
-    // todo 103,105行的id有作用吗
     render(){
         // 获取赛事类型
         let {msg,saveC,setC}=this.props;
@@ -105,11 +104,11 @@ class Set extends Component{
                     </div>
                     <div className="set-part">
                         <div className="set-title">竞赛名称</div>
-                        <input type="text" placeholder="赛事名称" theme={this.state.theme} id="theme" onChange={saveC}/>
+                        <input type="text" placeholder="赛事名称" id={CompetitionModel.name} onChange={saveC}/>
                     </div>
                     <div className="set-part">
                         <div className="set-title">主办单位</div>
-                        <div><input type="text" placeholder="主办方名称" name={this.state.name} id="name" onChange={saveC}/></div>
+                        <div><input type="text" placeholder="主办方名称"  id="host" onChange={saveC}/></div>
                     </div>
                     <div className="set-part">
                         <div className="set-title">赛事类型</div>
@@ -121,9 +120,9 @@ class Set extends Component{
                     <div className="set-part">
                         <div className="set-title">报名时间</div>
                         <div className="set-line">
-                            <div><input type="text" placeholder="开始时间" start1={this.state.state1} id="state1" onChange={this.inputChange}/></div>
+                            <div><input type="text" placeholder="开始时间" start1={this.state.state1} id="" onChange={this.inputChange}/></div>
                             <div className="part-solid"/>
-                            <div><input type="text" placeholder="结束时间" over1={this.state.over1} id="over1" onChange={this.inputChange}/></div>
+                            <div><input type="text" placeholder="结束时间" over1={this.state.over1} id="" onChange={this.inputChange}/></div>
                         </div>
                     </div>
                     <div className="set-part">

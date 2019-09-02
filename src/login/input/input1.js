@@ -15,7 +15,7 @@ class Input1 extends Component{
 
     send=()=>{
         userApi.sendCode(this.props.user.name)
-    }
+    };
     render(){
         let {saveU,user}=this.props;
         return(

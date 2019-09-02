@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css'
-import img4 from '../images/1.png'
+// import img4 from '../images/1.png'
 import {Link} from "react-router-dom";
 import CompetitionApi from "../config/competitionApi";
 import {connect} from "react-redux";
@@ -22,17 +22,19 @@ class Home extends Component{
         .then(res=>{
             this.setState({gameList:res.data.data});
         });
-
     };
 
     // 加载时获取数据
     componentDidMount() {
+        console.log("did");
         let {setCL}=this.props;
         CompetitionApi.home("new",1,6)
             .then(res=>{
+                console.log(res.data.data);
                 setCL(res.data.data);
             })
     };
+
 
     handleNew(){
         this.getRank("new");
@@ -49,6 +51,7 @@ class Home extends Component{
             )
         }
     }
+
     handleHost(){
         this.getRank("hot");
         if(this.state.host === true){

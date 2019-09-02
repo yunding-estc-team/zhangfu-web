@@ -29,6 +29,8 @@ export const Extra={
     MsgFailure:"E_M_FAILURE",
     // 发送验证码
     SendCode:"E_SEND_CODE",
+    // 设置页码
+    CurrentPage:"E_CURRENT_PAGE",
 };
 
 export const UserCompetition={
@@ -40,5 +42,5 @@ export const Search={
     SAVE:"S_SAVE",
     UPDATE:"S_UPDATE",
 
-}
+};
 

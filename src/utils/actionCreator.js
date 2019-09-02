@@ -131,6 +131,16 @@ export default class ActionCreator{
             type:Search.UPDATE,
             payload:s
         }
+    };
+
+    /**
+     *  分页
+     */
+    static updateCurrentPage=(current)=>{
+        return{
+            type:Extra.CurrentPage,
+            payload:current,
+        }
     }
 
 }

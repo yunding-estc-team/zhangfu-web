@@ -351,7 +351,7 @@ export default class UserApi{
     /**
      * 搜索（下拉框推荐与输入内容相关的结果）
      */
-    search(name){
+    static search(name){
             //搜索内容 name
         return instance.post(api.user.searchName,{name:name})
     }

@@ -5,24 +5,44 @@ export default class ReduxMap {
     // 常用映射方法
     static mapStateToProps=(state)=>{
         return{
+
             // user
             user:state.user,
+
             // competition
             competition:state.competition,
+
             // 赛事列表
             competitionList:state.competitionList,
+
+            // 当前页数
+            current:state.currentPage,
+
             // wiki
             wiki:state.wiki,
+
             // 状态值
             status:state.status,
+
             // 后台返回的信息
             msg:state.msg,
+
             // 创办赛事时的赛事类型列表
             typeList:state.typeList,
+
+            // 消息
+            message:state.message,
+
+            // 查询内容
+            search:state.search,
+
         }
     };
 
-    // 用户常用的dispatch
+    /**
+     * 用户常用的dispatch
+     *
+     * */
     static mapDispatchToPropsU=(dispatch,ownProps)=> {
         return {
             // 保存用户（非覆盖性）
@@ -71,7 +91,9 @@ export default class ReduxMap {
         };
     };
 
-    // 用户参赛常用的dispatch
+    /**
+     * 用户参赛常用的dispatch
+     */
     static mapDispatchToPropsUC=(dispatch,ownProps)=>{
         return{
             // 不覆盖保存
@@ -93,9 +115,7 @@ export default class ReduxMap {
 
     /**
      * 赛事用的dispatch
-     * @param dispatch
-     * @param ownProps
-     * @returns {{saveC: saveC, setC: setC}}
+     *
      */
     static mapDispatchToPropsC=(dispatch,ownProps)=>{
         return {
@@ -111,11 +131,17 @@ export default class ReduxMap {
             },
 
             // 非覆盖更新
-            setCL:(event)=>{
-                dispatch(ActionCreator.updateCompetitionList())
+            setCL:(cl)=>{
+                console.log(cl);
+                dispatch(ActionCreator.updateCompetitionList(cl))
+            },
+
+            // 设置当前页
+            setCurrent:(current)=>{
+                dispatch(ActionCreator.updateCurrentPage(current));
             }
         }
-    }
+    };
 
     // 问答常用的dispatch
     static mapDispatchTOPropsW=(dispatch,ownProps)=>{
@@ -124,7 +150,7 @@ export default class ReduxMap {
             return dispatch(ActionCreator.updateWiki(w))
             },
         }
-    }
+    };
 
     /**
      * 搜索功能dispatch
