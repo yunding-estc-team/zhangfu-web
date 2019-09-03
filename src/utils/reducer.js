@@ -15,11 +15,14 @@ const initState = {
 
     // 比赛
     competition:{
-
+        hot:"",
     },
 
     // 搜索值
     search:"",
+
+    // 问答列表
+    wikiList:[],
 
 };
 

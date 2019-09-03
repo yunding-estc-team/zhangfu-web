@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 import api, {instance} from "../config/url";
 import CompetitionApi from "../config/competitionApi";
 import wikiApi from "../config/wikiApi";
+import ReduxMap from "../utils/ReduxMap";
+import {connect} from "react-redux";
 
 // 赛事详情
 class Area extends Component{
@@ -44,7 +46,11 @@ class Area extends Component{
         console.log(this.props.location);
         console.log(window.location.state);
         let id = this.props.location.state;
+        // 获取赛事信息
         this.getInfo(id);
+
+        // 获取问答信息
+
     }
 
     handleAttention(){
@@ -293,4 +299,4 @@ class Area extends Component{
     }
 }
 
-export default Area
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsC)(Area)

@@ -106,7 +106,7 @@ class Home extends Component{
 
         return(
             <div className="home">
-                <div className="slideshow"/>
+                <img src={"https://z1.muscache.cn/pictures/hongbao/marquee/original/c1052094-1b00-4e36-8f2c-a9195f905627.jpg"}/>
                 <div className="home-game">
                     <div className="game-header">赛事</div>
                     <div className="game-classify">
