@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './index.css';
 import axios from 'axios';
 import api ,{instance}from "../../../../config/url";
+import ReduxMap from "../../../../store/ReduxMap";
+import {connect} from "react-redux";
 
 
 
@@ -19,10 +21,11 @@ class Box extends Component{
 
 
     render(){
+        let {saveW}=this.props;
         return(
             <div className="box">
                 <div className="box-circle"><span>答</span></div>
-                <div className="box-answer"><input type="text" placeholder="我要认真回答问题了"  onChange={this.inputChange.bind(this)}/></div>
+                <div className="box-answer"><input type="text" placeholder="我要认真回答问题了"  onChange={saveW}/></div>
                 <div className="box-button"><button onClick={this.handleClick.bind(this)}>确认</button></div>
                 <span className="mag">{this.state.msg}</span>
             </div>
@@ -57,4 +60,4 @@ class Box extends Component{
 
 }
 
-export default Box
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchTOPropsW)(Box)

@@ -22,7 +22,7 @@ const initState = {
     search:"",
 
     // 问答列表
-    wikiList:[],
+    wikiList:[{}],
 
 };
 
@@ -60,6 +60,10 @@ export default function reducer(state=initState,action) {
         // 存储搜索值
         case "S_UPDATE":{
             return {...state,search:action.payload}
+        }
+        // 存储问答列表
+        case "W_SET_L":{
+            return {...state,wikiList:action.payload}
         }
         default:
             console.log("default");

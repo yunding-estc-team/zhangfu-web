@@ -21,6 +21,9 @@ export default class ReduxMap {
             // wiki
             wiki:state.wiki,
 
+            // wikiList
+            wikiList:state.wikiList,
+
             // 状态值
             status:state.status,
 
@@ -143,12 +146,32 @@ export default class ReduxMap {
         }
     };
 
-    // 问答常用的dispatch
+
+    /**
+     * 问答常用的dispatch
+     */
     static mapDispatchTOPropsW=(dispatch,ownProps)=>{
         return{
+            // 存储消息内容
             saveW:(w)=>{
             return dispatch(ActionCreator.updateWiki(w))
             },
+
+            // 设置消息
+            setMsg:(msg)=>{
+                dispatch(ActionCreator.setMsg(msg));
+            },
+
+            // 存储wikiList
+            setWikiList:(wl)=>{
+                dispatch(ActionCreator.updateWikiList(wl));
+            },
+
+            // 设置特定值
+            setC:(c)=>{
+                dispatch(ActionCreator.updateCompetition(c));
+            },
+
         }
     };
 

@@ -5,7 +5,7 @@ import {Link, Route} from "react-router-dom";
 import Right1 from "./component/right1";
 import Right2 from "./component/right2";
 import UserApi from "../../config/userApi";
-import ReduxMap from "../../utils/ReduxMap";
+import ReduxMap from "../../store/ReduxMap";
 import {connect} from "react-redux";
 
 

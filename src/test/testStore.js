@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from "react-redux/es/alternate-renderers";
 import DEV from "./component/DEV";
-import ActionCreator from "../utils/actionCreator";
-import ReduxMap from "../utils/ReduxMap";
+import ActionCreator from "../store/actionCreator";
+import ReduxMap from "../store/ReduxMap";
 import {instance,api }from '../config/url'
     function Test({user,onClick,onChange,getU,sendCode}){
         // console.log(user);

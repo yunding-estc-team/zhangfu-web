@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import api, {instance} from "../config/url";
 import CompetitionApi from "../config/competitionApi";
 import wikiApi from "../config/wikiApi";
-import ReduxMap from "../utils/ReduxMap";
+import ReduxMap from "../store/ReduxMap";
 import {connect} from "react-redux";
 
 // 赛事详情
@@ -24,9 +24,8 @@ class Area extends Component{
             // 问答时的提示信息
             mag:"",
             // 赛事id
-            id:this.props.id,
-            // 获取的赛事对象
-            competition:{},
+            id:this.props.location.state,
+
         }
     };
 
@@ -41,20 +40,25 @@ class Area extends Component{
     };
 
     // 加载组件时
-    componentDidMount() {
-        console.log(this.props);
-        console.log(this.props.location);
-        console.log(window.location.state);
-        let id = this.props.location.state;
+    componentDidMount=()=> {
+        let {setWikiList} = this.props;
+        let id = this.props.location.state.id;
         // 获取赛事信息
         this.getInfo(id);
 
         // 获取问答信息
+        wikiApi.getAllWiki(id,1,10)
+            .then(res=>setWikiList(res.data.data))
+    };
 
-    }
-
+    // 点击关注
     handleAttention(){
         if (this.state.attention === true){
+
+            // 关注赛事
+            CompetitionApi.attention(this.state.id);
+
+            // 改变受控组件状态
             this.setState(
                 {
                     attention:!this.state.attention,
@@ -65,6 +69,7 @@ class Area extends Component{
             return 0
         }
     }
+
 
     handleMessage(){
         if(this.state.message === true){
@@ -148,7 +153,7 @@ class Area extends Component{
                 <span><span className="iconfont">&#xe694;</span><span>{competition.clickCount}</span></span>
             </div>
         ;
-
+        console.log(wikiList);
         let data4 = wikiList.map(question =>
             <div className="catechism-main">
                 <div className="main-question">
@@ -299,4 +304,4 @@ class Area extends Component{
     }
 }
 
-export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsC)(Area)
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchTOPropsW)(Area);

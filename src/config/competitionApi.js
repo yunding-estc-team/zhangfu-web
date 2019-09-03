@@ -12,34 +12,23 @@ export default class CompetitionApi {
     };
 
     // 关注赛事
-    attention=()=>{
-        let data={};
-        instance.put(api.competition.attention,data)
-            .then(res=>{
-                if (res.data.code === "200") {
-                    console.log(res.data);
-                    console.log("success");
-                }
-            })
-    };
+    static attention=(competitionId)=>
+
+        instance.put(api.competition.attention,{competitionId:competitionId})
+
+
 
     // 获取报名链接
-    link=()=>{
-        instance.get(api.competition.joinLink,{
+    static link=()=>{
+        return instance.get(api.competition.joinLink,{
             params:{
                 id:""
             },
         })
-            .then(res=>{
-                if (res.data.code === "200") {
-                    console.log("success");
-                    console.log(res.data.data);
-                }
-            })
     };
 
     // 认领赛事
-    claim=()=>{
+    static claim=()=>{
         let data  = {
             // 赛事id
             id:"",
@@ -48,13 +37,7 @@ export default class CompetitionApi {
             // 文件hash
             hash:"",
         };
-        instance.post(api.competition.claim,data)
-            .then(res=>{
-                if (res.data.code === "200") {
-                    console.log("success");
-                    console.log(res.data.data);
-                }
-            })
+        return instance.post(api.competition.claim,data)
     };
 
     // 首页赛事信息获取
@@ -72,47 +55,29 @@ export default class CompetitionApi {
     };
 
     // 获取rgr
-    rgr=()=>{
-        instance.get(api.competition.rgr,{
+    static rgr=()=>{
+        return instance.get(api.competition.rgr,{
             params:{
                 id:"",
             }
         })
-            .then(res=>{
-                if (res.data.code === "200") {
-                    console.log("success");
-                    console.log(res.data.data);
-                }
-            })
     };
 
     // 获取点击量
-    getClick=()=>{
-        instance.get(api.competition.click,{
+    static getClick=()=>{
+        return instance.get(api.competition.click,{
             params:{
                 id:"",
             }
         })
-            .then(res=>{
-                if (res.data.code === "200") {
-                    console.log("success");
-                    console.log(res.data.data);
-                }
-            })
     };
 
     // 获取热度
-    getHot=()=>{
-        instance.get(api.competition.hot,{
+    static getHot=()=>{
+        return instance.get(api.competition.hot,{
             params:{
                 id:"",
             }
         })
-            .then(res=>{
-                if (res.data.code === "200") {
-                    console.log("success");
-                    console.log(res.data.data);
-                }
-            })
     };
 }

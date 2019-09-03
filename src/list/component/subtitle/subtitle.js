@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './subtitle.css'
 import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
-import ReduxMap from "../../../utils/ReduxMap";
+import ReduxMap from "../../../store/ReduxMap";
 import {connect} from "react-redux";
 import CompetitionApi from "../../../config/competitionApi";
 

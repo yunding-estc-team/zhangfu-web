@@ -1,6 +1,6 @@
 import {AxiosInstance as axios} from "axios";
 import api, {instance} from "../config/url";
-import ActionCreator from "./actionCreator";
+import ActionCreator from "../store/actionCreator";
 import userApi from "../config/userApi";
 
 export default class Tools{

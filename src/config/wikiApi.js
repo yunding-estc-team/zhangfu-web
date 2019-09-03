@@ -14,68 +14,38 @@ export default class {
     }
 
     // 组织用户获取提问
-    getQuestions() {
+    static getQuestions(c,p) {
         let data ={
             // 当前页数
-            pageCurrent:"1",
+            pageCurrent:c,
             // 每页展示条数
-            pageSize:"3"
+            pageSize:p
         };
-        instance.post(api.competitionWiki.getUserAsk,data)
-            .then(res => {
-                // 展示后台传输的数据
-                console.log(res.data.data);
-                // 显示状态码
-                console.log(res.data.code);
-                // 针对状态码进行提示信息
-                if(res.data.code===200){
-                    this.setState({msg:"执行成功！"});
-                    console.log(res.data.msg);
-                } else {
-                    this.setState({msg: "失败！"});
-                    console.log(res.data.msg);
-                }
-            });
+        return instance.post(api.competitionWiki.getUserAsk,data)
     }
 
     // 组织用户进行回答
-    answerQuestions(){
+    static answerQuestions(wikiId,content){
         let data = {
             // 问题id
-            competitionWikiId: "",
+            competitionWikiId: wikiId,
             // 答案的内容
-            content: ""
+            content: content
         };
-        instance.post(api.competitionWiki.userAnswer, data)
-            .then(res => {
-                // 输出传输内容
-                console.log(res.data.data);
-                // 显示状态码
-                console.log(res.data.code);
-                // 显示提示信息
-                console.log(res.data.msg);
-            });
+        return instance.post(api.competitionWiki.userAnswer, data)
     }
 
     // 赛事详情页面获取全部问答信息
-    getAllWiki() {
+    static getAllWiki(id,c,p) {
         let data = {
             // 赛事id
-            competitionId: "",
+            competitionId: id,
             // 页码
-            pageCurrent: "",
+            pageCurrent: c,
             // 每页显示条数
-            pageSize: ""
+            pageSize: p,
         };
-        instance.post(api.competitionWiki.getAllWiki, data)
-            .then(res => {
-                // 输出传输内容
-                console.log(res.data.data);
-                // 显示状态码
-                console.log(res.data.code);
-                // 显示提示信息
-                console.log(res.data.msg);
-            });
+        return instance.post(api.competitionWiki.getAllWiki,data)
     }
 
 }

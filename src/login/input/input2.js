@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './input2.css'
-import ReduxMap from "../../utils/ReduxMap";
+import ReduxMap from "../../store/ReduxMap";
 import {connect} from "react-redux";
 
 class Input2 extends Component{

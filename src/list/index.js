@@ -3,7 +3,7 @@ import Classify from "./component/Classify/Classify";
 import Main from "./component/main/main";
 import './index.css'
 import CompetitionApi from "../config/competitionApi";
-import ReduxMap from "../utils/ReduxMap";
+import ReduxMap from "../store/ReduxMap";
 import {connect} from "react-redux";
 
 // 排行榜页面

@@ -1,4 +1,4 @@
-import ReduxMap from "../utils/ReduxMap";
+import ReduxMap from "../store/ReduxMap";
 import Loging from "../login/component/login";
 import Input1 from "../login/input/input1";
 import Input2 from "../login/input/input2";

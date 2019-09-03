@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 import api from "../../../../config/url";
-import Tools from "../../../../utils/Tools";
+import Tools from "../../../../util/Tools";
 
 /**
  * @Data 2019年8月28日04点27分

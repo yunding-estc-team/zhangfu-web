@@ -3,7 +3,7 @@ import Apply from '../apply/apply'
 import img from '../../../images/1.png'
 import './part.css'
  import {Link} from "react-router-dom";
- import ReduxMap from "../../../utils/ReduxMap";
+ import ReduxMap from "../../../store/ReduxMap";
  import {connect} from "react-redux";
  import CompetitionApi from "../../../config/competitionApi";
 
@@ -35,13 +35,9 @@ class Part extends Component{
         let {competitionList}=this.props;
 
         let data = competitionList.map(contest =>
-            <Link to={{
-                pathname:"/area",
-                state:contest.competitionId
-            }}>
                 <div className="part">
                     {/*赛事海报*/}
-                    <Link to="/area/index"><img src={contest.cover} alt=""/></Link>
+                    <img src={contest.cover} alt=""/>
                     <div className="introduce">
                         {/*赛事名称*/}
                         <Link to="/area/index"><p className="theme">{contest.name}</p></Link>
@@ -52,7 +48,6 @@ class Part extends Component{
                     </div>
                     <Apply joinLink={contest.joinLink}/>
                 </div>
-            </Link>
         );
         return(
             <div>

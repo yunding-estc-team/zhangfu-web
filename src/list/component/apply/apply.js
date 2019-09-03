@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './apply.css'
-import ReduxMap from "../../../utils/ReduxMap";
+import ReduxMap from "../../../store/ReduxMap";
 import {connect} from "react-redux";
 
 // 报名

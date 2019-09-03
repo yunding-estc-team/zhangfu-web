@@ -6,8 +6,8 @@ import UserApi from "../../../config/userApi";
 import api from "../../../config/url";
 import {AxiosInstance as instance} from "axios";
 import {UserModel} from "../../../config/model";
-import Tools from "../../../utils/Tools";
-import ReduxMap from "../../../utils/ReduxMap";
+import Tools from "../../../util/Tools";
+import ReduxMap from "../../../store/ReduxMap";
 import {connect} from "react-redux";
 
 /**

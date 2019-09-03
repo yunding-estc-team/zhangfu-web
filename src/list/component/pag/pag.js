@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './pag.css'
 import {connect} from "react-redux";
-import ReduxMap from "../../../utils/ReduxMap";
+import ReduxMap from "../../../store/ReduxMap";
 import CompetitionApi from "../../../config/competitionApi";
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './input1.css'
 import {connect} from "react-redux";
-import ReduxMap from "../../utils/ReduxMap";
+import ReduxMap from "../../store/ReduxMap";
 import Input2 from "./input2";
 import userApi from "../../config/userApi";
 

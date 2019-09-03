@@ -121,6 +121,14 @@ export default class ActionCreator{
             type:Wiki.UPDATE,
             payload:w,
         }
+    };
+
+    // 问答列表(保存数据,覆盖)
+    static updateWikiList=(wl)=>{
+        return{
+            type:Wiki.SET_L,
+            payload:wl,
+        }
     }
 
     /**

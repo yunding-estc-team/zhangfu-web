@@ -16,6 +16,7 @@ export const Competition={
 export const Wiki={
     UPDATE:"W_UPDATE",
     SET:"W_SET",
+    SET_L:"W_SET_L"
 }
 
 export const Extra={
