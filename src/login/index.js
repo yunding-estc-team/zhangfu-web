@@ -21,7 +21,7 @@ class Login extends Component {
                     {/*<div>*/}
                         <Route exact path="/login/index" component={Loging} />
                         <Route path="/find/index" component={Find} />
-                        {/*<Route path="/home/index" component={Home}/>*/}
+                        {/*<Route path="/home/index" render={Home}/>*/}
                         {/*<Route path={"register"} component={Register}/>*/}
                     {/*</div>*/}
                 </Router>

@@ -7,7 +7,9 @@ const initState = {
 
     // 用户
     user:{
-
+        realname:"",
+        userName:"",
+        portrait:"",
     },
 
     // 当前页数
@@ -23,6 +25,7 @@ const initState = {
 
     // 问答列表
     wikiList:[{}],
+
 
 };
 
@@ -51,6 +54,7 @@ export default function reducer(state=initState,action) {
         }
         // 设置赛事列表
         case "C_UPDATE_L":{
+            console.log("in");
             return {...state,competitionList: action.payload}
         }
         // 设置当前页数

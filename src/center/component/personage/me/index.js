@@ -6,6 +6,9 @@ import img from "../../../../images/1.png";
 import img0 from "../../../../images/853f400ac858c0f3749601f50a83da0ebdbeede135caf-yYVAGU_fw658.png";
 import {Link} from "react-router-dom";
 import UserApi from "../../../../config/userApi";
+import {connect} from "react-redux";
+import ReduxMap from "../../../../store/ReduxMap";
+import competitionApi from "../../../../config/competitionApi";
 
 // 用户个人中心（自己看）
 class Personage1 extends Component{
@@ -24,13 +27,32 @@ class Personage1 extends Component{
     }
 
     componentDidMount=()=>{
-        let {setCL}=this.props;
+        let {setCL,setU,competitonList}=this.props;
         // 获取得奖赛事信息
         UserApi.findHistoryPrize({c:1,p:3})
             .then(res=>{
+
+                console.log("++++++++++");
+                console.log(res.data.data);
+                console.log(res.data.data==null);
+                // if(res.data.data==null) {
+                //     console.log(competitonList);
+                //     setCL([]);
+                // }else {
+                //     setCL(res.data.data);
+                //     console.log(competitonList);
+                // }
                 setCL(res.data.data);
-            })
+            });
+
+        // 获取个人信息
+        UserApi.getInfo()
+            .then(res=>{
+                console.log(res.data.data);
+                setU(res.data.data)
+            });
     };
+
     render(){
         /**
             {
@@ -40,15 +62,23 @@ class Personage1 extends Component{
                 "school":"太原理工大学"
             }
          */
+        let {user,setCL,setU}=this.props;
 
-        let {user,competitionList}=this.props;
+
+
+
+
+
+        console.log(this.props);
+        console.log(user);
+
         let data =
             <div className="background">
                 {/*背景*/}
                 <img className="pag" src={png} alt=""/>
                 <div className="inside">
                     {/*头像*/}
-                    <img src={png1} alt=""/>
+                    <img src={user.portrait} alt=""/>
                     {/*姓名*/}
                     <div className="name">{user.userName}</div>
                     {/*大学*/}
@@ -59,7 +89,8 @@ class Personage1 extends Component{
                 </div>
             </div>
         ;
-        // let partList = [
+
+        // let competitionList = [
         //     {
         //         "img":"img",
         //         "theme":"2019年云顶暑期实践培训",
@@ -70,6 +101,7 @@ class Personage1 extends Component{
         //         "state":"已完成",
         //     }
         // ];
+        let competitionList=[];
         let data1 = competitionList.map(part =>
             <div className="parts">
                 {/*赛事海报*/}
@@ -118,7 +150,7 @@ class Personage1 extends Component{
                 {data}
                 <div className="center-main">
                     <div className="main-left">
-                        <div className="raced">我参见的赛事</div>
+                        <div className="raced">我参加的赛事</div>
                         {data1}
                         <div className={this.state.down1=== true ? '' : 'down1' }>
                             <div className="down" onClick={this.handleDown}>
@@ -149,6 +181,7 @@ class Personage1 extends Component{
             </div>
         )
      }
+
     handleUp(){
         if(this.state.up1 === true){
             this.setState(
@@ -161,6 +194,7 @@ class Personage1 extends Component{
             return 0
         }
      }
+
     handleDown(){
         if(this.state.down1 === true){
             this.setState(
@@ -173,6 +207,7 @@ class Personage1 extends Component{
             return 0
         }
      }
+
     handleUp2(){
         if(this.state.up2 === true){
             this.setState(
@@ -185,6 +220,7 @@ class Personage1 extends Component{
             return 0
         }
     }
+
     handleDown2(){
         if(this.state.down2 === true){
             this.setState(
@@ -199,4 +235,4 @@ class Personage1 extends Component{
     }
 }
 
-export default Personage1
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsU)(Personage1)

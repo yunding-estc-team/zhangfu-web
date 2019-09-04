@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import './personal.css'
 import {UserModel} from "../../../config/model";
-import api from "../../../config/url";
-// 修改个人资料
+import {connect} from "react-redux";
+import ReduxMap from "../../../store/ReduxMap";
+import UserApi from "../../../config/userApi";
+import "../../../common/Extra/msg.css"
+import { Select } from 'antd';
+
 /**
+ * 修改个人资料
  * @Data 2019年8月28日05点09分
+ * @Data 2019年09月03日15:58:25
  */
 class Personal extends Component{
     constructor(props){
@@ -15,40 +21,39 @@ class Personal extends Component{
         };
 
     }
-    handleOrganization(){
-       // todo 设置性别
-        if(this.state.circle1===true){
-            return 0
-        }
-        else{
-            this.setState(
-                {
-                    circle1:!this.state.circle1,
-                    circle2:!this.state.circle2,
-                }
-            )
-        }
-    }
-    handleParticipant(){
-        // todo 设置性别
-        if(this.state.circle2===true){
-            return 0
-        }
-        else{
-            this.setState(
-                {
-                    circle1:!this.state.circle1,
-                    circle2:!this.state.circle2,
-                }
-            )
-        }
-    }
+
+
+    componentDidMount=()=>{
+        let {setU}=this.props;
+        console.log("did")
+        // 获取用户信息
+        UserApi.getInfo()
+            .then(res=>{
+                console.log(res.data);
+                setU(res.data.data);
+            })
+    };
+
+
+
+
+    // 选择学历
+    changeLevel=(e)=>{
+        let {setU}=this.props;
+        setU({level:e.nativeEvent.target.value})
+    };
+
+    // 提交修改信息
+    submit=(user)=>{
+        let {setMsg}=this.props;
+        UserApi.updateInfo(user)
+            .then(res=>res.data.code==="200"?setMsg(""):setMsg("修改失败"))
+    };
 
     render(){
-        let {saveU,user,setU,submitU}=this.props;
+        let {saveU,user,setU,msg}=this.props;
         return(
             <div className="personal">
-                <form action="">
                     <div className="list">
                         <li className="line">
                             <span className="name">昵称：</span>
@@ -60,83 +65,91 @@ class Personal extends Component{
                         <li className="line">
                             <span className="name">姓名：</span>
                             {/*真实姓名*/}
-                            // todo 这里css改动
-                            <input className="detailed" id={UserModel.realName} onChange={saveU}/>
+                            <span className="detailed">
+                                <input type="text" placeholder="2~8个汉字/4~16个字符" id={UserModel.realName} onChange={saveU}/>
+                            </span>
                         </li>
                         <li className="line">
                             <span className="name">性别:</span>
                             <span className="detailed">
                                 <span>
-                                   <div className={this.state.circle1 === true ? 'circle1A' : 'circle1B'} onClick={this.handleOrganization.bind(this)}/>
+                                   <div className={user.sex === 1 ? 'circle1A' : 'circle1B'} onClick={()=>{setU({sex:1})}}/>
                                    <span className="sex">男</span>
                                 </span>
                                 <span>
-                                    <div className={this.state.circle2 === true ? 'circle2A' : 'circle2B'} onClick={this.handleParticipant.bind(this)}/>
+                                    <div className={user.sex === 0  ? 'circle2A' : 'circle2B'} onClick={()=>setU({sex:0})}/>
                                     <span className="sex">女</span>
                                 </span>
                             </span>
                         </li>
 
-                        // todo 看不懂
-                        <li className="line">
-                            <span className="name">年龄: </span>
-                            <span className="detailed">
-                                <div className="choice">
-                                    <li className="first">21岁 <span className="iconfont">&#xe6a2;</span></li>
-                                    <div className="second">
-                                        <li>22岁</li>
-                                        <li>24岁</li>
-                                    </div>
-                                </div>
-                            </span>
-                        </li>
+                        {/*<li className="line">*/}
+                        {/*    <span className="name">年龄: </span>*/}
+                        {/*    <span className="detailed">*/}
+                        {/*        <div className="choice">*/}
+                        {/*            <li className="first">{user.age}<span className="iconfont">&#xe6a2;</span></li>*/}
+                        {/*            <div className="second">*/}
+                        {/*                <li>22岁</li>*/}
+                        {/*                <li>24岁</li>*/}
+                        {/*            </div>*/}
+                        {/*        </div>*/}
+                        {/*    </span>*/}
+                        {/*</li>*/}
 
-                        // todo 看不懂，一下信息是否需要更改
+
                         <li className="line">
                             <span className="name">学号: </span>
                             {/*学号*/}
-                            <span className="detailed">2017007878</span>
+                            <span className="detailed">{user.number}</span>
                         </li>
                         <li className="line">
                             <span className="name">学校: </span>
-                            <span className="detailed">太原理工大学</span>
+                            <span className="detailed">{user.school}</span>
                         </li>
                         <li className="line">
                             <span className="name">专业: </span>
-                            <span className="detailed">软件工程</span>
+                            <span className="detailed">{user.major}</span>
                         </li>
                         <li className="line">
                             <span className="name">学历: </span>
                             <span className="detailed">
                                 <div className="choice">
 
-                                    // todo 看不懂，是不是要做select标签？
-                                    <li className="first">初中 <span className="iconfont">&#xe6a2;</span></li>
-                                    <div className="second">
-                                        <li>高中</li>
-                                        <li>大学</li>
-                                    </div>
+                                    {/*<li className="first">初中<span className="iconfont">&#xe6a2;</span></li>*/}
+                                    {/*<div className="second">*/}
+                                    {/*    <li>高中</li>*/}
+                                    {/*    <li>大学</li>*/}
+                                    {/*</div>*/}
+
+                                    {/*选择学历*/}
+                                    <select  value={user.level} onChange={this.changeLevel} >
+                                        <option value="初中">初中</option>
+                                        <option value="高中">高中</option>
+                                        <option value="大学">大学</option>
+                                    </select>
                                 </div>
                             </span>
                         </li>
                         <li className="line">
                             <span className="name">手机: </span>
                             <span className="detailed">
-                                <span>18763567272</span>
+                                <span>{user.phone}</span>
                             </span>
                         </li>
                         <li className="line">
                             <span className="name">邮箱: </span>
                             <span className="detailed">
-                                <span>245699916@qq.com</span>
+                                <span>{user.email}</span>
                             </span>
                         </li>
                     </div>
-                    <button onClick={submitU(api.user.updateInfo)}>保存</button>
-                </form>
+                <span className="msgFailure">{msg}</span>
+
+                    {/*提交信息*/}
+                    <button onClick={()=>{this.submit(user)}}>保存</button>
             </div>
         )
      }
 }
 
-export default Personal
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsU)(Personal)

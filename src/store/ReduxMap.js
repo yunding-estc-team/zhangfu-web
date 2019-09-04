@@ -1,5 +1,5 @@
 import ActionCreator from "./actionCreator";
-import api, {instance} from "../config/url";
+import  {instance} from "../config/url";
 
 export default class ReduxMap {
     // 常用映射方法
@@ -89,7 +89,13 @@ export default class ReduxMap {
             // 设置消息
             setMsg:(msg)=>{
                 dispatch(ActionCreator.setMsg(msg));
-            }
+            },
+
+            // 非覆盖更新
+            setCL:(cl)=>{
+                console.log(cl);
+                dispatch(ActionCreator.updateCompetitionList(cl))
+            },
 
         };
     };

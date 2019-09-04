@@ -68,17 +68,6 @@ export default class UserApi{
                 console.log(res.data.code);
                 if (res.data.code === "200") {
                     instance.post(api.user.updateInfo, data)
-                        .then(res => {
-                            console.log(res.data.code);
-                            if (res.data.code === "200") {
-                                this.setState({msg: "绑定成功"});
-                                console.log(res.data.msg);
-                            } else {
-                                this.setState({msg: "绑定失败"});
-                                console.log(res.data.msg);
-                            }
-                        })
-
                 }
             });
     };
@@ -164,6 +153,8 @@ export default class UserApi{
                 }
             });
     };
+
+
     bindPhone() {
         let data ={
             address:"",
@@ -224,23 +215,9 @@ export default class UserApi{
     /**
      * 常规信息修改
      */
-    updateInfo(){
-        let data={
-
-        }
-        instance.post(api.user.updateInfo,data)
-            .then(res=>{
-                console.log(res.data.code);
-                if(res.data.code==="200"){
-                    this.setState({msg:"修改信息成功，请重新认证"});
-                    console.log(res.data.msg);
-                    //todo 跳转回账户安全页面
-                }else{
-                    this.setState({msg:"修改失败，请重试"})
-                    console.log(res.data.msg);
-                    //todo 仍留在修改学生信息也买你
-                }
-            });
+    static updateInfo(user){
+        let data=user;
+        return instance.post(api.user.updateInfo,data)
     };
 
     /**
@@ -391,7 +368,7 @@ export default class UserApi{
             //每页的行数
             pageSize:p,
         };
-        return instance.post(api.user.selectJoinCompetion,data)
+        return instance.post(api.user.selectJoinCompetition,data)
     }
     /**
      * 获取个人资料
@@ -453,6 +430,13 @@ export default class UserApi{
                     console.log(res.data.msg);
                 }
             });
+    }
+
+    /**
+     * 用户信息获取
+     */
+    static getInfo=()=>{
+        return instance.get(api.user.info);
     }
 
 }

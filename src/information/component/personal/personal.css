@@ -111,6 +111,24 @@ li {
     text-align: center;
     padding-top: 10px;
 }
+
+.personal .list .choice select{
+    width: 265px;
+    height: 30px;
+
+    background-color: #EEEEF0;
+    text-align: center;
+    padding-top: 10px;
+}
+.personal .list .choice select option{
+    width: 265px;
+    height: 30px;
+
+    background-color: #EEEEF0;
+    text-align: center;
+    padding-top: 10px;
+}
+
 .personal .list .choice .second{
     width: 265px;
     display: none;

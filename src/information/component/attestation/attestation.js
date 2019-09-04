@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './attestation.css';
 import {Link, Route} from "react-router-dom";
+import ReduxMap from "../../../store/ReduxMap";
+import {connect} from "react-redux";
 
 
 // 账号安全
@@ -50,4 +52,4 @@ class Attestation extends Component{
      }
 }
 
-export default Attestation
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsUC)(Attestation);

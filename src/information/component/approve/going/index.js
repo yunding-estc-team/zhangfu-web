@@ -3,6 +3,8 @@ import './index.css';
 import approve from '../../../../images/shenfenzhengzhengmian.png'
 import api from "../../../../config/url";
 import Tools from '../../../../util/Tools'
+import {connect} from "react-redux";
+import ReduxMap from "../../../../store/ReduxMap";
 
 // 未验证身份时验证获奖的页面
 /**
@@ -93,25 +95,26 @@ class Approve extends Component{
         return(
             <div className="approve">
                 <div className="approve-portion">
-                    // todo 添加文件上传
-                    <form action="">
                         <div className="portion-theme">实名认证</div>
                         <div className="portion-img">
-                            <img src={approve} alt=""/>
-                            <input className="add" type="file" onChange={this.handleStudentsCards}/>
+
+                            {/*// todo 样式有问题*/}
+                            {/*<img src={approve} alt=""/>*/}
+                            <div className="uploadStudentCard">
+                                <input className="fileInput" type="file" onChange={this.handleStudentsCards}/>
+                            </div>
+                            {/*<input className="uploadStudentCard" type="file" onChange={this.handleStudentsCards}/>*/}
                         </div>
                         <div className="portion-explain">（请将学生卡有照片一面上传）</div>
                         <div className="portion-button">
                             <button onClick={submitUC(api.user.uploadStd)}>确认</button>
                             <button className="return">返回</button>
                         </div>
-                    </form>
                 </div>
                 <div className="approve-portion1">
                     <form action="">
                         <div className="portion1-theme">认证获奖记录</div>
                         <div className="portion1-name">
-                            // todo 修改页面 @张富
                             {/*输入姓名*/}
                             <span>姓名：</span><span><input id="userName" type="text" onChange={saveUC}/></span>
                         </div>
@@ -140,4 +143,4 @@ class Approve extends Component{
      }
 }
 
-export default Approve
+export default connect(ReduxMap.mapStateToProps,ReduxMap.mapDispatchToPropsUC)(Approve);

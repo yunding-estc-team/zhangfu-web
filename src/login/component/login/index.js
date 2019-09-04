@@ -33,7 +33,7 @@ class Loging extends Component{
     };
 
     submit=(url,user)=>{
-        this.props.history.push("/home/index");
+        // this.props.history.push("/home/index");
         console.log(instance);
         UserApi.login(url,user)
             .then(res=>{
@@ -42,6 +42,7 @@ class Loging extends Component{
                     // 存储token到localStorage
                     localStorage.setItem("token",res.data.data);
                     console.log(localStorage.getItem("token"));
+                    this.props.history.push("/home/index");
                     // 跳转到主页
                     // this.props.history.push("/register/index");
                 }else{
@@ -82,7 +83,7 @@ class Loging extends Component{
                         </div>
                     </div>
                     {/*<div className="right-footer"><button onClick={submitU(status ?api.user.loginByCode:api.user.loginByPassword)*/}
-                    <div className="right-footer"><button onClick={this.forward}>登录</button></div>
+                    <div className="right-footer"><button onClick={()=>this.submit(url,user)}>登录</button></div>
                 </div>
             </div>
         )
